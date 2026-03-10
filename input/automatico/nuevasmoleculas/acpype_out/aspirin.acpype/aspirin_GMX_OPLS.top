@@ -1,0 +1,19 @@
+; aspirin_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:29:16 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include aspirin_GMX.itp topology
+#include "aspirin_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_aspirin.itp"
+#endif
+
+[ system ]
+ aspirin
+
+[ molecules ]
+; Compound        nmols
+ aspirin          1     

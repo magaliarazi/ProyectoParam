@@ -1,0 +1,19 @@
+; fructose_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:46:09 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include fructose_GMX.itp topology
+#include "fructose_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_fructose.itp"
+#endif
+
+[ system ]
+ fructose
+
+[ molecules ]
+; Compound        nmols
+ fructose         1     

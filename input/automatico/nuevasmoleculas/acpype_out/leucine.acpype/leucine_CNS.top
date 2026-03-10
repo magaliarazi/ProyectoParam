@@ -1,0 +1,165 @@
+Remarks leucine_CNS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:52:41 2026
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS oh_     16.000
+MASS o_      16.000
+MASS n8_     14.010
+MASS c3_     12.010
+MASS c_      12.010
+MASS hc_      1.008
+MASS h1_      1.008
+MASS hn_      1.008
+MASS ho_      1.008
+
+RESIdue LEU
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM O     TYPE= oh_   CHARGE=  -0.5991 END
+ATOM OXT   TYPE= o_    CHARGE=  -0.5540 END
+ATOM N     TYPE= n8_   CHARGE=  -0.8998 END
+ATOM CG    TYPE= c3_   CHARGE=  -0.0647 END
+ATOM CB    TYPE= c3_   CHARGE=  -0.1144 END
+ATOM CA    TYPE= c3_   CHARGE=   0.1295 END
+ATOM CD1   TYPE= c3_   CHARGE=  -0.0986 END
+ATOM CD2   TYPE= c3_   CHARGE=  -0.0986 END
+ATOM C     TYPE= c_    CHARGE=   0.6451 END
+ATOM HG    TYPE= hc_   CHARGE=   0.0487 END
+ATOM HB1   TYPE= hc_   CHARGE=   0.0552 END
+ATOM HB2   TYPE= hc_   CHARGE=   0.0552 END
+ATOM HA    TYPE= h1_   CHARGE=   0.0957 END
+ATOM HD11  TYPE= hc_   CHARGE=   0.0389 END
+ATOM HD12  TYPE= hc_   CHARGE=   0.0389 END
+ATOM HD13  TYPE= hc_   CHARGE=   0.0389 END
+ATOM HD21  TYPE= hc_   CHARGE=   0.0389 END
+ATOM HD22  TYPE= hc_   CHARGE=   0.0389 END
+ATOM HD23  TYPE= hc_   CHARGE=   0.0389 END
+ATOM H1    TYPE= hn_   CHARGE=   0.3618 END
+ATOM H2    TYPE= hn_   CHARGE=   0.3618 END
+ATOM H     TYPE= ho_   CHARGE=   0.4430 END
+
+{ Bonds: atomName1  atomName2 }
+BOND O     H    
+BOND N     H1   
+BOND N     H2   
+BOND CG    HG   
+BOND CB    HB1  
+BOND CB    HB2  
+BOND CA    HA   
+BOND CD1   HD11 
+BOND CD1   HD12 
+BOND CD1   HD13 
+BOND CD2   HD21 
+BOND CD2   HD22 
+BOND CD2   HD23 
+BOND O     C    
+BOND OXT   C    
+BOND N     CA   
+BOND CG    CB   
+BOND CG    CD1  
+BOND CG    CD2  
+BOND CB    CA   
+BOND CA    C    
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe N     CA    HA   
+ANGLe CG    CB    HB1  
+ANGLe CG    CB    HB2  
+ANGLe CG    CD1   HD11 
+ANGLe CG    CD1   HD12 
+ANGLe CG    CD1   HD13 
+ANGLe CG    CD2   HD21 
+ANGLe CG    CD2   HD22 
+ANGLe CG    CD2   HD23 
+ANGLe CB    CG    HG   
+ANGLe CB    CA    HA   
+ANGLe CA    N     H1   
+ANGLe CA    N     H2   
+ANGLe CA    CB    HB1  
+ANGLe CA    CB    HB2  
+ANGLe CD1   CG    HG   
+ANGLe CD2   CG    HG   
+ANGLe C     O     H    
+ANGLe C     CA    HA   
+ANGLe HB1   CB    HB2  
+ANGLe HD11  CD1   HD12 
+ANGLe HD11  CD1   HD13 
+ANGLe HD12  CD1   HD13 
+ANGLe HD21  CD2   HD22 
+ANGLe HD21  CD2   HD23 
+ANGLe HD22  CD2   HD23 
+ANGLe H1    N     H2   
+ANGLe O     C     OXT  
+ANGLe O     C     CA   
+ANGLe OXT   C     CA   
+ANGLe N     CA    CB   
+ANGLe N     CA    C    
+ANGLe CG    CB    CA   
+ANGLe CB    CG    CD1  
+ANGLe CB    CG    CD2  
+ANGLe CB    CA    C    
+ANGLe CD1   CG    CD2  
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral O     C     CA    HA   
+DIHEdral H     O     C     OXT  
+DIHEdral OXT   C     CA    HA   
+DIHEdral N     CA    CB    HB1  
+DIHEdral N     CA    CB    HB2  
+DIHEdral CG    CB    CA    HA   
+DIHEdral CB    CG    CD1   HD11 
+DIHEdral CB    CG    CD1   HD12 
+DIHEdral CB    CG    CD1   HD13 
+DIHEdral CB    CG    CD2   HD21 
+DIHEdral CB    CG    CD2   HD22 
+DIHEdral CB    CG    CD2   HD23 
+DIHEdral CB    CA    N     H1   
+DIHEdral CB    CA    N     H2   
+DIHEdral CA    CB    CG    HG   
+DIHEdral H     O     C     CA   
+DIHEdral CD1   CG    CB    HB1  
+DIHEdral CD1   CG    CB    HB2  
+DIHEdral CD1   CG    CD2   HD21 
+DIHEdral CD1   CG    CD2   HD22 
+DIHEdral CD1   CG    CD2   HD23 
+DIHEdral CD2   CG    CB    HB1  
+DIHEdral CD2   CG    CB    HB2  
+DIHEdral CD2   CG    CD1   HD11 
+DIHEdral CD2   CG    CD1   HD12 
+DIHEdral CD2   CG    CD1   HD13 
+DIHEdral C     CA    N     H1   
+DIHEdral C     CA    N     H2   
+DIHEdral C     CA    CB    HB1  
+DIHEdral C     CA    CB    HB2  
+DIHEdral HG    CG    CB    HB1  
+DIHEdral HG    CG    CB    HB2  
+DIHEdral HG    CG    CD1   HD11 
+DIHEdral HG    CG    CD1   HD12 
+DIHEdral HG    CG    CD1   HD13 
+DIHEdral HG    CG    CD2   HD21 
+DIHEdral HG    CG    CD2   HD22 
+DIHEdral HG    CG    CD2   HD23 
+DIHEdral HB1   CB    CA    HA   
+DIHEdral HB2   CB    CA    HA   
+DIHEdral HA    CA    N     H1   
+DIHEdral HA    CA    N     H2   
+DIHEdral O     C     CA    N    
+DIHEdral O     C     CA    CB   
+DIHEdral OXT   C     CA    N    
+DIHEdral OXT   C     CA    CB   
+DIHEdral N     CA    CB    CG   
+DIHEdral CG    CB    CA    C    
+DIHEdral CA    CB    CG    CD1  
+DIHEdral CA    CB    CG    CD2  
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+IMPRoper O     C     OXT   CA   
+
+END {RESIdue LEU}
+
+set echo=true end

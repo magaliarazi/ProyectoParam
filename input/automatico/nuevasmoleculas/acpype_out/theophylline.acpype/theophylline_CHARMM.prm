@@ -1,0 +1,75 @@
+* Force Field Parameter File.
+* 
+
+BOND
+c  o   637.70   1.218
+cc n   425.10   1.381
+c  n   427.60   1.379
+c3 n   328.70   1.462
+cd na  425.80   1.380
+hn na  408.40   1.010
+cc nc  441.10   1.369
+cd nc  525.40   1.317
+cc cd  500.90   1.373
+c  cd  371.00   1.468
+c3 h1  330.60   1.097
+cd h5  351.80   1.082
+
+ANGLE
+o  c  n    74.200     123.050
+o  c  cd   69.100     123.930
+n  cc nc   69.300     126.230
+n  cc cd   68.900     121.330
+n  c  n    72.900     113.560
+n  c3 h1   49.800     108.880
+n  c  cd   69.100     112.700
+na cd cc   73.400     106.990
+na cd c    67.781     113.835   ! Calculated with empirical approach
+na cd nc   74.900     112.220
+na cd h5   49.600     121.550
+nc cc cd   72.200     111.650
+nc cd h5   50.600     125.520
+cc n  c    64.700     123.270
+cc n  c3   63.300     120.850
+cc nc cd   71.800     105.490
+cc cd c    65.100     121.350
+cd na cd   68.500     109.900
+cd na hn   46.800     125.500
+c  n  c    63.700     127.080
+c  n  c3   63.400     120.690
+h1 c3 h1   39.200     108.460
+
+DIHEDRAL
+X  n  cc X      1.650         2     180.0
+X  c  n  X      2.500         2     180.0
+X  c3 n  X      0.000         2       0.0
+X  cd na X      1.700         2     180.0
+X  cc nc X      4.750         2     180.0
+X  cd nc X      4.750         2     180.0
+X  cc cd X      4.000         2     180.0
+X  c  cd X      2.875         2     180.0
+
+IMPHI
+c  c3 n  cc     1.100         2     180.0	! Using default value
+c  c  n  c3     1.100         2     180.0	! Using default value
+X  X  na hn     1.100         2     180.0
+cd n  cc nc     1.100         2     180.0	! Using default value
+c  cc cd na     1.100         2     180.0	! Using default value
+X  X  c  o     10.500         2     180.0
+h5 na cd nc     1.100         2     180.0	! Using default value
+
+NONBONDED  NBXMOD 5  GROUP SWITCH CDIEL -
+CUTNB 14.0  CTOFNB 12.0  CTONNB 10.0  EPS 1.0  E14FAC 0.83333333  WMIN 1.4
+!                Emin     Rmin/2              Emin/2     Rmin  (for 1-4's)
+!             (kcal/mol)    (A)
+ o      0.00   -0.2100    1.6612      0.00   -0.1050    1.6612
+ n      0.00   -0.1700    1.8240      0.00   -0.0850    1.8240
+na      0.00   -0.1700    1.8240      0.00   -0.0850    1.8240
+nc      0.00   -0.1700    1.8240      0.00   -0.0850    1.8240
+cc      0.00   -0.0860    1.9080      0.00   -0.0430    1.9080
+cd      0.00   -0.0860    1.9080      0.00   -0.0430    1.9080
+ c      0.00   -0.0860    1.9080      0.00   -0.0430    1.9080
+c3      0.00   -0.1094    1.9080      0.00   -0.0547    1.9080
+hn      0.00   -0.0157    0.6000      0.00   -0.0078    0.6000
+h1      0.00   -0.0157    1.3870      0.00   -0.0078    1.3870
+h5      0.00   -0.0150    1.3590      0.00   -0.0075    1.3590

@@ -1,0 +1,20 @@
+; atrazine_GMX.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:30:29 2026
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               2               yes             0.5     0.8333333333
+
+; Include atrazine_GMX.itp topology
+#include "atrazine_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_atrazine.itp"
+#endif
+
+[ system ]
+ atrazine
+
+[ molecules ]
+; Compound        nmols
+ atrazine         1     

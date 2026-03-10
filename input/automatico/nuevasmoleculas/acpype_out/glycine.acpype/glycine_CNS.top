@@ -1,0 +1,80 @@
+Remarks glycine_CNS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:46:16 2026
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS oh_     16.000
+MASS o_      16.000
+MASS n8_     14.010
+MASS c3_     12.010
+MASS c_      12.010
+MASS h1_      1.008
+MASS hn_      1.008
+MASS ho_      1.008
+
+RESIdue GLY
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM O     TYPE= oh_   CHARGE=  -0.6041 END
+ATOM OXT   TYPE= o_    CHARGE=  -0.5590 END
+ATOM N     TYPE= n8_   CHARGE=  -0.8948 END
+ATOM CA    TYPE= c3_   CHARGE=   0.1188 END
+ATOM C     TYPE= c_    CHARGE=   0.5831 END
+ATOM HA1   TYPE= h1_   CHARGE=   0.0907 END
+ATOM HA2   TYPE= h1_   CHARGE=   0.0907 END
+ATOM H1    TYPE= hn_   CHARGE=   0.3648 END
+ATOM H2    TYPE= hn_   CHARGE=   0.3648 END
+ATOM H     TYPE= ho_   CHARGE=   0.4450 END
+
+{ Bonds: atomName1  atomName2 }
+BOND O     H    
+BOND N     H1   
+BOND N     H2   
+BOND CA    HA1  
+BOND CA    HA2  
+BOND O     C    
+BOND OXT   C    
+BOND N     CA   
+BOND CA    C    
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe N     CA    HA1  
+ANGLe N     CA    HA2  
+ANGLe CA    N     H1   
+ANGLe CA    N     H2   
+ANGLe C     O     H    
+ANGLe C     CA    HA1  
+ANGLe C     CA    HA2  
+ANGLe HA1   CA    HA2  
+ANGLe H1    N     H2   
+ANGLe O     C     OXT  
+ANGLe O     C     CA   
+ANGLe OXT   C     CA   
+ANGLe N     CA    C    
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral O     C     CA    HA1  
+DIHEdral O     C     CA    HA2  
+DIHEdral H     O     C     OXT  
+DIHEdral OXT   C     CA    HA1  
+DIHEdral OXT   C     CA    HA2  
+DIHEdral H     O     C     CA   
+DIHEdral C     CA    N     H1   
+DIHEdral C     CA    N     H2   
+DIHEdral HA1   CA    N     H1   
+DIHEdral HA1   CA    N     H2   
+DIHEdral HA2   CA    N     H1   
+DIHEdral HA2   CA    N     H2   
+DIHEdral O     C     CA    N    
+DIHEdral OXT   C     CA    N    
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+IMPRoper O     C     OXT   CA   
+
+END {RESIdue GLY}
+
+set echo=true end

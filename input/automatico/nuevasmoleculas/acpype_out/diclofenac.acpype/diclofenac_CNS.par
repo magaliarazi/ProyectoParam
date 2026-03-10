@@ -1,0 +1,83 @@
+Remarks diclofenac_CNS.par created by acpype (v: 2023.10.27) on Mon Feb  9 17:43:05 2026
+
+set echo=false end
+
+{ Bonds: atomType1 atomType2 kb r0 }
+BOND   oh_   ho_    535.5   0.9725
+BOND   nu_   hn_    472.5   1.0137
+BOND   c3_   hc_    345.2   1.0962
+BOND   ca_   ha_    360.7   1.0860
+BOND   cl_   ca_    188.0   1.7572
+BOND   oh_    c_    359.3   1.3556
+BOND    o_    c_    590.6   1.2190
+BOND   nu_   ca_    319.9   1.3944
+BOND   ca_   ca_    354.2   1.3986
+BOND   ca_   c3_    243.9   1.5147
+BOND   c3_    c_    234.8   1.5270
+
+{ Angles: aType1 aType2 aType3 kt t0 }
+ANGLe   ca_   c3_   hc_     43.6   110.63
+ANGLe   ca_   ca_   ha_     44.9   119.88
+ANGLe   ca_   nu_   hn_     57.5   114.73
+ANGLe    c_   oh_   ho_     68.5   106.54
+ANGLe    c_   c3_   hc_     43.6   108.95
+ANGLe   hc_   c3_   hc_     35.8   107.73
+ANGLe   cl_   ca_   ca_     64.1   119.38
+ANGLe   oh_    c_    o_    102.0   122.09
+ANGLe   oh_    c_   c3_     77.4   112.74
+ANGLe    o_    c_   c3_     76.5   122.90
+ANGLe   nu_   ca_   ca_     67.5   120.74
+ANGLe   ca_   ca_   ca_     63.7   120.02
+ANGLe   ca_   c3_    c_     60.8   111.16
+ANGLe   ca_   nu_   ca_     75.8   130.28
+ANGLe   ca_   ca_   c3_     60.7   120.83
+
+{ Proper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+DIHEdral   cl_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   ha_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral    o_    c_   c3_   ca_           0.000    2   180.00
+DIHEdral    o_    c_   oh_   ho_  MULT 2   1.900    1     0.00
+                                           2.300    2   180.00
+DIHEdral   nu_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   c3_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   ca_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   ca_   ca_   c3_   hc_           0.000    0     0.00
+DIHEdral   nu_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   ca_   ca_   c3_    c_           0.000    0     0.00
+DIHEdral   oh_    c_   c3_   hc_           0.000    2   180.00
+DIHEdral   cl_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   ca_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   oh_    c_   c3_   ca_           0.000    2   180.00
+DIHEdral    o_    c_   c3_   hc_  MULT 2   4.030    1     0.00
+                                           3.660    2   180.00
+DIHEdral   ca_   nu_   ca_   ca_           0.800    2   180.00
+DIHEdral   nu_   ca_   ca_   c3_           3.625    2   180.00
+DIHEdral   c3_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   c3_    c_   oh_   ho_           1.800    2   180.00
+DIHEdral   ca_   ca_   nu_   hn_           1.050    2   180.00
+DIHEdral   cl_   ca_   ca_   nu_           3.625    2   180.00
+DIHEdral   ca_   ca_   nu_   ca_           0.800    2   180.00
+
+{ Improper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+IMPRoper   cl_   ca_   ca_   ca_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   c3_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   cl_           1.1    2   180.00
+IMPRoper   ca_   ca_   nu_   hn_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   nu_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   ha_           1.1    2   180.00
+IMPRoper   c3_    o_    c_   oh_           1.1    2   180.00
+
+{ Nonbonded: Type Emin sigma; (1-4): Emin/2 sigma }
+NONBonded   cl_    0.263800    3.465952    0.131900    3.465952
+NONBonded   oh_    0.093000    3.242871    0.046500    3.242871
+NONBonded    o_    0.146300    3.048121    0.073150    3.048121
+NONBonded   nu_    0.154500    3.279042    0.077250    3.279042
+NONBonded   ca_    0.098800    3.315212    0.049400    3.315212
+NONBonded   c3_    0.107800    3.397710    0.053900    3.397710
+NONBonded    c_    0.098800    3.315212    0.049400    3.315212
+NONBonded   hc_    0.020800    2.600177    0.010400    2.600177
+NONBonded   hn_    0.010000    1.106496    0.005000    1.106496
+NONBonded   ha_    0.016100    2.625479    0.008050    2.625479
+NONBonded   ho_    0.004700    0.537925    0.002350    0.537925
+
+set echo=true end

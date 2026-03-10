@@ -1,0 +1,19 @@
+; leucine_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:52:41 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include leucine_GMX.itp topology
+#include "leucine_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_leucine.itp"
+#endif
+
+[ system ]
+ leucine
+
+[ molecules ]
+; Compound        nmols
+ leucine          1     

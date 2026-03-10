@@ -1,0 +1,20 @@
+; androstenedione_GMX.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:28:54 2026
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               2               yes             0.5     0.8333333333
+
+; Include androstenedione_GMX.itp topology
+#include "androstenedione_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_androstenedione.itp"
+#endif
+
+[ system ]
+ androstenedione
+
+[ molecules ]
+; Compound        nmols
+ androstenedione  1     

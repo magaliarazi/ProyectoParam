@@ -1,0 +1,75 @@
+Remarks cysteine_CNS.par created by acpype (v: 2023.10.27) on Mon Feb  9 17:39:31 2026
+
+set echo=false end
+
+{ Bonds: atomType1 atomType2 kb r0 }
+BOND   sh_   hs_    277.5   1.3503
+BOND   oh_   ho_    535.5   0.9725
+BOND   n8_   hn_    460.7   1.0192
+BOND   c3_   h1_    344.2   1.0969
+BOND   sh_   c3_    182.9   1.8446
+BOND   oh_    c_    359.3   1.3556
+BOND    o_    c_    590.6   1.2190
+BOND   n8_   c3_    253.8   1.4651
+BOND   c3_   c3_    228.9   1.5354
+BOND   c3_    c_    234.8   1.5270
+
+{ Angles: aType1 aType2 aType3 kt t0 }
+ANGLe   sh_   c3_   h1_     42.0   108.37
+ANGLe   n8_   c3_   h1_     48.2   108.12
+ANGLe   c3_   n8_   hn_     56.2   109.61
+ANGLe   c3_   c3_   h1_     43.3   109.59
+ANGLe   c3_   sh_   hs_     66.9    96.41
+ANGLe    c_   oh_   ho_     68.5   106.54
+ANGLe    c_   c3_   h1_     43.7   108.37
+ANGLe   h1_   c3_   h1_     35.6   108.55
+ANGLe   hn_   n8_   hn_     47.9   106.38
+ANGLe   sh_   c3_   c3_     62.0   113.30
+ANGLe   oh_    c_    o_    102.0   122.09
+ANGLe   oh_    c_   c3_     77.4   112.74
+ANGLe    o_    c_   c3_     76.5   122.90
+ANGLe   n8_   c3_   c3_     65.5   110.91
+ANGLe   n8_   c3_    c_     65.7   110.96
+ANGLe   c3_   c3_    c_     60.4   111.43
+
+{ Proper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+DIHEdral   sh_   c3_   c3_    c_           0.156    3     0.00
+DIHEdral    c_   c3_   c3_   h1_           0.156    3     0.00
+DIHEdral    c_   c3_   n8_   hn_           0.300    3     0.00
+DIHEdral   sh_   c3_   c3_   h1_           0.156    3     0.00
+DIHEdral   hs_   sh_   c3_   h1_           0.143    3     0.00
+DIHEdral    o_    c_   c3_   n8_           0.000    2   180.00
+DIHEdral    o_    c_   oh_   ho_  MULT 2   1.900    1     0.00
+                                           2.300    2   180.00
+DIHEdral   oh_    c_   c3_   c3_           0.000    2   180.00
+DIHEdral    o_    c_   c3_   c3_  MULT 3   0.680    1     0.00
+                                           0.200    2   180.00
+                                           0.440    3   180.00
+DIHEdral   h1_   c3_   c3_   h1_           0.156    3     0.00
+DIHEdral   h1_   c3_   n8_   hn_           0.300    3     0.00
+DIHEdral    o_    c_   c3_   h1_  MULT 2   0.800    1     0.00
+                                           0.080    3   180.00
+DIHEdral   sh_   c3_   c3_   n8_           0.156    3     0.00
+DIHEdral   c3_    c_   oh_   ho_           1.800    2   180.00
+DIHEdral   c3_   c3_   n8_   hn_           0.030    3   180.00
+DIHEdral   hs_   sh_   c3_   c3_           0.250    3     0.00
+DIHEdral   n8_   c3_   c3_   h1_           0.156    3     0.00
+DIHEdral   oh_    c_   c3_   n8_           0.000    2   180.00
+DIHEdral   oh_    c_   c3_   h1_           0.000    2   180.00
+
+{ Improper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+IMPRoper   c3_    o_    c_   oh_           1.1    2   180.00
+
+{ Nonbonded: Type Emin sigma; (1-4): Emin/2 sigma }
+NONBonded   sh_    0.282400    3.532413    0.141200    3.532413
+NONBonded   oh_    0.093000    3.242871    0.046500    3.242871
+NONBonded    o_    0.146300    3.048121    0.073150    3.048121
+NONBonded   n8_    0.032300    3.650190    0.016150    3.650190
+NONBonded   c3_    0.107800    3.397710    0.053900    3.397710
+NONBonded    c_    0.098800    3.315212    0.049400    3.315212
+NONBonded   h1_    0.020800    2.421997    0.010400    2.421997
+NONBonded   hn_    0.010000    1.106496    0.005000    1.106496
+NONBonded   hs_    0.012400    1.089035    0.006200    1.089035
+NONBonded   ho_    0.004700    0.537925    0.002350    0.537925
+
+set echo=true end

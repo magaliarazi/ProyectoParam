@@ -1,0 +1,196 @@
+; valine_GMX_OPLS.itp created by acpype (v: 2023.10.27) on Mon Feb  9 18:01:21 2026
+
+; For OPLS atomtypes manual fine tuning
+; AC_at:OPLS_at:OPLScode: Possible_Alternatives (see ffoplsaa.atp and ffoplsaanb.itp)
+; oh:OH:opls_154: ['167']
+; o:O:opls_236: ['272']
+; n8:x:opls_x: []
+; c3:CT:opls_135: ['136', '137', '149', '157', '158', '206', '209', '210', '223B', '224B', '245', '246', '274', '283', '284', '285', '292', '292B', '293B', '296', '307', '308', '505']
+; c:C:opls_235: ['271']
+; hc:HC:opls_140: []
+; h1:HC:opls_140: []
+; hn:H:opls_240: ['241', '290', '301', '304', '310', '504', '513']
+; ho:HO:opls_155: ['168']
+
+[ moleculetype ]
+;name            nrexcl
+ valine           3
+
+[ atoms ]
+;   nr  type  resi  res  atom  cgnr     charge      mass       ; qtot   bond_type
+     1 opls_154     1   VAL     O    1    -0.602100     15.99940 ; qtot -0.602  OH  
+     2 opls_236     1   VAL   OXT    2    -0.552000     15.99940 ; qtot -1.154  O   
+     3 opls_x     1   VAL     N    3    -0.897798      0.00000 ; qtot -2.052  x   
+     4 opls_135     1   VAL    CB    4    -0.099700     12.01100 ; qtot -2.152  CT  
+     5 opls_135     1   VAL    CA    5     0.129500     12.01100 ; qtot -2.022  CT  
+     6 opls_135     1   VAL   CG1    6    -0.100100     12.01100 ; qtot -2.122  CT  
+     7 opls_135     1   VAL   CG2    7    -0.100100     12.01100 ; qtot -2.222  CT  
+     8 opls_235     1   VAL     C    8     0.644100     12.01100 ; qtot -1.578  C   
+     9 opls_140     1   VAL    HB    9     0.053700      1.00800 ; qtot -1.524  HC  
+    10 opls_140     1   VAL    HA   10     0.092700      1.00800 ; qtot -1.432  HC  
+    11 opls_140     1   VAL  HG11   11     0.043533      1.00800 ; qtot -1.388  HC  
+    12 opls_140     1   VAL  HG12   12     0.043533      1.00800 ; qtot -1.345  HC  
+    13 opls_140     1   VAL  HG13   13     0.043533      1.00800 ; qtot -1.301  HC  
+    14 opls_140     1   VAL  HG21   14     0.043533      1.00800 ; qtot -1.258  HC  
+    15 opls_140     1   VAL  HG22   15     0.043533      1.00800 ; qtot -1.214  HC  
+    16 opls_140     1   VAL  HG23   16     0.043533      1.00800 ; qtot -1.171  HC  
+    17 opls_240     1   VAL    H1   17     0.363300      1.00800 ; qtot -0.807  H   
+    18 opls_240     1   VAL    H2   18     0.363300      1.00800 ; qtot -0.444  H   
+    19 opls_155     1   VAL     H   19     0.444000      1.00800 ; qtot  0.000  HO  
+
+[ bonds ]
+;   ai     aj funct   r             k
+     1      8   1 ;    1.3556e-01    3.0064e+05 ;      O - C          OH - C     
+     1     19   1 ;    9.7250e-02    4.4811e+05 ;      O - H          OH - HO    
+     2      8   1 ;    1.2190e-01    4.9421e+05 ;    OXT - C           O - C     
+     3      5   1 ;    1.4651e-01    2.1239e+05 ;      N - CA          x - CT    
+     3     17   1 ;    1.0192e-01    3.8550e+05 ;      N - H1          x - H     
+     3     18   1 ;    1.0192e-01    3.8550e+05 ;      N - H2          x - H     
+     4      5   1 ;    1.5354e-01    1.9154e+05 ;     CB - CA         CT - CT    
+     4      6   1 ;    1.5354e-01    1.9154e+05 ;     CB - CG1        CT - CT    
+     4      7   1 ;    1.5354e-01    1.9154e+05 ;     CB - CG2        CT - CT    
+     4      9   1 ;    1.0962e-01    2.8891e+05 ;     CB - HB         CT - HC    
+     5      8   1 ;    1.5270e-01    1.9652e+05 ;     CA - C          CT - C     
+     5     10   1 ;    1.0969e-01    2.8804e+05 ;     CA - HA         CT - HC    
+     6     11   1 ;    1.0962e-01    2.8891e+05 ;    CG1 - HG11       CT - HC    
+     6     12   1 ;    1.0962e-01    2.8891e+05 ;    CG1 - HG12       CT - HC    
+     6     13   1 ;    1.0962e-01    2.8891e+05 ;    CG1 - HG13       CT - HC    
+     7     14   1 ;    1.0962e-01    2.8891e+05 ;    CG2 - HG21       CT - HC    
+     7     15   1 ;    1.0962e-01    2.8891e+05 ;    CG2 - HG22       CT - HC    
+     7     16   1 ;    1.0962e-01    2.8891e+05 ;    CG2 - HG23       CT - HC    
+
+[ pairs ]
+;   ai     aj    funct
+     1      3      1 ;      O - N     
+     1      4      1 ;      O - CB    
+     1     10      1 ;      O - HA    
+     2      3      1 ;    OXT - N     
+     2      4      1 ;    OXT - CB    
+     2     10      1 ;    OXT - HA    
+     3      6      1 ;      N - CG1   
+     3      7      1 ;      N - CG2   
+     3      9      1 ;      N - HB    
+     4     17      1 ;     CB - H1    
+     4     18      1 ;     CB - H2    
+     5     11      1 ;     CA - HG11  
+     5     12      1 ;     CA - HG12  
+     5     13      1 ;     CA - HG13  
+     5     14      1 ;     CA - HG21  
+     5     15      1 ;     CA - HG22  
+     5     16      1 ;     CA - HG23  
+     6      8      1 ;    CG1 - C     
+     6     10      1 ;    CG1 - HA    
+     6     14      1 ;    CG1 - HG21  
+     6     15      1 ;    CG1 - HG22  
+     6     16      1 ;    CG1 - HG23  
+     7      8      1 ;    CG2 - C     
+     7     10      1 ;    CG2 - HA    
+     7     11      1 ;    CG2 - HG11  
+     7     12      1 ;    CG2 - HG12  
+     7     13      1 ;    CG2 - HG13  
+     8      9      1 ;      C - HB    
+     8     17      1 ;      C - H1    
+     8     18      1 ;      C - H2    
+     9     10      1 ;     HB - HA    
+     9     11      1 ;     HB - HG11  
+     9     12      1 ;     HB - HG12  
+     9     13      1 ;     HB - HG13  
+     9     14      1 ;     HB - HG21  
+     9     15      1 ;     HB - HG22  
+     9     16      1 ;     HB - HG23  
+    10     17      1 ;     HA - H1    
+    10     18      1 ;     HA - H2    
+    19      2      1 ;      H - OXT   
+    19      5      1 ;      H - CA    
+
+[ angles ]
+;   ai     aj     ak    funct   theta         cth
+     1      8      2      1 ;    1.2209e+02    8.5379e+02 ;      O - C    - OXT      OH -    C - O   
+     1      8      5      1 ;    1.1274e+02    6.4785e+02 ;      O - C    - CA       OH -    C - CT  
+     2      8      5      1 ;    1.2290e+02    6.3973e+02 ;    OXT - C    - CA        O -    C - CT  
+     3      5      4      1 ;    1.1091e+02    5.4794e+02 ;      N - CA   - CB        x -   CT - CT  
+     3      5      8      1 ;    1.1096e+02    5.4944e+02 ;      N - CA   - C         x -   CT - C   
+     3      5     10      1 ;    1.0812e+02    4.0342e+02 ;      N - CA   - HA        x -   CT - HC  
+     4      5      8      1 ;    1.1143e+02    5.0509e+02 ;     CB - CA   - C        CT -   CT - C   
+     4      5     10      1 ;    1.0959e+02    3.6217e+02 ;     CB - CA   - HA       CT -   CT - HC  
+     4      6     11      1 ;    1.0968e+02    3.6208e+02 ;     CB - CG1  - HG11     CT -   CT - HC  
+     4      6     12      1 ;    1.0968e+02    3.6208e+02 ;     CB - CG1  - HG12     CT -   CT - HC  
+     4      6     13      1 ;    1.0968e+02    3.6208e+02 ;     CB - CG1  - HG13     CT -   CT - HC  
+     4      7     14      1 ;    1.0968e+02    3.6208e+02 ;     CB - CG2  - HG21     CT -   CT - HC  
+     4      7     15      1 ;    1.0968e+02    3.6208e+02 ;     CB - CG2  - HG22     CT -   CT - HC  
+     4      7     16      1 ;    1.0968e+02    3.6208e+02 ;     CB - CG2  - HG23     CT -   CT - HC  
+     5      3     17      1 ;    1.0961e+02    4.7003e+02 ;     CA - N    - H1       CT -    x - H   
+     5      3     18      1 ;    1.0961e+02    4.7003e+02 ;     CA - N    - H2       CT -    x - H   
+     5      4      6      1 ;    1.1263e+02    5.0099e+02 ;     CA - CB   - CG1      CT -   CT - CT  
+     5      4      7      1 ;    1.1263e+02    5.0099e+02 ;     CA - CB   - CG2      CT -   CT - CT  
+     5      4      9      1 ;    1.0968e+02    3.6208e+02 ;     CA - CB   - HB       CT -   CT - HC  
+     6      4      7      1 ;    1.1263e+02    5.0099e+02 ;    CG1 - CB   - CG2      CT -   CT - CT  
+     6      4      9      1 ;    1.0968e+02    3.6208e+02 ;    CG1 - CB   - HB       CT -   CT - HC  
+     7      4      9      1 ;    1.0968e+02    3.6208e+02 ;    CG2 - CB   - HB       CT -   CT - HC  
+     8      1     19      1 ;    1.0654e+02    5.7287e+02 ;      C - O    - H         C -   OH - HO  
+     8      5     10      1 ;    1.0837e+02    3.6602e+02 ;      C - CA   - HA        C -   CT - HC  
+    11      6     12      1 ;    1.0773e+02    2.9957e+02 ;   HG11 - CG1  - HG12     HC -   CT - HC  
+    11      6     13      1 ;    1.0773e+02    2.9957e+02 ;   HG11 - CG1  - HG13     HC -   CT - HC  
+    12      6     13      1 ;    1.0773e+02    2.9957e+02 ;   HG12 - CG1  - HG13     HC -   CT - HC  
+    14      7     15      1 ;    1.0773e+02    2.9957e+02 ;   HG21 - CG2  - HG22     HC -   CT - HC  
+    14      7     16      1 ;    1.0773e+02    2.9957e+02 ;   HG21 - CG2  - HG23     HC -   CT - HC  
+    15      7     16      1 ;    1.0773e+02    2.9957e+02 ;   HG22 - CG2  - HG23     HC -   CT - HC  
+    17      3     18      1 ;    1.0638e+02    4.0074e+02 ;     H1 - N    - H2        H -    x - H   
+
+[ dihedrals ] ; propers
+; for gromacs 4.5 or higher, using funct 9
+;    i      j      k      l   func   phase     kd      pn
+     1      8      5      3      9 ;   180.00   0.00000   2 ;      O-     C-    CA-     N
+     1      8      5      4      9 ;   180.00   0.00000   2 ;      O-     C-    CA-    CB
+     1      8      5     10      9 ;   180.00   0.00000   2 ;      O-     C-    CA-    HA
+     2      8      5      3      9 ;   180.00   0.00000   2 ;    OXT-     C-    CA-     N
+     2      8      5      4      9 ;     0.00   2.84512   1 ;    OXT-     C-    CA-    CB
+     2      8      5      4      9 ;   180.00   0.83680   2 ;    OXT-     C-    CA-    CB
+     2      8      5      4      9 ;   180.00   1.84096   3 ;    OXT-     C-    CA-    CB
+     2      8      5     10      9 ;     0.00   3.34720   1 ;    OXT-     C-    CA-    HA
+     2      8      5     10      9 ;   180.00   0.33472   3 ;    OXT-     C-    CA-    HA
+     3      5      4      6      9 ;     0.00   2.17568   3 ;      N-    CA-    CB-   CG1
+     3      5      4      7      9 ;     0.00   2.17568   3 ;      N-    CA-    CB-   CG2
+     3      5      4      9      9 ;     0.00   0.20920   3 ;      N-    CA-    CB-    HB
+     4      5      3     17      9 ;   180.00   0.12552   3 ;     CB-    CA-     N-    H1
+     4      5      3     18      9 ;   180.00   0.12552   3 ;     CB-    CA-     N-    H2
+     5      4      6     11      9 ;     0.00   0.54392   3 ;     CA-    CB-   CG1-  HG11
+     5      4      6     12      9 ;     0.00   0.54392   3 ;     CA-    CB-   CG1-  HG12
+     5      4      6     13      9 ;     0.00   0.54392   3 ;     CA-    CB-   CG1-  HG13
+     5      4      7     14      9 ;     0.00   0.54392   3 ;     CA-    CB-   CG2-  HG21
+     5      4      7     15      9 ;     0.00   0.54392   3 ;     CA-    CB-   CG2-  HG22
+     5      4      7     16      9 ;     0.00   0.54392   3 ;     CA-    CB-   CG2-  HG23
+     6      4      5      8      9 ;     0.00   0.00000   0 ;    CG1-    CB-    CA-     C
+     6      4      5      8      9 ;     0.00   0.16736   2 ;    CG1-    CB-    CA-     C
+     6      4      5      8      9 ;   180.00   1.92464   1 ;    CG1-    CB-    CA-     C
+     6      4      5     10      9 ;     0.00   0.65084   3 ;    CG1-    CB-    CA-    HA
+     6      4      7     14      9 ;     0.00   0.54392   3 ;    CG1-    CB-   CG2-  HG21
+     6      4      7     15      9 ;     0.00   0.54392   3 ;    CG1-    CB-   CG2-  HG22
+     6      4      7     16      9 ;     0.00   0.54392   3 ;    CG1-    CB-   CG2-  HG23
+     7      4      5      8      9 ;     0.00   0.00000   0 ;    CG2-    CB-    CA-     C
+     7      4      5      8      9 ;     0.00   0.16736   2 ;    CG2-    CB-    CA-     C
+     7      4      5      8      9 ;   180.00   1.92464   1 ;    CG2-    CB-    CA-     C
+     7      4      5     10      9 ;     0.00   0.65084   3 ;    CG2-    CB-    CA-    HA
+     7      4      6     11      9 ;     0.00   0.54392   3 ;    CG2-    CB-   CG1-  HG11
+     7      4      6     12      9 ;     0.00   0.54392   3 ;    CG2-    CB-   CG1-  HG12
+     7      4      6     13      9 ;     0.00   0.54392   3 ;    CG2-    CB-   CG1-  HG13
+     8      5      3     17      9 ;     0.00   1.25520   3 ;      C-    CA-     N-    H1
+     8      5      3     18      9 ;     0.00   1.25520   3 ;      C-    CA-     N-    H2
+     8      5      4      9      9 ;     0.00   0.65084   3 ;      C-    CA-    CB-    HB
+     9      4      5     10      9 ;     0.00   0.65084   3 ;     HB-    CB-    CA-    HA
+     9      4      6     11      9 ;     0.00   0.50208   3 ;     HB-    CB-   CG1-  HG11
+     9      4      6     12      9 ;     0.00   0.50208   3 ;     HB-    CB-   CG1-  HG12
+     9      4      6     13      9 ;     0.00   0.50208   3 ;     HB-    CB-   CG1-  HG13
+     9      4      7     14      9 ;     0.00   0.50208   3 ;     HB-    CB-   CG2-  HG21
+     9      4      7     15      9 ;     0.00   0.50208   3 ;     HB-    CB-   CG2-  HG22
+     9      4      7     16      9 ;     0.00   0.50208   3 ;     HB-    CB-   CG2-  HG23
+    10      5      3     17      9 ;     0.00   1.25520   3 ;     HA-    CA-     N-    H1
+    10      5      3     18      9 ;     0.00   1.25520   3 ;     HA-    CA-     N-    H2
+    19      1      8      2      9 ;     0.00   7.94960   1 ;      H-     O-     C-   OXT
+    19      1      8      2      9 ;   180.00   9.62320   2 ;      H-     O-     C-   OXT
+    19      1      8      5      9 ;   180.00   7.53120   2 ;      H-     O-     C-    CA
+
+[ dihedrals ] ; impropers
+; treated as propers in GROMACS to use correct AMBER analytical function
+;    i      j      k      l   func   phase     kd      pn
+     1      8      2      5      4 ;   180.00   4.60240   2 ;      O-     C-   OXT-    CA

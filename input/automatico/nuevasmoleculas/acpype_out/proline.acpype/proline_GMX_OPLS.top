@@ -1,0 +1,19 @@
+; proline_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:56:02 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include proline_GMX.itp topology
+#include "proline_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_proline.itp"
+#endif
+
+[ system ]
+ proline
+
+[ molecules ]
+; Compound        nmols
+ proline          1     

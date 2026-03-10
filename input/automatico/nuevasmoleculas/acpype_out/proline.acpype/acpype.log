@@ -1,0 +1,127 @@
+============================================================================
+| ACPYPE: AnteChamber PYthon Parser interfacE v. 2023.10.27 (c) 2026 AWSdS |
+============================================================================
+DEBUG: CLI: -i mol2/proline.mol2 -b proline
+DEBUG: Python Version 3.9.25 (main, Nov 3 2025, 22:33:05) 
+[GCC 11.2.0]
+DEBUG: Max execution time tolerance is 3h
+DEBUG: /home/marazi/miniconda3/envs/acpype/bin/antechamber -dr no -i proline.mol2 -fi mol2 -o tmp -fo ac -pf y
+DEBUG: 
+Welcome to antechamber 22.0: molecular input file processor.
+
+Info: The atom type is set to gaff; the options available to the -at flag are
+ gaff, gaff2, amber, bcc, and sybyl.
+
+/bin/bash: /home/marazi/miniconda3/envs/acpype/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+/bin/bash: /home/marazi/miniconda3/envs/acpype/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+
+DEBUG: setResNameCheckCoords done
+WARNING: no charge value given, trying to guess one...
+DEBUG: /home/marazi/miniconda3/envs/acpype/bin/antechamber -dr no -i proline.mol2 -fi mol2 -o tmp -fo mol2 -c gas -pf n
+DEBUG: /home/marazi/miniconda3/envs/acpype/bin/antechamber -dr no -i tmp -fi mol2 -o tmp -fo mol2 -c wc -cf tmp.crg -pf n
+DEBUG: ++++++++++start_quote+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+DEBUG: 
+Welcome to antechamber 22.0: molecular input file processor.
+
+Info: The atom type is set to gaff; the options available to the -at flag are
+ gaff, gaff2, amber, bcc, and sybyl.
+
+/bin/bash: /home/marazi/miniconda3/envs/acpype/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+/bin/bash: /home/marazi/miniconda3/envs/acpype/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+
+DEBUG: ++++++++++end_quote+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+DEBUG: readMol2TotalCharge: 1.000000000001e-06
+DEBUG: Net charge drift '0.000001'
+==> ... charge set to 0
+==> Executing Antechamber...
+DEBUG: /home/marazi/miniconda3/envs/acpype/bin/antechamber -dr no -i proline.mol2 -fi mol2 -o proline_bcc_gaff2.mol2 -fo mol2 -c bcc -nc 0 -m 1 -s 2 -df 2 -at gaff2 -pf n 
+DEBUG: No file left to be removed
+==> * Antechamber OK *
+DEBUG: /home/marazi/miniconda3/envs/acpype/bin/parmchk2 -i proline_bcc_gaff2.mol2 -f mol2 -o proline_AC.frcmod -s 2
+==> * Parmchk OK *
+DEBUG: No crd or prm files left to be removed
+==> Executing Tleap...
+DEBUG: /home/marazi/miniconda3/envs/acpype/bin/tleap -f tleap.in
+DEBUG: ++++++++++start_quote+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+DEBUG: Checking 'PRO'....
+Checking parameters for unit 'PRO'.
+Checking for bond parameters.
+Checking for angle parameters.
+Unit is OK.
+DEBUG: ++++++++++end_quote+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+==> * Tleap OK *
+==> Removing temporary files...
+DEBUG: prmtop and inpcrd files loaded
+DEBUG: basename defined = 'proline'
+DEBUG: getCoords done
+DEBUG: getABCOEFs done
+DEBUG: charge to be balanced: total -0.0000000022
+DEBUG: balanceCharges done
+DEBUG: Balanced TotalCharge -0.0000000000
+DEBUG: PBC = None
+DEBUG: getAtoms done
+DEBUG: getBonds done
+DEBUG: getAngles done
+DEBUG: getDihedrals done
+==> Using OpenBabel v.3.1.0
+
+==> Writing NEW PDB file
+
+==> Writing CNS/XPLOR files
+
+DEBUG: chiralGroups 1
+==> Writing GROMACS files
+
+==> Disambiguating lower and uppercase atomtypes in GMX top file, even if identical.
+
+DEBUG: writing GRO file
+DEBUG: Box size estimated
+DEBUG: writing POSRE file
+DEBUG: atomTypes 9
+DEBUG: GMX atomtypes done
+DEBUG: atoms 17
+DEBUG: GMX atoms done
+DEBUG: bonds 17
+DEBUG: GMX bonds done
+DEBUG: atomPairs 42
+DEBUG: GMX pairs done
+DEBUG: angles 31
+DEBUG: GMX angles done
+DEBUG: setProperDihedralsCoef done
+DEBUG: properDihedralsCoefRB 47
+DEBUG: properDihedralsAlphaGamma 0
+DEBUG: properDihedralsGmx45 53
+==> Writing GMX dihedrals for GMX 4.5 and higher.
+
+DEBUG: GMX special proper dihedrals done
+DEBUG: improperDihedrals 1
+DEBUG: GMX improper dihedrals done
+==> Writing CHARMM files
+
+DEBUG: /home/marazi/miniconda3/envs/acpype/bin/antechamber -dr no -i proline_bcc_gaff2.mol2 -fi mol2 -o proline_CHARMM -fo charmm -s 2 -at gaff2 -pf n -rn PRO
+DEBUG: ++++++++++start_quote+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+DEBUG: 
+Welcome to antechamber 22.0: molecular input file processor.
+
+Info: The atom type is set to gaff2; the options available to the -at flag are
+ gaff, gaff2, amber, bcc, and sybyl.
+
+Info: Ignoring Mol2 record type (@<TRIPOS>SUBSTRUCTURE).
+Info: Finished reading file (proline_bcc_gaff2.mol2); atoms read (17), bonds read (17).
+Info: Determining atomic numbers from atomic symbols which are case sensitive.
+Running: /home/marazi/miniconda3/envs/acpype/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+/bin/bash: /home/marazi/miniconda3/envs/acpype/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+
+Running: /home/marazi/miniconda3/envs/acpype/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff2
+/bin/bash: /home/marazi/miniconda3/envs/acpype/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+
+Running: /home/marazi/miniconda3/envs/acpype/bin/atomtype -i ANTECHAMBER_PREP.AC0 -o ANTECHAMBER_PREP.AC -p gaff2
+/bin/bash: /home/marazi/miniconda3/envs/acpype/lib/libtinfo.so.6: no version information available (required by /bin/bash)
+
+Running: /home/marazi/miniconda3/envs/acpype/bin/charmmgen -i ANTECHAMBER_PREP.AC -f ac -o proline_CHARMM -r PRO
+
+DEBUG: ++++++++++end_quote+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+==> Writing pickle file proline.pkl
+==> Removing temporary files...
+Total time of execution: 2s
+DEBUG: No tmp folder left to be removed

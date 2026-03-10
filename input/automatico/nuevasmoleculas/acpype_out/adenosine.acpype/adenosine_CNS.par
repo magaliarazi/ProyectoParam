@@ -1,0 +1,175 @@
+Remarks adenosine_CNS.par created by acpype (v: 2023.10.27) on Mon Feb  9 17:24:46 2026
+
+set echo=false end
+
+{ Bonds: atomType1 atomType2 kb r0 }
+BOND   oh_   ho_    535.5   0.9725
+BOND   nv_   hn_    477.5   1.0114
+BOND   c5_   h1_    343.8   1.0972
+BOND   c5_   h2_    346.3   1.0955
+BOND   c3_   h1_    344.2   1.0969
+BOND   cd_   h5_    366.8   1.0821
+BOND   ca_   h5_    357.6   1.0880
+BOND   os_   c5_    275.6   1.4346
+BOND   oh_   c5_    289.7   1.4194
+BOND   oh_   c3_    285.1   1.4242
+BOND   na_   c5_    260.4   1.4571
+BOND   na_   ca_    329.3   1.3858
+BOND   na_   cd_    332.4   1.3830
+BOND   nc_   cd_    417.8   1.3171
+BOND   nc_   ca_    330.0   1.3852
+BOND   nb_   ca_    386.5   1.3392
+BOND   nv_   ca_    342.3   1.3744
+BOND   c5_   c5_    220.1   1.5483
+BOND   c5_   c3_    227.6   1.5372
+BOND   ca_   ca_    354.2   1.3986
+
+{ Angles: aType1 aType2 aType3 kt t0 }
+ANGLe   os_   c5_   h2_     56.2   109.47
+ANGLe   os_   c5_   h1_     56.4   108.46
+ANGLe   oh_   c5_   h1_     56.5   110.27
+ANGLe   oh_   c3_   h1_     56.3   110.38
+ANGLe   na_   c5_   h2_     48.9   106.16
+ANGLe   na_   cd_   h5_     47.9   120.83
+ANGLe   nc_   cd_   h5_     48.9   125.29
+ANGLe   nb_   ca_   h5_     50.2   115.79
+ANGLe   c5_   oh_   ho_     65.4   107.17
+ANGLe   c5_   c5_   h2_     42.8   110.53
+ANGLe   c5_   c5_   h1_     42.6   111.17
+ANGLe   c5_   c3_   h1_     43.3   109.38
+ANGLe   c3_   oh_   ho_     65.1   107.39
+ANGLe   c3_   c5_   h1_     43.3   109.24
+ANGLe   ca_   nv_   hn_     57.7   116.73
+ANGLe   h1_   c3_   h1_     35.6   108.55
+ANGLe   hn_   nv_   hn_     46.4   115.28
+ANGLe   os_   c5_   na_     83.8   109.27
+ANGLe   os_   c5_   c5_     77.4   106.14
+ANGLe   os_   c5_   c3_     76.8   108.97
+ANGLe   oh_   c5_   c5_     75.8   111.62
+ANGLe   oh_   c3_   c5_     76.7   109.85
+ANGLe   na_   c5_   c5_     64.2   114.85
+ANGLe   na_   ca_   nb_     71.5   127.10
+ANGLe   na_   ca_   ca_     67.8   120.31
+ANGLe   na_   cd_   nc_     76.5   113.02
+ANGLe   nc_   ca_   ca_     67.4   121.87
+ANGLe   nb_   ca_   ca_     68.2   122.94
+ANGLe   nb_   ca_   nb_     72.8   127.30
+ANGLe   nb_   ca_   nv_     75.0   116.77
+ANGLe   nv_   ca_   ca_     67.9   120.94
+ANGLe   c5_   c5_   c5_     61.8   103.83
+ANGLe   c5_   os_   c5_     89.6   109.26
+ANGLe   c5_   na_   ca_     75.0   127.76
+ANGLe   c5_   na_   cd_     75.4   126.54
+ANGLe   c5_   c5_   c3_     59.3   113.60
+ANGLe   ca_   na_   cd_     83.5   108.77
+ANGLe   ca_   nb_   ca_     83.2   117.24
+ANGLe   ca_   ca_   ca_     63.7   120.02
+ANGLe   cd_   nc_   ca_     87.3   104.17
+
+{ Proper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+DIHEdral   oh_   c5_   c5_   c5_           0.180    3     0.00
+DIHEdral   oh_   c5_   c5_   oh_  MULT 2   1.000    1     0.00
+                                           1.440    3     0.00
+DIHEdral   os_   c5_   c5_   c5_           0.156    3     0.00
+DIHEdral   os_   c5_   na_   ca_           0.000    0     0.00
+DIHEdral   na_   ca_   ca_   nc_           3.625    2   180.00
+DIHEdral   na_   c5_   c5_   c5_           0.156    3     0.00
+DIHEdral   c5_   c5_   na_   cd_           0.000    0     0.00
+DIHEdral   na_   c5_   c5_   h1_           0.156    3     0.00
+DIHEdral   c5_   c3_   oh_   ho_           0.060    3     0.00
+DIHEdral   oh_   c3_   c5_   c5_           0.180    3     0.00
+DIHEdral   c5_   os_   c5_   c5_  MULT 3   0.880    1   180.00
+                                           0.080    2     0.00
+                                           0.750    3     0.00
+DIHEdral   ca_   nc_   cd_   h5_           4.750    2   180.00
+DIHEdral   c5_   na_   cd_   h5_           1.700    2   180.00
+DIHEdral   nc_   ca_   ca_   nv_           3.625    2   180.00
+DIHEdral   nb_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   cd_   na_   ca_   ca_           0.300    2   180.00
+DIHEdral   os_   c5_   c3_   oh_  MULT 3   0.590    1     0.00
+                                           1.260    2     0.00
+                                           0.790    3     0.00
+DIHEdral   oh_   c5_   c5_   h1_  MULT 2   0.250    1     0.00
+                                           0.000    0     0.00
+DIHEdral   na_   ca_   nb_   ca_           4.800    2   180.00
+DIHEdral   c5_   os_   c5_   h1_           0.337    3     0.00
+DIHEdral   c3_   c5_   c5_   h1_           0.156    3     0.00
+DIHEdral   os_   c5_   na_   cd_           0.000    0     0.00
+DIHEdral   c5_   na_   ca_   ca_           0.300    2   180.00
+DIHEdral   nb_   ca_   nv_   hn_           1.050    2   180.00
+DIHEdral   oh_   c5_   c5_   h2_           0.156    3     0.00
+DIHEdral   ca_   ca_   nc_   cd_           4.800    2   180.00
+DIHEdral   c5_   c5_   c5_   c3_           0.520    3     0.00
+DIHEdral   ca_   na_   cd_   h5_           1.700    2   180.00
+DIHEdral   c5_   c5_   c3_   h1_           0.156    3     0.00
+DIHEdral   ca_   nb_   ca_   h5_           4.800    2   180.00
+DIHEdral   nc_   ca_   ca_   nb_           3.625    2   180.00
+DIHEdral   nc_   cd_   na_   c5_           1.700    2   180.00
+DIHEdral   os_   c5_   c5_   h1_  MULT 2   0.250    1     0.00
+                                           0.000    0     0.00
+DIHEdral   os_   c5_   c3_   h1_  MULT 2   0.250    1     0.00
+                                           0.000    0     0.00
+DIHEdral   oh_   c3_   c5_   h1_  MULT 2   0.250    1     0.00
+                                           0.000    0     0.00
+DIHEdral   c5_   c5_   oh_   ho_           0.060    3     0.00
+DIHEdral   na_   cd_   nc_   ca_           4.750    2   180.00
+DIHEdral   nb_   ca_   na_   cd_           0.300    2   180.00
+DIHEdral   cd_   nc_   ca_   ca_           4.800    2   180.00
+DIHEdral   c5_   os_   c5_   h2_           0.383    3     0.00
+DIHEdral   h1_   c5_   oh_   ho_           0.123    3     0.00
+DIHEdral   oh_   c5_   c5_   na_           0.156    3     0.00
+DIHEdral   oh_   c5_   c5_   c3_           0.180    3     0.00
+DIHEdral   c5_   c5_   c5_   h2_           0.156    3     0.00
+DIHEdral   os_   c5_   c5_   oh_  MULT 3   0.590    1     0.00
+                                           1.260    2     0.00
+                                           0.790    3     0.00
+DIHEdral   c5_   c5_   na_   ca_           0.000    0     0.00
+DIHEdral   ca_   na_   c5_   h2_           0.000    0     0.00
+DIHEdral   h1_   c3_   oh_   ho_           0.123    3     0.00
+DIHEdral   ca_   ca_   nb_   ca_           4.800    2   180.00
+DIHEdral   nv_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   c5_   os_   c5_   c3_  MULT 3   0.880    1   180.00
+                                           0.080    2     0.00
+                                           0.750    3     0.00
+DIHEdral   cd_   na_   c5_   h2_           0.000    0     0.00
+DIHEdral   c5_   c5_   c5_   c5_           0.520    3     0.00
+DIHEdral   nc_   cd_   na_   ca_           1.700    2   180.00
+DIHEdral   c5_   c5_   c5_   h1_           0.156    3     0.00
+DIHEdral   nb_   ca_   na_   c5_           0.300    2   180.00
+DIHEdral   h1_   c5_   c5_   h1_           0.156    3     0.00
+DIHEdral   ca_   ca_   nv_   hn_           1.050    2   180.00
+DIHEdral   c5_   os_   c5_   na_  MULT 2   0.650    2     0.00
+                                           0.383    3     0.00
+DIHEdral   nb_   ca_   nb_   ca_           4.800    2   180.00
+DIHEdral   h1_   c5_   c5_   h2_           0.156    3     0.00
+DIHEdral   nv_   ca_   nb_   ca_           4.800    2   180.00
+DIHEdral   na_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   h1_   c5_   c3_   h1_           0.156    3     0.00
+
+{ Improper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+IMPRoper   ca_   nb_   ca_   nv_           1.1    2   180.00
+IMPRoper   h5_   nb_   ca_   nb_           1.1    2   180.00
+IMPRoper   ca_   na_   ca_   nb_           1.1    2   180.00
+IMPRoper   ca_   hn_   nv_   hn_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   nc_           1.1    2   180.00
+IMPRoper   h5_   na_   cd_   nc_           1.1    2   180.00
+IMPRoper   c5_   ca_   na_   cd_           1.1    2   180.00
+
+{ Nonbonded: Type Emin sigma; (1-4): Emin/2 sigma }
+NONBonded   os_    0.072600    3.156098    0.036300    3.156098
+NONBonded   oh_    0.093000    3.242871    0.046500    3.242871
+NONBonded   na_    0.204200    3.205810    0.102100    3.205810
+NONBonded   nc_    0.094100    3.384168    0.047050    3.384168
+NONBonded   nb_    0.094100    3.384168    0.047050    3.384168
+NONBonded   nv_    0.112000    3.368132    0.056000    3.368132
+NONBonded   c5_    0.107800    3.397710    0.053900    3.397710
+NONBonded   c3_    0.107800    3.397710    0.053900    3.397710
+NONBonded   ca_    0.098800    3.315212    0.049400    3.315212
+NONBonded   cd_    0.098800    3.315212    0.049400    3.315212
+NONBonded   h1_    0.020800    2.421997    0.010400    2.421997
+NONBonded   h2_    0.020800    2.243818    0.010400    2.243818
+NONBonded   ho_    0.004700    0.537925    0.002350    0.537925
+NONBonded   h5_    0.016100    2.447299    0.008050    2.447299
+NONBonded   hn_    0.010000    1.106496    0.005000    1.106496
+
+set echo=true end

@@ -1,0 +1,19 @@
+; estradiol_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:45:57 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include estradiol_GMX.itp topology
+#include "estradiol_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_estradiol.itp"
+#endif
+
+[ system ]
+ estradiol
+
+[ molecules ]
+; Compound        nmols
+ estradiol        1     

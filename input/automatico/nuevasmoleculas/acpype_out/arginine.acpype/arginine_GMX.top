@@ -1,0 +1,20 @@
+; arginine_GMX.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:29:07 2026
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               2               yes             0.5     0.8333333333
+
+; Include arginine_GMX.itp topology
+#include "arginine_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_arginine.itp"
+#endif
+
+[ system ]
+ arginine
+
+[ molecules ]
+; Compound        nmols
+ arginine         1     

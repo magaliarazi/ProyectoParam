@@ -1,0 +1,29 @@
+CHARGE     -0.00 ( 0 )
+Formula: H7 C3 N1 O2 S1 
+ATOM      1  SG  CYS     1       2.227   1.123   0.044 -0.377900        sh
+ATOM      2  O   CYS     1      -1.365   1.172   0.912 -0.607100        oh
+ATOM      3  OXT CYS     1      -1.177   0.496  -1.245 -0.550000         o
+ATOM      4  N   CYS     1      -0.435  -1.983   0.159 -0.910800        n8
+ATOM      5  CA  CYS     1       0.126  -0.659   0.434  0.136500        c3
+ATOM      6  CB  CYS     1       1.492  -0.519  -0.240  0.000700        c3
+ATOM      7  C   CYS     1      -0.869   0.372  -0.065  0.637100         c
+ATOM      8  HA  CYS     1       0.237  -0.551   1.520  0.063700        h1
+ATOM      9  HB1 CYS     1       2.189  -1.270   0.148  0.094200        h1
+ATOM     10  HB2 CYS     1       1.416  -0.663  -1.323  0.094200        h1
+ATOM     11  H1  CYS     1      -1.294  -2.108   0.695  0.370300        hn
+ATOM     12  H2  CYS     1       0.209  -2.702   0.486  0.370300        hn
+ATOM     13  HG  CYS     1       1.339   1.824  -0.676  0.227800        hs
+ATOM     14  H   CYS     1      -1.992   1.837   0.557  0.450000        ho
+BOND    1    1    6    1     SG   CB
+BOND    2    1   13    1     SG   HG
+BOND    3    2    7    1      O    C
+BOND    4    2   14    1      O    H
+BOND    5    3    7    2    OXT    C
+BOND    6    4    5    1      N   CA
+BOND    7    4   11    1      N   H1
+BOND    8    4   12    1      N   H2
+BOND    9    5    6    1     CA   CB
+BOND   10    5    7    1     CA    C
+BOND   11    5    8    1     CA   HA
+BOND   12    6    9    1     CB  HB1
+BOND   13    6   10    1     CB  HB2

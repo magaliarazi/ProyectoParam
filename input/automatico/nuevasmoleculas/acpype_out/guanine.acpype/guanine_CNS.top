@@ -1,0 +1,138 @@
+Remarks guanine_CNS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:46:17 2026
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS o_      16.000
+MASS na_     14.010
+MASS ns_     14.010
+MASS nc_     14.010
+MASS nv_     14.010
+MASS cd_     12.010
+MASS cc_     12.010
+MASS c_      12.010
+MASS hn_      1.008
+MASS h5_      1.008
+
+RESIdue UNL
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM O     TYPE= o_    CHARGE=  -0.6365 END
+ATOM N     TYPE= na_   CHARGE=  -0.2799 END
+ATOM N1    TYPE= ns_   CHARGE=  -0.4924 END
+ATOM N2    TYPE= nc_   CHARGE=  -0.6927 END
+ATOM N3    TYPE= nc_   CHARGE=  -0.6450 END
+ATOM N4    TYPE= nv_   CHARGE=  -0.8798 END
+ATOM C     TYPE= cd_   CHARGE=  -0.3512 END
+ATOM C1    TYPE= cc_   CHARGE=   0.5883 END
+ATOM C2    TYPE= c_    CHARGE=   0.7471 END
+ATOM C3    TYPE= cd_   CHARGE=   0.6458 END
+ATOM C4    TYPE= cd_   CHARGE=   0.4414 END
+ATOM H     TYPE= hn_   CHARGE=   0.3227 END
+ATOM H1    TYPE= hn_   CHARGE=   0.3385 END
+ATOM H2    TYPE= h5_   CHARGE=   0.0681 END
+ATOM H3    TYPE= hn_   CHARGE=   0.4128 END
+ATOM H4    TYPE= hn_   CHARGE=   0.4128 END
+
+{ Bonds: atomName1  atomName2 }
+BOND N     H    
+BOND N1    H1   
+BOND N4    H3   
+BOND N4    H4   
+BOND C4    H2   
+BOND O     C2   
+BOND N     C    
+BOND N     C4   
+BOND N1    C2   
+BOND N1    C3   
+BOND N2    C1   
+BOND N2    C3   
+BOND N3    C1   
+BOND N3    C4   
+BOND N4    C3   
+BOND C     C1   
+BOND C     C2   
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe N     C4    H2   
+ANGLe N3    C4    H2   
+ANGLe C     N     H    
+ANGLe C2    N1    H1   
+ANGLe C3    N1    H1   
+ANGLe C3    N4    H3   
+ANGLe C3    N4    H4   
+ANGLe C4    N     H    
+ANGLe H3    N4    H4   
+ANGLe O     C2    N1   
+ANGLe O     C2    C    
+ANGLe N     C     C1   
+ANGLe N     C     C2   
+ANGLe N     C4    N3   
+ANGLe N1    C2    C    
+ANGLe N1    C3    N2   
+ANGLe N1    C3    N4   
+ANGLe N2    C1    N3   
+ANGLe N2    C1    C    
+ANGLe N2    C3    N4   
+ANGLe N3    C1    C    
+ANGLe C     N     C4   
+ANGLe C1    N2    C3   
+ANGLe C1    N3    C4   
+ANGLe C1    C     C2   
+ANGLe C2    N1    C3   
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral O     C2    N1    H1   
+DIHEdral N1    C3    N4    H3   
+DIHEdral N1    C3    N4    H4   
+DIHEdral N2    C3    N1    H1   
+DIHEdral N2    C3    N4    H3   
+DIHEdral N2    C3    N4    H4   
+DIHEdral N3    C4    N     H    
+DIHEdral N4    C3    N1    H1   
+DIHEdral C     N     C4    H2   
+DIHEdral C     C2    N1    H1   
+DIHEdral C1    N3    C4    H2   
+DIHEdral C1    C     N     H    
+DIHEdral C2    C     N     H    
+DIHEdral H     N     C4    H2   
+DIHEdral O     C2    N1    C3   
+DIHEdral O     C2    C     N    
+DIHEdral O     C2    C     C1   
+DIHEdral N     C     C1    N2   
+DIHEdral N     C     C1    N3   
+DIHEdral N     C     C2    N1   
+DIHEdral N     C4    N3    C1   
+DIHEdral N1    C2    C     C1   
+DIHEdral N1    C3    N2    C1   
+DIHEdral N2    C1    N3    C4   
+DIHEdral N2    C1    C     C2   
+DIHEdral N2    C3    N1    C2   
+DIHEdral N3    C1    N2    C3   
+DIHEdral N3    C1    C     C2   
+DIHEdral N3    C4    N     C    
+DIHEdral N4    C3    N1    C2   
+DIHEdral N4    C3    N2    C1   
+DIHEdral C     C1    N2    C3   
+DIHEdral C     C1    N3    C4   
+DIHEdral C     C2    N1    C3   
+DIHEdral C1    C     N     C4   
+DIHEdral C2    C     N     C4   
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+IMPRoper C     C4    N     H    
+IMPRoper C2    C3    N1    H1   
+IMPRoper C3    H3    N4    H4   
+IMPRoper H2    N     C4    N3   
+IMPRoper C2    C1    C     N    
+IMPRoper C     N2    C1    N3   
+IMPRoper O     C2    N1    C    
+IMPRoper N2    N1    C3    N4   
+
+END {RESIdue UNL}
+
+set echo=true end

@@ -1,0 +1,19 @@
+; androstenedione_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:28:54 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include androstenedione_GMX.itp topology
+#include "androstenedione_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_androstenedione.itp"
+#endif
+
+[ system ]
+ androstenedione
+
+[ molecules ]
+; Compound        nmols
+ androstenedione  1     

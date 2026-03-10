@@ -1,0 +1,20 @@
+; diethylstilbestrol_GMX.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:43:33 2026
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               2               yes             0.5     0.8333333333
+
+; Include diethylstilbestrol_GMX.itp topology
+#include "diethylstilbestrol_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_diethylstilbestrol.itp"
+#endif
+
+[ system ]
+ diethylstilbestrol
+
+[ molecules ]
+; Compound        nmols
+ diethylstilbestrol 1     

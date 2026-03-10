@@ -1,0 +1,19 @@
+; octylphenol_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:55:16 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include octylphenol_GMX.itp topology
+#include "octylphenol_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_octylphenol.itp"
+#endif
+
+[ system ]
+ octylphenol
+
+[ molecules ]
+; Compound        nmols
+ octylphenol      1     

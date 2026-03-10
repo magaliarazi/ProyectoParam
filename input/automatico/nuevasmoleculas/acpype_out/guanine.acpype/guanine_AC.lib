@@ -1,0 +1,131 @@
+!!index array str
+ "UNL"
+!entry.UNL.unit.atoms table  str name  str type  int typex  int resx  int flags  int seq  int elmnt  dbl chg
+ "O" "o" 0 1 131072 1 8 -0.636500
+ "N" "na" 0 1 131072 2 7 -0.279900
+ "N1" "ns" 0 1 131072 3 7 -0.492400
+ "N2" "nc" 0 1 131072 4 7 -0.692700
+ "N3" "nc" 0 1 131072 5 7 -0.645000
+ "N4" "nv" 0 1 131072 6 7 -0.880800
+ "C" "cd" 0 1 131072 7 6 -0.351200
+ "C1" "cc" 0 1 131072 8 6 0.588300
+ "C2" "c" 0 1 131072 9 6 0.747100
+ "C3" "cd" 0 1 131072 10 6 0.645800
+ "C4" "cd" 0 1 131072 11 6 0.441400
+ "H" "hn" 0 1 131072 12 1 0.322700
+ "H1" "hn" 0 1 131072 13 1 0.338500
+ "H2" "h5" 0 1 131072 14 1 0.068100
+ "H3" "hn" 0 1 131072 15 1 0.412800
+ "H4" "hn" 0 1 131072 16 1 0.412800
+!entry.UNL.unit.atomspertinfo table  str pname  str ptype  int ptypex  int pelmnt  dbl pchg
+ "O" "o" 0 -1 0.0
+ "N" "na" 0 -1 0.0
+ "N1" "ns" 0 -1 0.0
+ "N2" "nc" 0 -1 0.0
+ "N3" "nc" 0 -1 0.0
+ "N4" "nv" 0 -1 0.0
+ "C" "cd" 0 -1 0.0
+ "C1" "cc" 0 -1 0.0
+ "C2" "c" 0 -1 0.0
+ "C3" "cd" 0 -1 0.0
+ "C4" "cd" 0 -1 0.0
+ "H" "hn" 0 -1 0.0
+ "H1" "hn" 0 -1 0.0
+ "H2" "h5" 0 -1 0.0
+ "H3" "hn" 0 -1 0.0
+ "H4" "hn" 0 -1 0.0
+!entry.UNL.unit.boundbox array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.UNL.unit.childsequence single int
+ 2
+!entry.UNL.unit.connect array int
+ 0
+ 0
+!entry.UNL.unit.connectivity table  int atom1x  int atom2x  int flags
+ 1 9 2
+ 2 7 1
+ 2 11 1
+ 2 12 1
+ 3 9 1
+ 3 10 1
+ 3 13 1
+ 4 8 1
+ 4 10 2
+ 5 8 1
+ 5 11 2
+ 6 10 1
+ 6 15 1
+ 6 16 1
+ 7 8 2
+ 7 9 1
+ 11 14 1
+!entry.UNL.unit.hierarchy table  str abovetype  int abovex  str belowtype  int belowx
+ "U" 0 "R" 1
+ "R" 1 "A" 1
+ "R" 1 "A" 2
+ "R" 1 "A" 3
+ "R" 1 "A" 4
+ "R" 1 "A" 5
+ "R" 1 "A" 6
+ "R" 1 "A" 7
+ "R" 1 "A" 8
+ "R" 1 "A" 9
+ "R" 1 "A" 10
+ "R" 1 "A" 11
+ "R" 1 "A" 12
+ "R" 1 "A" 13
+ "R" 1 "A" 14
+ "R" 1 "A" 15
+ "R" 1 "A" 16
+!entry.UNL.unit.name single str
+ "135398634"
+!entry.UNL.unit.positions table  dbl x  dbl y  dbl z
+ 0.192000 2.666000 0.0
+ -2.071000 0.659000 0.001000
+ 1.574000 0.803000 0.0
+ 0.757000 -1.454000 0.0
+ -1.719000 -1.543000 -0.001000
+ 3.055000 -1.010000 0.001000
+ -0.718000 0.488000 0.0
+ -0.524000 -0.873000 0.0
+ 0.338000 1.449000 0.0
+ 1.748000 -0.592000 0.0
+ -2.631000 -0.593000 0.001000
+ -2.571000 1.539000 0.001000
+ 2.408000 1.383000 0.0
+ -3.701000 -0.739000 0.001000
+ 3.291000 -1.996000 0.001000
+ 3.822000 -0.347000 0.001000
+!entry.UNL.unit.residueconnect table  int c1x  int c2x  int c3x  int c4x  int c5x  int c6x
+ 0 0 0 0 0 0
+!entry.UNL.unit.residues table  str name  int seq  int childseq  int startatomx  str restype  int imagingx
+ "UNL" 1 17 1 "?" 0
+!entry.UNL.unit.residuesPdbSequenceNumber array int
+ 0
+!entry.UNL.unit.solventcap array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.UNL.unit.velocities table  dbl x  dbl y  dbl z
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0

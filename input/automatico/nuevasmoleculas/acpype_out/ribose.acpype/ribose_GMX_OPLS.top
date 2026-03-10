@@ -1,0 +1,19 @@
+; ribose_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:57:29 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include ribose_GMX.itp topology
+#include "ribose_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_ribose.itp"
+#endif
+
+[ system ]
+ ribose
+
+[ molecules ]
+; Compound        nmols
+ ribose           1     

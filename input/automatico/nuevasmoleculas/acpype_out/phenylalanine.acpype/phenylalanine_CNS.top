@@ -1,0 +1,179 @@
+Remarks phenylalanine_CNS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:55:36 2026
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS oh_     16.000
+MASS o_      16.000
+MASS n8_     14.010
+MASS c3_     12.010
+MASS ca_     12.010
+MASS c_      12.010
+MASS hc_      1.008
+MASS h1_      1.008
+MASS ha_      1.008
+MASS hn_      1.008
+MASS ho_      1.008
+
+RESIdue PHE
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM O     TYPE= oh_   CHARGE=  -0.5911 END
+ATOM OXT   TYPE= o_    CHARGE=  -0.5560 END
+ATOM N     TYPE= n8_   CHARGE=  -0.9048 END
+ATOM CB    TYPE= c3_   CHARGE=  -0.0751 END
+ATOM CA    TYPE= c3_   CHARGE=   0.1315 END
+ATOM CG    TYPE= ca_   CHARGE=  -0.0903 END
+ATOM CD1   TYPE= ca_   CHARGE=  -0.1220 END
+ATOM CD2   TYPE= ca_   CHARGE=  -0.1220 END
+ATOM C     TYPE= c_    CHARGE=   0.6461 END
+ATOM CE1   TYPE= ca_   CHARGE=  -0.1265 END
+ATOM CE2   TYPE= ca_   CHARGE=  -0.1265 END
+ATOM CZ    TYPE= ca_   CHARGE=  -0.1260 END
+ATOM HB1   TYPE= hc_   CHARGE=   0.0627 END
+ATOM HB2   TYPE= hc_   CHARGE=   0.0627 END
+ATOM HA    TYPE= h1_   CHARGE=   0.0977 END
+ATOM HD1   TYPE= ha_   CHARGE=   0.1340 END
+ATOM HD2   TYPE= ha_   CHARGE=   0.1340 END
+ATOM H1    TYPE= hn_   CHARGE=   0.3638 END
+ATOM H2    TYPE= hn_   CHARGE=   0.3638 END
+ATOM HE1   TYPE= ha_   CHARGE=   0.1335 END
+ATOM HE2   TYPE= ha_   CHARGE=   0.1335 END
+ATOM HZ    TYPE= ha_   CHARGE=   0.1330 END
+ATOM H     TYPE= ho_   CHARGE=   0.4440 END
+
+{ Bonds: atomName1  atomName2 }
+BOND O     H    
+BOND N     H1   
+BOND N     H2   
+BOND CB    HB1  
+BOND CB    HB2  
+BOND CA    HA   
+BOND CD1   HD1  
+BOND CD2   HD2  
+BOND CE1   HE1  
+BOND CE2   HE2  
+BOND CZ    HZ   
+BOND O     C    
+BOND OXT   C    
+BOND N     CA   
+BOND CB    CA   
+BOND CB    CG   
+BOND CA    C    
+BOND CG    CD1  
+BOND CG    CD2  
+BOND CD1   CE1  
+BOND CD2   CE2  
+BOND CE1   CZ   
+BOND CE2   CZ   
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe N     CA    HA   
+ANGLe CB    CA    HA   
+ANGLe CA    N     H1   
+ANGLe CA    N     H2   
+ANGLe CA    CB    HB1  
+ANGLe CA    CB    HB2  
+ANGLe CG    CB    HB1  
+ANGLe CG    CB    HB2  
+ANGLe CG    CD1   HD1  
+ANGLe CG    CD2   HD2  
+ANGLe CD1   CE1   HE1  
+ANGLe CD2   CE2   HE2  
+ANGLe C     O     H    
+ANGLe C     CA    HA   
+ANGLe CE1   CD1   HD1  
+ANGLe CE1   CZ    HZ   
+ANGLe CE2   CD2   HD2  
+ANGLe CE2   CZ    HZ   
+ANGLe CZ    CE1   HE1  
+ANGLe CZ    CE2   HE2  
+ANGLe HB1   CB    HB2  
+ANGLe H1    N     H2   
+ANGLe O     C     OXT  
+ANGLe O     C     CA   
+ANGLe OXT   C     CA   
+ANGLe N     CA    CB   
+ANGLe N     CA    C    
+ANGLe CB    CA    C    
+ANGLe CB    CG    CD1  
+ANGLe CB    CG    CD2  
+ANGLe CA    CB    CG   
+ANGLe CG    CD1   CE1  
+ANGLe CG    CD2   CE2  
+ANGLe CD1   CG    CD2  
+ANGLe CD1   CE1   CZ   
+ANGLe CD2   CE2   CZ   
+ANGLe CE1   CZ    CE2  
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral O     C     CA    HA   
+DIHEdral H     O     C     OXT  
+DIHEdral OXT   C     CA    HA   
+DIHEdral N     CA    CB    HB1  
+DIHEdral N     CA    CB    HB2  
+DIHEdral CB    CA    N     H1   
+DIHEdral CB    CA    N     H2   
+DIHEdral CB    CG    CD1   HD1  
+DIHEdral CB    CG    CD2   HD2  
+DIHEdral H     O     C     CA   
+DIHEdral CG    CB    CA    HA   
+DIHEdral CG    CD1   CE1   HE1  
+DIHEdral CG    CD2   CE2   HE2  
+DIHEdral CD1   CG    CB    HB1  
+DIHEdral CD1   CG    CB    HB2  
+DIHEdral CD1   CG    CD2   HD2  
+DIHEdral CD1   CE1   CZ    HZ   
+DIHEdral CD2   CG    CB    HB1  
+DIHEdral CD2   CG    CB    HB2  
+DIHEdral CD2   CG    CD1   HD1  
+DIHEdral CD2   CE2   CZ    HZ   
+DIHEdral C     CA    N     H1   
+DIHEdral C     CA    N     H2   
+DIHEdral C     CA    CB    HB1  
+DIHEdral C     CA    CB    HB2  
+DIHEdral CE1   CZ    CE2   HE2  
+DIHEdral CE2   CZ    CE1   HE1  
+DIHEdral CZ    CE1   CD1   HD1  
+DIHEdral CZ    CE2   CD2   HD2  
+DIHEdral HB1   CB    CA    HA   
+DIHEdral HB2   CB    CA    HA   
+DIHEdral HA    CA    N     H1   
+DIHEdral HA    CA    N     H2   
+DIHEdral HD1   CD1   CE1   HE1  
+DIHEdral HD2   CD2   CE2   HE2  
+DIHEdral HE1   CE1   CZ    HZ   
+DIHEdral HE2   CE2   CZ    HZ   
+DIHEdral O     C     CA    N    
+DIHEdral O     C     CA    CB   
+DIHEdral OXT   C     CA    N    
+DIHEdral OXT   C     CA    CB   
+DIHEdral N     CA    CB    CG   
+DIHEdral CB    CG    CD1   CE1  
+DIHEdral CB    CG    CD2   CE2  
+DIHEdral CA    CB    CG    CD1  
+DIHEdral CA    CB    CG    CD2  
+DIHEdral CG    CB    CA    C    
+DIHEdral CG    CD1   CE1   CZ   
+DIHEdral CG    CD2   CE2   CZ   
+DIHEdral CD1   CG    CD2   CE2  
+DIHEdral CD1   CE1   CZ    CE2  
+DIHEdral CD2   CG    CD1   CE1  
+DIHEdral CD2   CE2   CZ    CE1  
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+IMPRoper CG    CE1   CD1   HD1  
+IMPRoper CG    CE2   CD2   HD2  
+IMPRoper CD1   CZ    CE1   HE1  
+IMPRoper CD2   CZ    CE2   HE2  
+IMPRoper CE1   CE2   CZ    HZ   
+IMPRoper CD1   CD2   CG    CB   
+IMPRoper O     C     OXT   CA   
+
+END {RESIdue PHE}
+
+set echo=true end

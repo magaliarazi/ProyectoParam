@@ -1,0 +1,137 @@
+Remarks metformin_CNS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:54:14 2026
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS nh_     14.010
+MASS ne_     14.010
+MASS n2_     14.010
+MASS nv_     14.010
+MASS c3_     12.010
+MASS ce_     12.010
+MASS c2_     12.010
+MASS h1_      1.008
+MASS hn_      1.008
+
+RESIdue UNL
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM N     TYPE= nh_   CHARGE=  -0.7196 END
+ATOM N1    TYPE= ne_   CHARGE=  -0.8560 END
+ATOM N2    TYPE= n2_   CHARGE=  -0.8711 END
+ATOM N3    TYPE= nv_   CHARGE=  -0.9188 END
+ATOM N4    TYPE= nv_   CHARGE=  -0.9188 END
+ATOM C     TYPE= c3_   CHARGE=   0.1616 END
+ATOM C1    TYPE= c3_   CHARGE=   0.1616 END
+ATOM C2    TYPE= ce_   CHARGE=   0.8202 END
+ATOM C3    TYPE= c2_   CHARGE=   0.8461 END
+ATOM H     TYPE= h1_   CHARGE=   0.0362 END
+ATOM H1    TYPE= h1_   CHARGE=   0.0362 END
+ATOM H2    TYPE= h1_   CHARGE=   0.0362 END
+ATOM H3    TYPE= h1_   CHARGE=   0.0362 END
+ATOM H4    TYPE= h1_   CHARGE=   0.0362 END
+ATOM H5    TYPE= h1_   CHARGE=   0.0362 END
+ATOM H6    TYPE= hn_   CHARGE=   0.4084 END
+ATOM H7    TYPE= hn_   CHARGE=   0.4173 END
+ATOM H8    TYPE= hn_   CHARGE=   0.4173 END
+ATOM H9    TYPE= hn_   CHARGE=   0.4173 END
+ATOM H10   TYPE= hn_   CHARGE=   0.4173 END
+
+{ Bonds: atomName1  atomName2 }
+BOND N2    H6   
+BOND N3    H7   
+BOND N3    H8   
+BOND N4    H9   
+BOND N4    H10  
+BOND C     H    
+BOND C     H1   
+BOND C     H2   
+BOND C1    H3   
+BOND C1    H4   
+BOND C1    H5   
+BOND N     C    
+BOND N     C1   
+BOND N     C2   
+BOND N1    C2   
+BOND N1    C3   
+BOND N2    C2   
+BOND N3    C3   
+BOND N4    C3   
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe N     C     H    
+ANGLe N     C     H1   
+ANGLe N     C     H2   
+ANGLe N     C1    H3   
+ANGLe N     C1    H4   
+ANGLe N     C1    H5   
+ANGLe C2    N2    H6   
+ANGLe C3    N3    H7   
+ANGLe C3    N3    H8   
+ANGLe C3    N4    H9   
+ANGLe C3    N4    H10  
+ANGLe H     C     H1   
+ANGLe H     C     H2   
+ANGLe H1    C     H2   
+ANGLe H3    C1    H4   
+ANGLe H3    C1    H5   
+ANGLe H4    C1    H5   
+ANGLe H7    N3    H8   
+ANGLe H9    N4    H10  
+ANGLe N     C2    N1   
+ANGLe N     C2    N2   
+ANGLe N1    C2    N2   
+ANGLe N1    C3    N3   
+ANGLe N1    C3    N4   
+ANGLe N3    C3    N4   
+ANGLe C     N     C1   
+ANGLe C     N     C2   
+ANGLe C1    N     C2   
+ANGLe C2    N1    C3   
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral N     C2    N2    H6   
+DIHEdral N1    C2    N2    H6   
+DIHEdral N1    C3    N3    H7   
+DIHEdral N1    C3    N3    H8   
+DIHEdral N1    C3    N4    H9   
+DIHEdral N1    C3    N4    H10  
+DIHEdral N3    C3    N4    H9   
+DIHEdral N3    C3    N4    H10  
+DIHEdral N4    C3    N3    H7   
+DIHEdral N4    C3    N3    H8   
+DIHEdral C     N     C1    H3   
+DIHEdral C     N     C1    H4   
+DIHEdral C     N     C1    H5   
+DIHEdral C1    N     C     H    
+DIHEdral C1    N     C     H1   
+DIHEdral C1    N     C     H2   
+DIHEdral C2    N     C     H    
+DIHEdral C2    N     C     H1   
+DIHEdral C2    N     C     H2   
+DIHEdral C2    N     C1    H3   
+DIHEdral C2    N     C1    H4   
+DIHEdral C2    N     C1    H5   
+DIHEdral N     C2    N1    C3   
+DIHEdral C     N     C2    N1   
+DIHEdral C1    N     C2    N1   
+DIHEdral C     N     C2    N2   
+DIHEdral C1    N     C2    N2   
+DIHEdral N2    C2    N1    C3   
+DIHEdral N3    C3    N1    C2   
+DIHEdral N4    C3    N1    C2   
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+IMPRoper C3    H7    N3    H8   
+IMPRoper C3    H9    N4    H10  
+IMPRoper C2    N     C1    C    
+IMPRoper N     C2    N1    N2   
+IMPRoper N1    N3    C3    N4   
+
+END {RESIdue UNL}
+
+set echo=true end

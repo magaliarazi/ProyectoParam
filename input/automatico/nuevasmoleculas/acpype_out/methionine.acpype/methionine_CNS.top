@@ -1,0 +1,145 @@
+Remarks methionine_CNS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:54:22 2026
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS ss_     32.060
+MASS oh_     16.000
+MASS o_      16.000
+MASS n8_     14.010
+MASS c3_     12.010
+MASS c_      12.010
+MASS hc_      1.008
+MASS h1_      1.008
+MASS hn_      1.008
+MASS ho_      1.008
+
+RESIdue MET
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM SD    TYPE= ss_   CHARGE=  -0.3032 END
+ATOM O     TYPE= oh_   CHARGE=  -0.6121 END
+ATOM OXT   TYPE= o_    CHARGE=  -0.5470 END
+ATOM N     TYPE= n8_   CHARGE=  -0.9078 END
+ATOM CB    TYPE= c3_   CHARGE=  -0.0714 END
+ATOM CA    TYPE= c3_   CHARGE=   0.1315 END
+ATOM CG    TYPE= c3_   CHARGE=  -0.0263 END
+ATOM C     TYPE= c_    CHARGE=   0.6391 END
+ATOM CE    TYPE= c3_   CHARGE=  -0.0410 END
+ATOM HB1   TYPE= hc_   CHARGE=   0.0657 END
+ATOM HB2   TYPE= hc_   CHARGE=   0.0657 END
+ATOM HA    TYPE= h1_   CHARGE=   0.0657 END
+ATOM HG1   TYPE= h1_   CHARGE=   0.0862 END
+ATOM HG2   TYPE= h1_   CHARGE=   0.0862 END
+ATOM H1    TYPE= hn_   CHARGE=   0.3663 END
+ATOM H2    TYPE= hn_   CHARGE=   0.3663 END
+ATOM HE1   TYPE= h1_   CHARGE=   0.0630 END
+ATOM HE2   TYPE= h1_   CHARGE=   0.0630 END
+ATOM HE3   TYPE= h1_   CHARGE=   0.0630 END
+ATOM H     TYPE= ho_   CHARGE=   0.4470 END
+
+{ Bonds: atomName1  atomName2 }
+BOND O     H    
+BOND N     H1   
+BOND N     H2   
+BOND CB    HB1  
+BOND CB    HB2  
+BOND CA    HA   
+BOND CG    HG1  
+BOND CG    HG2  
+BOND CE    HE1  
+BOND CE    HE2  
+BOND CE    HE3  
+BOND SD    CG   
+BOND SD    CE   
+BOND O     C    
+BOND OXT   C    
+BOND N     CA   
+BOND CB    CA   
+BOND CB    CG   
+BOND CA    C    
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe SD    CG    HG1  
+ANGLe SD    CG    HG2  
+ANGLe SD    CE    HE1  
+ANGLe SD    CE    HE2  
+ANGLe SD    CE    HE3  
+ANGLe N     CA    HA   
+ANGLe CB    CA    HA   
+ANGLe CB    CG    HG1  
+ANGLe CB    CG    HG2  
+ANGLe CA    N     H1   
+ANGLe CA    N     H2   
+ANGLe CA    CB    HB1  
+ANGLe CA    CB    HB2  
+ANGLe CG    CB    HB1  
+ANGLe CG    CB    HB2  
+ANGLe C     O     H    
+ANGLe C     CA    HA   
+ANGLe HB1   CB    HB2  
+ANGLe HG1   CG    HG2  
+ANGLe H1    N     H2   
+ANGLe HE1   CE    HE2  
+ANGLe HE1   CE    HE3  
+ANGLe HE2   CE    HE3  
+ANGLe SD    CG    CB   
+ANGLe O     C     OXT  
+ANGLe O     C     CA   
+ANGLe OXT   C     CA   
+ANGLe N     CA    CB   
+ANGLe N     CA    C    
+ANGLe CB    CA    C    
+ANGLe CA    CB    CG   
+ANGLe CG    SD    CE   
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral SD    CG    CB    HB1  
+DIHEdral SD    CG    CB    HB2  
+DIHEdral O     C     CA    HA   
+DIHEdral OXT   C     O     H    
+DIHEdral OXT   C     CA    HA   
+DIHEdral N     CA    CB    HB1  
+DIHEdral N     CA    CB    HB2  
+DIHEdral CB    CA    N     H1   
+DIHEdral CB    CA    N     H2   
+DIHEdral CA    CB    CG    HG1  
+DIHEdral CA    CB    CG    HG2  
+DIHEdral CA    C     O     H    
+DIHEdral CG    SD    CE    HE1  
+DIHEdral CG    SD    CE    HE2  
+DIHEdral CG    SD    CE    HE3  
+DIHEdral CG    CB    CA    HA   
+DIHEdral C     CA    N     H1   
+DIHEdral C     CA    N     H2   
+DIHEdral C     CA    CB    HB1  
+DIHEdral C     CA    CB    HB2  
+DIHEdral CE    SD    CG    HG1  
+DIHEdral CE    SD    CG    HG2  
+DIHEdral HB1   CB    CA    HA   
+DIHEdral HB1   CB    CG    HG1  
+DIHEdral HB1   CB    CG    HG2  
+DIHEdral HB2   CB    CA    HA   
+DIHEdral HB2   CB    CG    HG1  
+DIHEdral HB2   CB    CG    HG2  
+DIHEdral HA    CA    N     H1   
+DIHEdral HA    CA    N     H2   
+DIHEdral SD    CG    CB    CA   
+DIHEdral O     C     CA    N    
+DIHEdral O     C     CA    CB   
+DIHEdral OXT   C     CA    N    
+DIHEdral OXT   C     CA    CB   
+DIHEdral N     CA    CB    CG   
+DIHEdral CE    SD    CG    CB   
+DIHEdral CG    CB    CA    C    
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+IMPRoper CA    OXT   C     O    
+
+END {RESIdue MET}
+
+set echo=true end

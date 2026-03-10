@@ -1,0 +1,19 @@
+; ciprofloxacin_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:38:27 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include ciprofloxacin_GMX.itp topology
+#include "ciprofloxacin_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_ciprofloxacin.itp"
+#endif
+
+[ system ]
+ ciprofloxacin
+
+[ molecules ]
+; Compound        nmols
+ ciprofloxacin    1     

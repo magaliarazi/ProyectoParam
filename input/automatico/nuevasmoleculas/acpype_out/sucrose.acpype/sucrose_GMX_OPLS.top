@@ -1,0 +1,19 @@
+; sucrose_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:59:15 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include sucrose_GMX.itp topology
+#include "sucrose_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_sucrose.itp"
+#endif
+
+[ system ]
+ sucrose
+
+[ molecules ]
+; Compound        nmols
+ sucrose          1     

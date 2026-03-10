@@ -1,0 +1,147 @@
+Remarks proline_CNS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:56:02 2026
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS oh_     16.000
+MASS o_      16.000
+MASS n7_     14.010
+MASS c5_     12.010
+MASS c_      12.010
+MASS h1_      1.008
+MASS hc_      1.008
+MASS hn_      1.008
+MASS ho_      1.008
+
+RESIdue PRO
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM O     TYPE= oh_   CHARGE=  -0.6021 END
+ATOM OXT   TYPE= o_    CHARGE=  -0.5550 END
+ATOM N     TYPE= n7_   CHARGE=  -0.7972 END
+ATOM CA    TYPE= c5_   CHARGE=   0.1255 END
+ATOM CB    TYPE= c5_   CHARGE=  -0.0824 END
+ATOM CG    TYPE= c5_   CHARGE=  -0.0984 END
+ATOM CD    TYPE= c5_   CHARGE=   0.1478 END
+ATOM C     TYPE= c_    CHARGE=   0.6111 END
+ATOM HA    TYPE= h1_   CHARGE=   0.0987 END
+ATOM HB1   TYPE= hc_   CHARGE=   0.0612 END
+ATOM HB2   TYPE= hc_   CHARGE=   0.0612 END
+ATOM HG1   TYPE= hc_   CHARGE=   0.0527 END
+ATOM HG2   TYPE= hc_   CHARGE=   0.0527 END
+ATOM HD1   TYPE= h1_   CHARGE=   0.0487 END
+ATOM HD2   TYPE= h1_   CHARGE=   0.0487 END
+ATOM H     TYPE= hn_   CHARGE=   0.3808 END
+ATOM H1    TYPE= ho_   CHARGE=   0.4460 END
+
+{ Bonds: atomName1  atomName2 }
+BOND O     H1   
+BOND N     H    
+BOND CA    HA   
+BOND CB    HB1  
+BOND CB    HB2  
+BOND CG    HG1  
+BOND CG    HG2  
+BOND CD    HD1  
+BOND CD    HD2  
+BOND O     C    
+BOND OXT   C    
+BOND N     CA   
+BOND N     CD   
+BOND CA    CB   
+BOND CA    C    
+BOND CB    CG   
+BOND CG    CD   
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe N     CA    HA   
+ANGLe N     CD    HD1  
+ANGLe N     CD    HD2  
+ANGLe CA    N     H    
+ANGLe CA    CB    HB1  
+ANGLe CA    CB    HB2  
+ANGLe CB    CA    HA   
+ANGLe CB    CG    HG1  
+ANGLe CB    CG    HG2  
+ANGLe CG    CB    HB1  
+ANGLe CG    CB    HB2  
+ANGLe CG    CD    HD1  
+ANGLe CG    CD    HD2  
+ANGLe CD    N     H    
+ANGLe CD    CG    HG1  
+ANGLe CD    CG    HG2  
+ANGLe C     O     H1   
+ANGLe C     CA    HA   
+ANGLe HB1   CB    HB2  
+ANGLe HG1   CG    HG2  
+ANGLe HD1   CD    HD2  
+ANGLe O     C     OXT  
+ANGLe O     C     CA   
+ANGLe OXT   C     CA   
+ANGLe N     CA    CB   
+ANGLe N     CA    C    
+ANGLe N     CD    CG   
+ANGLe CA    N     CD   
+ANGLe CA    CB    CG   
+ANGLe CB    CA    C    
+ANGLe CB    CG    CD   
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral O     C     CA    HA   
+DIHEdral H1    O     C     OXT  
+DIHEdral OXT   C     CA    HA   
+DIHEdral N     CA    CB    HB1  
+DIHEdral N     CA    CB    HB2  
+DIHEdral N     CD    CG    HG1  
+DIHEdral N     CD    CG    HG2  
+DIHEdral CA    N     CD    HD1  
+DIHEdral CA    N     CD    HD2  
+DIHEdral CA    CB    CG    HG1  
+DIHEdral CA    CB    CG    HG2  
+DIHEdral H1    O     C     CA   
+DIHEdral CB    CA    N     H    
+DIHEdral CB    CG    CD    HD1  
+DIHEdral CB    CG    CD    HD2  
+DIHEdral CG    CB    CA    HA   
+DIHEdral CG    CD    N     H    
+DIHEdral CD    N     CA    HA   
+DIHEdral CD    CG    CB    HB1  
+DIHEdral CD    CG    CB    HB2  
+DIHEdral C     CA    N     H    
+DIHEdral C     CA    CB    HB1  
+DIHEdral C     CA    CB    HB2  
+DIHEdral HA    CA    N     H    
+DIHEdral HA    CA    CB    HB1  
+DIHEdral HA    CA    CB    HB2  
+DIHEdral HB1   CB    CG    HG1  
+DIHEdral HB1   CB    CG    HG2  
+DIHEdral HB2   CB    CG    HG1  
+DIHEdral HB2   CB    CG    HG2  
+DIHEdral HG1   CG    CD    HD1  
+DIHEdral HG1   CG    CD    HD2  
+DIHEdral HG2   CG    CD    HD1  
+DIHEdral HG2   CG    CD    HD2  
+DIHEdral HD1   CD    N     H    
+DIHEdral HD2   CD    N     H    
+DIHEdral O     C     CA    N    
+DIHEdral O     C     CA    CB   
+DIHEdral OXT   C     CA    N    
+DIHEdral OXT   C     CA    CB   
+DIHEdral N     CA    CB    CG   
+DIHEdral N     CD    CG    CB   
+DIHEdral CA    N     CD    CG   
+DIHEdral CA    CB    CG    CD   
+DIHEdral CB    CA    N     CD   
+DIHEdral CG    CB    CA    C    
+DIHEdral CD    N     CA    C    
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+IMPRoper O     C     OXT   CA   
+
+END {RESIdue PRO}
+
+set echo=true end

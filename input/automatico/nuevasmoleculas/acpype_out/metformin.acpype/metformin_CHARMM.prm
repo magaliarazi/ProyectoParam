@@ -1,0 +1,63 @@
+* Force Field Parameter File.
+* 
+
+BOND
+c3 nh  326.60   1.464
+ce nh  412.30   1.390
+ce ne  406.90   1.394
+c2 ne  574.10   1.292
+ce n2  582.40   1.287
+hn n2  385.60   1.023
+nv c2  416.20   1.387	! same as  c2 nh
+nv hn  404.60   1.012	! same as  hn nh
+nv hn  404.60   1.012
+nv c2  416.20   1.387
+c3 h1  330.60   1.097
+
+ANGLE
+nh c3 h1   49.600     109.790
+nh ce ne   72.200     113.640
+nh ce n2   71.300     125.090
+ne ce n2   72.500     120.690
+ne c2 nv   71.800     123.460	! same as ne c2 nh
+ne c2 nv   71.800     123.460
+nv c2 nv   72.700     112.820	! same as nh c2 nh
+c3 nh c3   63.200     114.510
+c3 nh ce   63.300     120.120
+ce ne c2   68.300     116.010
+ce n2 hn   52.600     111.000
+c2 nv hn   48.600     115.090	! same as c2 nh hn
+c2 nv hn   48.600     115.090
+h1 c3 h1   39.200     108.460
+hn nv hn   40.100     115.120	! same as hn nh hn
+hn nv hn   40.100     115.120
+
+DIHEDRAL
+X  c3 nh X      0.000         2       0.0
+c3 nh ce ne     0.675         2     180.0      ! same as X  c2 nh X 
+c3 nh ce n2     0.675         2     180.0      ! same as X  c2 nh X 
+X  ce ne X      0.800         2     180.0
+X  c2 ne X      4.150         2     180.0
+hn n2 ce nh     4.150         2     180.0      ! same as X  c2 n2 X 
+hn n2 ce ne     4.150         2     180.0      ! same as X  c2 n2 X 
+hn nv c2 ne     0.675         2     180.0      ! same as X  c2 nh X 
+hn nv c2 nv     0.675         2     180.0      ! same as X  c2 nh X 
+
+IMPHI
+c3 c3 nh ce     1.100         2     180.0	! Using default value
+c2 hn nv hn     1.100         2     180.0	! Using default value
+n2 ne ce nh     1.100         2     180.0	! Using default value
+ne nv c2 nv     1.100         2     180.0	! Using default value
+
+NONBONDED  NBXMOD 5  GROUP SWITCH CDIEL -
+CUTNB 14.0  CTOFNB 12.0  CTONNB 10.0  EPS 1.0  E14FAC 0.83333333  WMIN 1.4
+!                Emin     Rmin/2              Emin/2     Rmin  (for 1-4's)
+!             (kcal/mol)    (A)
+nh      0.00   -0.1700    1.8240      0.00   -0.0850    1.8240
+ne      0.00   -0.1700    1.8240      0.00   -0.0850    1.8240
+n2      0.00   -0.1700    1.8240      0.00   -0.0850    1.8240
+c3      0.00   -0.1094    1.9080      0.00   -0.0547    1.9080
+ce      0.00   -0.0860    1.9080      0.00   -0.0430    1.9080
+c2      0.00   -0.0860    1.9080      0.00   -0.0430    1.9080
+h1      0.00   -0.0157    1.3870      0.00   -0.0078    1.3870
+hn      0.00   -0.0157    0.6000      0.00   -0.0078    0.6000

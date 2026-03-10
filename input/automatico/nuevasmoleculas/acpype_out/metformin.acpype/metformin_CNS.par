@@ -1,0 +1,61 @@
+Remarks metformin_CNS.par created by acpype (v: 2023.10.27) on Mon Feb  9 17:54:14 2026
+
+set echo=false end
+
+{ Bonds: atomType1 atomType2 kb r0 }
+BOND   n2_   hn_    454.6   1.0221
+BOND   nv_   hn_    477.5   1.0114
+BOND   c3_   h1_    344.2   1.0969
+BOND   nh_   c3_    256.9   1.4613
+BOND   nh_   ce_    328.9   1.3862
+BOND   ne_   ce_    322.5   1.3920
+BOND   ne_   c2_    454.8   1.2934
+BOND   n2_   ce_    464.2   1.2878
+BOND   nv_   c2_    324.6   1.3901
+
+{ Angles: aType1 aType2 aType3 kt t0 }
+ANGLe   nh_   c3_   h1_     48.0   109.68
+ANGLe   ce_   n2_   hn_     62.4   110.98
+ANGLe   c2_   nv_   hn_     57.6   115.05
+ANGLe   h1_   c3_   h1_     35.6   108.55
+ANGLe   hn_   nv_   hn_     46.4   115.28
+ANGLe   nh_   ce_   ne_     73.3   116.52
+ANGLe   nh_   ce_   n2_     74.2   121.98
+ANGLe   ne_   ce_   n2_     72.9   126.04
+ANGLe   ne_   c2_   nv_     74.3   120.81
+ANGLe   nv_   c2_   nv_     73.3   116.46
+ANGLe   c3_   nh_   c3_     76.4   116.56
+ANGLe   c3_   nh_   ce_     76.9   121.07
+ANGLe   ce_   ne_   c2_     83.2   115.80
+
+{ Proper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+DIHEdral   nh_   ce_   ne_   c2_           0.800    2   180.00
+DIHEdral   nv_   c2_   ne_   ce_           4.150    2   180.00
+DIHEdral   c3_   nh_   ce_   ne_           1.050    2   180.00
+DIHEdral   c3_   nh_   ce_   n2_           1.050    2   180.00
+DIHEdral   ne_   ce_   n2_   hn_           0.800    2   180.00
+DIHEdral   nh_   ce_   n2_   hn_           0.800    2   180.00
+DIHEdral   nv_   c2_   nv_   hn_           0.675    2   180.00
+DIHEdral   ce_   nh_   c3_   h1_           0.000    0     0.00
+DIHEdral   n2_   ce_   ne_   c2_           0.800    2   180.00
+DIHEdral   ne_   c2_   nv_   hn_           0.675    2   180.00
+DIHEdral   c3_   nh_   c3_   h1_           0.000    0     0.00
+
+{ Improper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+IMPRoper   ce_   nh_   c3_   c3_           1.1    2   180.00
+IMPRoper   c2_   hn_   nv_   hn_           1.1    2   180.00
+IMPRoper   ne_   nv_   c2_   nv_           1.1    2   180.00
+IMPRoper   nh_   ce_   ne_   n2_           1.1    2   180.00
+
+{ Nonbonded: Type Emin sigma; (1-4): Emin/2 sigma }
+NONBonded   nh_    0.215000    3.189952    0.107500    3.189952
+NONBonded   ne_    0.094100    3.384168    0.047050    3.384168
+NONBonded   n2_    0.094100    3.384168    0.047050    3.384168
+NONBonded   nv_    0.112000    3.368132    0.056000    3.368132
+NONBonded   c3_    0.107800    3.397710    0.053900    3.397710
+NONBonded   ce_    0.098800    3.315212    0.049400    3.315212
+NONBonded   c2_    0.098800    3.315212    0.049400    3.315212
+NONBonded   h1_    0.020800    2.421997    0.010400    2.421997
+NONBonded   hn_    0.010000    1.106496    0.005000    1.106496
+
+set echo=true end

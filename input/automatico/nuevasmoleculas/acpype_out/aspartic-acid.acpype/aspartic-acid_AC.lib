@@ -1,0 +1,129 @@
+!!index array str
+ "ASP"
+!entry.ASP.unit.atoms table  str name  str type  int typex  int resx  int flags  int seq  int elmnt  dbl chg
+ "O" "oh" 0 1 131072 1 8 -0.596100
+ "OD1" "oh" 0 1 131072 2 8 -0.605100
+ "OXT" "o" 0 1 131072 3 8 -0.550000
+ "OD2" "o" 0 1 131072 4 8 -0.539000
+ "N" "n8" 0 1 131072 5 7 -0.897800
+ "CA" "c3" 0 1 131072 6 6 0.143500
+ "CB" "c3" 0 1 131072 7 6 -0.127400
+ "C" "c" 0 1 131072 8 6 0.580100
+ "CG" "c" 0 1 131072 9 6 0.637100
+ "HA" "h1" 0 1 131072 10 1 0.114700
+ "HB1" "hc" 0 1 131072 11 1 0.099700
+ "HB2" "hc" 0 1 131072 12 1 0.099700
+ "H1" "hn" 0 1 131072 13 1 0.370300
+ "H2" "hn" 0 1 131072 14 1 0.370300
+ "H" "ho" 0 1 131072 15 1 0.449000
+ "HD1" "ho" 0 1 131072 16 1 0.449000
+!entry.ASP.unit.atomspertinfo table  str pname  str ptype  int ptypex  int pelmnt  dbl pchg
+ "O" "oh" 0 -1 0.0
+ "OD1" "oh" 0 -1 0.0
+ "OXT" "o" 0 -1 0.0
+ "OD2" "o" 0 -1 0.0
+ "N" "n8" 0 -1 0.0
+ "CA" "c3" 0 -1 0.0
+ "CB" "c3" 0 -1 0.0
+ "C" "c" 0 -1 0.0
+ "CG" "c" 0 -1 0.0
+ "HA" "h1" 0 -1 0.0
+ "HB1" "hc" 0 -1 0.0
+ "HB2" "hc" 0 -1 0.0
+ "H1" "hn" 0 -1 0.0
+ "H2" "hn" 0 -1 0.0
+ "H" "ho" 0 -1 0.0
+ "HD1" "ho" 0 -1 0.0
+!entry.ASP.unit.boundbox array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.ASP.unit.childsequence single int
+ 2
+!entry.ASP.unit.connect array int
+ 0
+ 0
+!entry.ASP.unit.connectivity table  int atom1x  int atom2x  int flags
+ 1 8 1
+ 1 15 1
+ 2 9 1
+ 2 16 1
+ 3 8 2
+ 4 9 2
+ 5 6 1
+ 5 13 1
+ 5 14 1
+ 6 7 1
+ 6 8 1
+ 6 10 1
+ 7 9 1
+ 7 11 1
+ 7 12 1
+!entry.ASP.unit.hierarchy table  str abovetype  int abovex  str belowtype  int belowx
+ "U" 0 "R" 1
+ "R" 1 "A" 1
+ "R" 1 "A" 2
+ "R" 1 "A" 3
+ "R" 1 "A" 4
+ "R" 1 "A" 5
+ "R" 1 "A" 6
+ "R" 1 "A" 7
+ "R" 1 "A" 8
+ "R" 1 "A" 9
+ "R" 1 "A" 10
+ "R" 1 "A" 11
+ "R" 1 "A" 12
+ "R" 1 "A" 13
+ "R" 1 "A" 14
+ "R" 1 "A" 15
+ "R" 1 "A" 16
+!entry.ASP.unit.name single str
+ "424"
+!entry.ASP.unit.positions table  dbl x  dbl y  dbl z
+ -0.661000 1.596000 0.895000
+ 2.010000 -0.157000 1.121000
+ -1.974000 0.972000 -0.843000
+ 2.217000 0.566000 -1.022000
+ -1.803000 -1.694000 0.097000
+ -0.747000 -0.745000 0.352000
+ 0.503000 -1.078000 -0.468000
+ -1.200000 0.676000 0.059000
+ 1.656000 -0.135000 -0.191000
+ -0.515000 -0.800000 1.422000
+ 0.284000 -1.017000 -1.541000
+ 0.851000 -2.099000 -0.267000
+ -2.070000 -1.672000 -0.887000
+ -2.636000 -1.446000 0.629000
+ -0.965000 2.504000 0.686000
+ 2.756000 0.452000 1.308000
+!entry.ASP.unit.residueconnect table  int c1x  int c2x  int c3x  int c4x  int c5x  int c6x
+ 0 0 0 0 0 0
+!entry.ASP.unit.residues table  str name  int seq  int childseq  int startatomx  str restype  int imagingx
+ "ASP" 1 17 1 "?" 0
+!entry.ASP.unit.residuesPdbSequenceNumber array int
+ 0
+!entry.ASP.unit.solventcap array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.ASP.unit.velocities table  dbl x  dbl y  dbl z
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0

@@ -1,0 +1,19 @@
+; adenosine_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:24:46 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include adenosine_GMX.itp topology
+#include "adenosine_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_adenosine.itp"
+#endif
+
+[ system ]
+ adenosine
+
+[ molecules ]
+; Compound        nmols
+ adenosine        1     

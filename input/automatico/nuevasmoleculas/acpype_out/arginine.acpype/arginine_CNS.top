@@ -1,0 +1,187 @@
+Remarks arginine_CNS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:29:07 2026
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS oh_     16.000
+MASS o_      16.000
+MASS n8_     14.010
+MASS n2_     14.010
+MASS nv_     14.010
+MASS c3_     12.010
+MASS c_      12.010
+MASS c2_     12.010
+MASS hc_      1.008
+MASS h1_      1.008
+MASS hn_      1.008
+MASS ho_      1.008
+
+RESIdue ARG
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM O     TYPE= oh_   CHARGE=  -0.5991 END
+ATOM OXT   TYPE= o_    CHARGE=  -0.5650 END
+ATOM N     TYPE= n8_   CHARGE=  -0.8948 END
+ATOM NE    TYPE= n2_   CHARGE=  -0.7139 END
+ATOM NH1   TYPE= nv_   CHARGE=  -0.9003 END
+ATOM NH2   TYPE= nv_   CHARGE=  -0.9003 END
+ATOM CB    TYPE= c3_   CHARGE=  -0.0734 END
+ATOM CG    TYPE= c3_   CHARGE=  -0.0734 END
+ATOM CA    TYPE= c3_   CHARGE=   0.1365 END
+ATOM CD    TYPE= c3_   CHARGE=   0.1378 END
+ATOM C     TYPE= c_    CHARGE=   0.5901 END
+ATOM CZ    TYPE= c2_   CHARGE=   0.7361 END
+ATOM HB1   TYPE= hc_   CHARGE=   0.0677 END
+ATOM HB2   TYPE= hc_   CHARGE=   0.0677 END
+ATOM HG1   TYPE= hc_   CHARGE=   0.0507 END
+ATOM HG2   TYPE= hc_   CHARGE=   0.0507 END
+ATOM HA    TYPE= h1_   CHARGE=   0.0897 END
+ATOM HD1   TYPE= h1_   CHARGE=   0.0272 END
+ATOM HD2   TYPE= h1_   CHARGE=   0.0272 END
+ATOM H1    TYPE= hn_   CHARGE=   0.3628 END
+ATOM H2    TYPE= hn_   CHARGE=   0.3628 END
+ATOM H     TYPE= ho_   CHARGE=   0.4430 END
+ATOM HH11  TYPE= hn_   CHARGE=   0.3926 END
+ATOM HH12  TYPE= hn_   CHARGE=   0.3926 END
+ATOM HH21  TYPE= hn_   CHARGE=   0.3926 END
+ATOM HH22  TYPE= hn_   CHARGE=   0.3926 END
+
+{ Bonds: atomName1  atomName2 }
+BOND O     H    
+BOND N     H1   
+BOND N     H2   
+BOND NH1   HH11 
+BOND NH1   HH12 
+BOND NH2   HH21 
+BOND NH2   HH22 
+BOND CB    HB1  
+BOND CB    HB2  
+BOND CG    HG1  
+BOND CG    HG2  
+BOND CA    HA   
+BOND CD    HD1  
+BOND CD    HD2  
+BOND O     C    
+BOND OXT   C    
+BOND N     CA   
+BOND NE    CD   
+BOND NE    CZ   
+BOND NH1   CZ   
+BOND NH2   CZ   
+BOND CB    CG   
+BOND CB    CA   
+BOND CG    CD   
+BOND CA    C    
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe N     CA    HA   
+ANGLe NE    CD    HD1  
+ANGLe NE    CD    HD2  
+ANGLe CB    CG    HG1  
+ANGLe CB    CG    HG2  
+ANGLe CB    CA    HA   
+ANGLe CG    CB    HB1  
+ANGLe CG    CB    HB2  
+ANGLe CG    CD    HD1  
+ANGLe CG    CD    HD2  
+ANGLe CA    N     H1   
+ANGLe CA    N     H2   
+ANGLe CA    CB    HB1  
+ANGLe CA    CB    HB2  
+ANGLe CD    CG    HG1  
+ANGLe CD    CG    HG2  
+ANGLe C     O     H    
+ANGLe C     CA    HA   
+ANGLe CZ    NH1   HH11 
+ANGLe CZ    NH1   HH12 
+ANGLe CZ    NH2   HH21 
+ANGLe CZ    NH2   HH22 
+ANGLe HB1   CB    HB2  
+ANGLe HG1   CG    HG2  
+ANGLe HD1   CD    HD2  
+ANGLe H1    N     H2   
+ANGLe HH11  NH1   HH12 
+ANGLe HH21  NH2   HH22 
+ANGLe O     C     OXT  
+ANGLe O     C     CA   
+ANGLe OXT   C     CA   
+ANGLe N     CA    CB   
+ANGLe N     CA    C    
+ANGLe NE    CD    CG   
+ANGLe NE    CZ    NH1  
+ANGLe NE    CZ    NH2  
+ANGLe NH1   CZ    NH2  
+ANGLe CB    CG    CD   
+ANGLe CB    CA    C    
+ANGLe CG    CB    CA   
+ANGLe CD    NE    CZ   
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral O     C     CA    HA   
+DIHEdral H     O     C     OXT  
+DIHEdral OXT   C     CA    HA   
+DIHEdral N     CA    CB    HB1  
+DIHEdral N     CA    CB    HB2  
+DIHEdral NE    CD    CG    HG1  
+DIHEdral NE    CD    CG    HG2  
+DIHEdral NE    CZ    NH1   HH11 
+DIHEdral NE    CZ    NH1   HH12 
+DIHEdral NE    CZ    NH2   HH21 
+DIHEdral NE    CZ    NH2   HH22 
+DIHEdral NH1   CZ    NH2   HH21 
+DIHEdral NH1   CZ    NH2   HH22 
+DIHEdral NH2   CZ    NH1   HH11 
+DIHEdral NH2   CZ    NH1   HH12 
+DIHEdral CB    CG    CD    HD1  
+DIHEdral CB    CG    CD    HD2  
+DIHEdral CB    CA    N     H1   
+DIHEdral CB    CA    N     H2   
+DIHEdral CG    CB    CA    HA   
+DIHEdral CA    CB    CG    HG1  
+DIHEdral CA    CB    CG    HG2  
+DIHEdral H     O     C     CA   
+DIHEdral CD    CG    CB    HB1  
+DIHEdral CD    CG    CB    HB2  
+DIHEdral C     CA    N     H1   
+DIHEdral C     CA    N     H2   
+DIHEdral C     CA    CB    HB1  
+DIHEdral C     CA    CB    HB2  
+DIHEdral CZ    NE    CD    HD1  
+DIHEdral CZ    NE    CD    HD2  
+DIHEdral HB1   CB    CG    HG1  
+DIHEdral HB1   CB    CG    HG2  
+DIHEdral HB1   CB    CA    HA   
+DIHEdral HB2   CB    CG    HG1  
+DIHEdral HB2   CB    CG    HG2  
+DIHEdral HB2   CB    CA    HA   
+DIHEdral HG1   CG    CD    HD1  
+DIHEdral HG1   CG    CD    HD2  
+DIHEdral HG2   CG    CD    HD1  
+DIHEdral HG2   CG    CD    HD2  
+DIHEdral HA    CA    N     H1   
+DIHEdral HA    CA    N     H2   
+DIHEdral O     C     CA    N    
+DIHEdral O     C     CA    CB   
+DIHEdral OXT   C     CA    N    
+DIHEdral OXT   C     CA    CB   
+DIHEdral N     CA    CB    CG   
+DIHEdral NE    CD    CG    CB   
+DIHEdral NH1   CZ    NE    CD   
+DIHEdral NH2   CZ    NE    CD   
+DIHEdral CG    CB    CA    C    
+DIHEdral CG    CD    NE    CZ   
+DIHEdral CA    CB    CG    CD   
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+IMPRoper CZ    HH11  NH1   HH12 
+IMPRoper CZ    HH21  NH2   HH22 
+IMPRoper O     C     OXT   CA   
+IMPRoper NE    NH1   CZ    NH2  
+
+END {RESIdue ARG}
+
+set echo=true end

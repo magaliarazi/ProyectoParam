@@ -1,0 +1,86 @@
+Remarks propranolol_CNS.par created by acpype (v: 2023.10.27) on Mon Feb  9 17:56:03 2026
+
+set echo=false end
+
+{ Bonds: atomType1 atomType2 kb r0 }
+BOND   oh_   ho_    535.5   0.9725
+BOND   n7_   hn_    460.1   1.0195
+BOND   c3_   h1_    344.2   1.0969
+BOND   c3_   hc_    345.2   1.0962
+BOND   ca_   ha_    360.7   1.0860
+BOND   os_   c3_    282.3   1.4273
+BOND   os_   ca_    343.3   1.3688
+BOND   oh_   c3_    285.1   1.4242
+BOND   n7_   c3_    255.5   1.4630
+BOND   c3_   c3_    228.9   1.5354
+BOND   ca_   ca_    354.2   1.3986
+
+{ Angles: aType1 aType2 aType3 kt t0 }
+ANGLe   os_   c3_   h1_     56.2   110.34
+ANGLe   oh_   c3_   h1_     56.3   110.38
+ANGLe   n7_   c3_   h1_     47.8   110.29
+ANGLe   c3_   oh_   ho_     65.1   107.39
+ANGLe   c3_   c3_   h1_     43.3   109.59
+ANGLe   c3_   n7_   hn_     56.4   108.86
+ANGLe   c3_   c3_   hc_     43.3   109.68
+ANGLe   ca_   ca_   ha_     44.9   119.88
+ANGLe   h1_   c3_   h1_     35.6   108.55
+ANGLe   hc_   c3_   hc_     35.8   107.73
+ANGLe   os_   c3_   c3_     77.4   107.62
+ANGLe   os_   ca_   ca_     79.0   119.11
+ANGLe   oh_   c3_   c3_     76.8   109.66
+ANGLe   n7_   c3_   c3_     65.7   110.22
+ANGLe   c3_   n7_   c3_     77.0   114.58
+ANGLe   c3_   c3_   c3_     59.9   112.63
+ANGLe   c3_   os_   ca_     88.3   118.39
+ANGLe   ca_   ca_   ca_     63.7   120.02
+
+{ Proper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+DIHEdral   c3_   c3_   n7_   c3_           0.140    3     0.00
+DIHEdral   c3_   n7_   c3_   c3_           0.140    3     0.00
+DIHEdral   os_   c3_   c3_   oh_           0.156    3     0.00
+DIHEdral   h1_   c3_   oh_   ho_           0.123    3     0.00
+DIHEdral   h1_   c3_   c3_   h1_           0.156    3     0.00
+DIHEdral   os_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   os_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   c3_   os_   ca_   ca_           1.660    2   180.00
+DIHEdral   c3_   c3_   c3_   hc_           0.130    3     0.00
+DIHEdral   os_   c3_   c3_   c3_           0.156    3     0.00
+DIHEdral   oh_   c3_   c3_   h1_  MULT 2   0.250    1     0.00
+                                           0.000    0     0.00
+DIHEdral   ca_   os_   c3_   h1_           0.383    3     0.00
+DIHEdral   c3_   c3_   oh_   ho_           0.060    3     0.00
+DIHEdral   ca_   os_   c3_   c3_           0.383    3     0.00
+DIHEdral   oh_   c3_   c3_   n7_           0.156    3     0.00
+DIHEdral   c3_   c3_   n7_   hn_           0.217    3     0.00
+DIHEdral   ca_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   c3_   c3_   c3_   h1_           0.156    3     0.00
+DIHEdral   h1_   c3_   n7_   hn_           0.300    3     0.00
+DIHEdral   ha_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   c3_   n7_   c3_   h1_           0.215    3     0.00
+DIHEdral   n7_   c3_   c3_   hc_           0.100    3     0.00
+DIHEdral   n7_   c3_   c3_   c3_           0.210    3     0.00
+DIHEdral   h1_   c3_   c3_   hc_           0.156    3     0.00
+DIHEdral   os_   c3_   c3_   h1_  MULT 2   0.250    1     0.00
+                                           0.000    0     0.00
+DIHEdral   n7_   c3_   c3_   h1_           0.156    3     0.00
+DIHEdral   ca_   ca_   ca_   ca_           3.625    2   180.00
+
+{ Improper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+IMPRoper   ca_   ca_   ca_   ha_           1.1    2   180.00
+IMPRoper   os_   ca_   ca_   ca_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   ca_           1.1    2   180.00
+
+{ Nonbonded: Type Emin sigma; (1-4): Emin/2 sigma }
+NONBonded   os_    0.072600    3.156098    0.036300    3.156098
+NONBonded   oh_    0.093000    3.242871    0.046500    3.242871
+NONBonded   n7_    0.052200    3.507646    0.026100    3.507646
+NONBonded   c3_    0.107800    3.397710    0.053900    3.397710
+NONBonded   ca_    0.098800    3.315212    0.049400    3.315212
+NONBonded   h1_    0.020800    2.421997    0.010400    2.421997
+NONBonded   hn_    0.010000    1.106496    0.005000    1.106496
+NONBonded   hc_    0.020800    2.600177    0.010400    2.600177
+NONBonded   ho_    0.004700    0.537925    0.002350    0.537925
+NONBonded   ha_    0.016100    2.625479    0.008050    2.625479
+
+set echo=true end

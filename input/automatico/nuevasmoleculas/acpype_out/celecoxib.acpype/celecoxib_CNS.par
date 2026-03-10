@@ -1,0 +1,122 @@
+Remarks celecoxib_CNS.par created by acpype (v: 2023.10.27) on Mon Feb  9 17:36:31 2026
+
+set echo=false end
+
+{ Bonds: atomType1 atomType2 kb r0 }
+BOND   n8_   hn_    460.7   1.0192
+BOND   cd_   ha_    364.6   1.0835
+BOND   ca_   ha_    360.7   1.0860
+BOND   c3_   hc_    345.2   1.0962
+BOND   sy_    o_    614.7   1.4656
+BOND   sy_   n8_    300.5   1.6920
+BOND   sy_   ca_    209.8   1.7913
+BOND    f_   c3_    334.3   1.3512
+BOND   na_   nc_    290.4   1.3570
+BOND   na_   cc_    335.5   1.3803
+BOND   na_   ca_    329.3   1.3858
+BOND   nc_   cd_    417.8   1.3171
+BOND   cc_   ca_    296.5   1.4528
+BOND   cc_   cd_    386.2   1.3730
+BOND   ca_   ca_    354.2   1.3986
+BOND   cd_   cd_    321.5   1.4279
+BOND   cd_   c3_    253.9   1.5018
+BOND   ca_   c3_    243.9   1.5147
+
+{ Angles: aType1 aType2 aType3 kt t0 }
+ANGLe   sy_   n8_   hn_     56.4   109.66
+ANGLe   cc_   cd_   ha_     45.2   121.70
+ANGLe   ca_   ca_   ha_     44.9   119.88
+ANGLe   cd_   cd_   ha_     43.8   121.85
+ANGLe   ca_   c3_   hc_     43.6   110.63
+ANGLe   hc_   c3_   hc_     35.8   107.73
+ANGLe   hn_   n8_   hn_     47.9   106.38
+ANGLe   sy_   ca_   ca_     63.1   119.41
+ANGLe    f_   c3_    f_    106.9   107.37
+ANGLe    f_   c3_   cd_     79.7   111.78
+ANGLe    o_   sy_    o_    157.8   121.38
+ANGLe    o_   sy_   n8_    134.0   106.96
+ANGLe    o_   sy_   ca_    120.4   108.34
+ANGLe   na_   nc_   cd_     93.9   103.83
+ANGLe   na_   cc_   ca_     66.2   121.80
+ANGLe   na_   cc_   cd_     72.8   106.75
+ANGLe   na_   ca_   ca_     67.8   120.31
+ANGLe   nc_   na_   cc_     87.4   114.57
+ANGLe   nc_   na_   ca_     87.2   114.47
+ANGLe   nc_   cd_   cd_     68.5   120.70
+ANGLe   nc_   cd_   c3_     66.5   119.97
+ANGLe   n8_   sy_   ca_    102.0   103.18
+ANGLe   cc_   na_   ca_     80.5   117.32
+ANGLe   cc_   ca_   ca_     62.2   120.91
+ANGLe   cc_   cd_   cd_     64.6   116.21
+ANGLe   ca_   ca_   ca_     63.7   120.02
+ANGLe   ca_   cc_   cd_     64.0   116.03
+ANGLe   cd_   cd_   c3_     59.4   125.50
+ANGLe   ca_   ca_   c3_     60.7   120.83
+
+{ Proper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+DIHEdral    o_   sy_   ca_   ca_           1.300    2   180.00
+DIHEdral   cc_   na_   ca_   ca_           0.613    2   180.00
+DIHEdral   ca_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   nc_   na_   cc_   ca_           1.700    2   180.00
+DIHEdral   cc_   cd_   cd_   c3_           4.000    2   180.00
+DIHEdral   sy_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral    f_   c3_   cd_   cd_           0.000    0     0.00
+DIHEdral    f_   c3_   cd_   nc_           0.000    0     0.00
+DIHEdral   na_   cc_   cd_   ha_           4.000    2   180.00
+DIHEdral   ca_   cc_   cd_   ha_           4.000    2   180.00
+DIHEdral   na_   cc_   ca_   ca_           1.097    2   180.00
+DIHEdral   cc_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   cd_   cc_   ca_   ca_           0.585    2   180.00
+DIHEdral   c3_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   nc_   cd_   cd_   ha_           4.000    2   180.00
+DIHEdral   na_   cc_   cd_   cd_           4.000    2   180.00
+DIHEdral   ca_   na_   cc_   cd_           1.700    2   180.00
+DIHEdral   na_   nc_   cd_   cd_           4.750    2   180.00
+DIHEdral    o_   sy_   n8_   hn_           3.133    2     0.00
+DIHEdral   sy_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   ca_   ca_   c3_   hc_           0.000    0     0.00
+DIHEdral   ca_   ca_   ca_   c3_           3.625    2   180.00
+DIHEdral   ca_   na_   cc_   ca_           1.700    2   180.00
+DIHEdral   ca_   sy_   n8_   hn_           3.133    2     0.00
+DIHEdral   c3_   cd_   cd_   ha_           4.000    2   180.00
+DIHEdral   nc_   cd_   cd_   cc_           4.000    2   180.00
+DIHEdral   na_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   n8_   sy_   ca_   ca_           1.300    2   180.00
+DIHEdral   cc_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   ca_   na_   nc_   cd_           4.800    2   180.00
+DIHEdral   ca_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   ha_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   nc_   na_   ca_   ca_           0.300    2   180.00
+DIHEdral   ca_   cc_   cd_   cd_           4.000    2   180.00
+DIHEdral   cc_   na_   nc_   cd_           4.800    2   180.00
+DIHEdral   nc_   na_   cc_   cd_           1.700    2   180.00
+DIHEdral   na_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   na_   nc_   cd_   c3_           4.750    2   180.00
+
+{ Improper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+IMPRoper   ca_   cc_   na_   nc_           1.1    2   180.00
+IMPRoper   sy_   ca_   ca_   ca_           1.1    2   180.00
+IMPRoper   ca_   cd_   cc_   na_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   ha_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   c3_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   cc_           1.1    2   180.00
+IMPRoper   c3_   cd_   cd_   nc_           1.1    2   180.00
+IMPRoper   cc_   cd_   cd_   ha_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   na_           1.1    2   180.00
+
+{ Nonbonded: Type Emin sigma; (1-4): Emin/2 sigma }
+NONBonded   sy_    0.061400    4.058400    0.030700    4.058400
+NONBonded    f_    0.083200    3.034223    0.041600    3.034223
+NONBonded    o_    0.146300    3.048121    0.073150    3.048121
+NONBonded   na_    0.204200    3.205810    0.102100    3.205810
+NONBonded   nc_    0.094100    3.384168    0.047050    3.384168
+NONBonded   n8_    0.032300    3.650190    0.016150    3.650190
+NONBonded   cc_    0.098800    3.315212    0.049400    3.315212
+NONBonded   ca_    0.098800    3.315212    0.049400    3.315212
+NONBonded   cd_    0.098800    3.315212    0.049400    3.315212
+NONBonded   c3_    0.107800    3.397710    0.053900    3.397710
+NONBonded   ha_    0.016100    2.625479    0.008050    2.625479
+NONBonded   hc_    0.020800    2.600177    0.010400    2.600177
+NONBonded   hn_    0.010000    1.106496    0.005000    1.106496
+
+set echo=true end

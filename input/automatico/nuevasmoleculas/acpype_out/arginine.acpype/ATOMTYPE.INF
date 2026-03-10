@@ -1,0 +1,121 @@
+====================================================================================
+-------------------------------ring property (I)------------------------------------
+
+====================================================================================
+-------------------------------ring property (II)------------------------------------
+
+====================================================================================
+-------------------------------ring property (III)-----------------------------------
+atom[ 1] (O   ) is not in any ring (nr[1]=1)
+atom[ 2] (OXT ) is not in any ring (nr[2]=1)
+atom[ 3] (N   ) is not in any ring (nr[3]=1)
+atom[ 4] (NE  ) is not in any ring (nr[4]=1)
+atom[ 5] (NH1 ) is not in any ring (nr[5]=1)
+atom[ 6] (NH2 ) is not in any ring (nr[6]=1)
+atom[ 7] (CB  ) is not in any ring (nr[7]=1)
+atom[ 8] (CG  ) is not in any ring (nr[8]=1)
+atom[ 9] (CA  ) is not in any ring (nr[9]=1)
+atom[10] (CD  ) is not in any ring (nr[10]=1)
+atom[11] (C   ) is not in any ring (nr[11]=1)
+atom[12] (CZ  ) is not in any ring (nr[12]=1)
+atom[13] (HB1 ) is not in any ring (nr[13]=1)
+atom[14] (HB2 ) is not in any ring (nr[14]=1)
+atom[15] (HG1 ) is not in any ring (nr[15]=1)
+atom[16] (HG2 ) is not in any ring (nr[16]=1)
+atom[17] (HA  ) is not in any ring (nr[17]=1)
+atom[18] (HD1 ) is not in any ring (nr[18]=1)
+atom[19] (HD2 ) is not in any ring (nr[19]=1)
+atom[20] (H1  ) is not in any ring (nr[20]=1)
+atom[21] (H2  ) is not in any ring (nr[21]=1)
+atom[22] (H   ) is not in any ring (nr[22]=1)
+atom[23] (HH11) is not in any ring (nr[23]=1)
+atom[24] (HH12) is not in any ring (nr[24]=1)
+atom[25] (HH21) is not in any ring (nr[25]=1)
+atom[26] (HH22) is not in any ring (nr[26]=1)
+
+====================================================================================
+-------------------------------aromatic property------------------------------------
+
+====================================================================================
+-------------------------------electronic property----------------------------------
+atom [ 1] (O   ) is an electron-withdrew atom
+atom [ 2] (OXT ) is an electron-withdrew atom
+atom [ 3] (N   ) is an electron-withdrew atom
+atom [ 4] (NE  ) is an electron-withdrew atom
+atom [ 5] (NH1 ) is an electron-withdrew atom
+atom [ 6] (NH2 ) is an electron-withdrew atom
+atom [ 7] (CB  ) is not an electron-withdrew atom
+atom [ 8] (CG  ) is not an electron-withdrew atom
+atom [ 9] (CA  ) is not an electron-withdrew atom
+atom [10] (CD  ) is not an electron-withdrew atom
+atom [11] (C   ) is not an electron-withdrew atom
+atom [12] (CZ  ) is not an electron-withdrew atom
+atom [13] (HB1 ) is not an electron-withdrew atom
+atom [14] (HB2 ) is not an electron-withdrew atom
+atom [15] (HG1 ) is not an electron-withdrew atom
+atom [16] (HG2 ) is not an electron-withdrew atom
+atom [17] (HA  ) is not an electron-withdrew atom
+atom [18] (HD1 ) is not an electron-withdrew atom
+atom [19] (HD2 ) is not an electron-withdrew atom
+atom [20] (H1  ) is not an electron-withdrew atom
+atom [21] (H2  ) is not an electron-withdrew atom
+atom [22] (H   ) is not an electron-withdrew atom
+atom [23] (HH11) is not an electron-withdrew atom
+atom [24] (HH12) is not an electron-withdrew atom
+atom [25] (HH21) is not an electron-withdrew atom
+atom [26] (HH22) is not an electron-withdrew atom
+
+====================================================================================
+--------------------------------connectivity property-------------------------------
+atom[ 1] (O   )    11     C
+atom[ 1] (O   )    22     H
+atom[ 2] (OXT )    11     C
+atom[ 3] (N   )     9    CA
+atom[ 3] (N   )    20    H1
+atom[ 3] (N   )    21    H2
+atom[ 4] (NE  )    10    CD
+atom[ 4] (NE  )    12    CZ
+atom[ 5] (NH1 )    12    CZ
+atom[ 5] (NH1 )    23  HH11
+atom[ 5] (NH1 )    24  HH12
+atom[ 6] (NH2 )    12    CZ
+atom[ 6] (NH2 )    25  HH21
+atom[ 6] (NH2 )    26  HH22
+atom[ 7] (CB  )     8    CG
+atom[ 7] (CB  )     9    CA
+atom[ 7] (CB  )    13   HB1
+atom[ 7] (CB  )    14   HB2
+atom[ 8] (CG  )     7    CB
+atom[ 8] (CG  )    10    CD
+atom[ 8] (CG  )    15   HG1
+atom[ 8] (CG  )    16   HG2
+atom[ 9] (CA  )     3     N
+atom[ 9] (CA  )     7    CB
+atom[ 9] (CA  )    11     C
+atom[ 9] (CA  )    17    HA
+atom[10] (CD  )     4    NE
+atom[10] (CD  )     8    CG
+atom[10] (CD  )    18   HD1
+atom[10] (CD  )    19   HD2
+atom[11] (C   )     1     O
+atom[11] (C   )     2   OXT
+atom[11] (C   )     9    CA
+atom[12] (CZ  )     4    NE
+atom[12] (CZ  )     5   NH1
+atom[12] (CZ  )     6   NH2
+atom[13] (HB1 )     7    CB
+atom[14] (HB2 )     7    CB
+atom[15] (HG1 )     8    CG
+atom[16] (HG2 )     8    CG
+atom[17] (HA  )     9    CA
+atom[18] (HD1 )    10    CD
+atom[19] (HD2 )    10    CD
+atom[20] (H1  )     3     N
+atom[21] (H2  )     3     N
+atom[22] (H   )     1     O
+atom[23] (HH11)     5   NH1
+atom[24] (HH12)     5   NH1
+atom[25] (HH21)     6   NH2
+atom[26] (HH22)     6   NH2
+----------------------------------------END-----------------------------------------
+

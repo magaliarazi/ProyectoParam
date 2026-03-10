@@ -1,0 +1,137 @@
+* Force Field Parameter File.
+* 
+
+BOND
+os c5    0.00   0.000	!ATTN, need revision
+os c5    0.00   0.000
+ho oh  371.40   0.973
+oh c5    0.00   0.000
+c3 oh  316.70   1.423
+c  o   637.70   1.218
+cd na  425.80   1.380
+cd nc  525.40   1.317
+cc nc  441.10   1.369
+cd nd  441.10   1.369
+cc nd  525.40   1.317
+ns c   427.60   1.379	! same as  c  n 
+ns cc  425.10   1.381	! same as  cc n 
+ns hn  403.20   1.013	! same as  hn n 
+nv cc  435.20   1.373	! same as  cc nh
+nv hn  404.60   1.012	! same as  hn nh
+nv hn  404.60   1.012
+c5 c5    0.00   0.000
+c5 h1    0.00   0.000
+c3 h1  330.60   1.097
+cc cd  500.90   1.373
+cd h5  351.80   1.082
+c  cc  371.00   1.468
+
+ANGLE
+os c5 c5    0.000       0.000
+oh c5 c5    0.000       0.000
+oh c5 h1    0.000       0.000
+oh c3 h1   50.900     110.260
+o  c  ns   74.200     123.050	! same as n  c  o 
+o  c  cc   69.100     123.930
+na cd nd   70.600     121.950
+na cd cc   73.400     106.990
+na cd nc   74.900     112.220
+na cd h5   49.600     121.550
+nc cd h5   50.600     125.520
+nc cc cd   72.200     111.650
+nc cc c    66.200     123.320
+nd cd cc   72.200     111.650
+nd cc ns   71.500     123.000	! same as n  cc nd
+nd cc nv   72.400     120.650	! same as nd cc nh
+ns c  cc   69.100     112.700	! same as cc c  n 
+ns cc nv   73.500     109.350	! same as n  c2 nh
+c5 na cd    0.000       0.000
+c5 c5 c5    0.000       0.000
+c5 c5 h1    0.000       0.000
+c5 oh ho    0.000       0.000
+c5 c3 h1    0.000       0.000
+c3 oh ho   47.400     107.260
+cd na cd   68.500     109.900
+cd nd cc   71.800     105.490
+cd cc c    65.100     121.350
+cd nc cc   71.800     105.490
+c  ns cc   64.700     123.270	! same as c  n  cc
+c  ns hn   48.300     117.550	! same as c  n  hn
+cc ns hn   47.900     119.260	! same as cc n  hn
+cc nv hn   48.900     115.630	! same as cc nh hn
+cc nv hn   48.900     115.630
+h1 c3 h1   39.200     108.460
+hn nv hn   40.100     115.120	! same as hn nh hn
+
+DIHEDRAL
+c5 os c5 c5      -nan         0       0.0
+ho oh c5 c5      -nan         0       0.0
+ho oh c5 h1      -nan         0       0.0
+X  c3 oh X      0.167         3       0.0
+cd na c5 os      -nan         0       0.0
+cd na c5 c5      -nan         0       0.0
+cd na c5 h2      -nan         0       0.0
+X  cd na X      1.700         2     180.0
+X  cd nc X      4.750         2     180.0
+X  cc nc X      4.750         2     180.0
+X  cd nd X      4.750         2     180.0
+X  cc nd X      4.750         2     180.0
+cc ns c  o      2.500         2     180.0      ! same as X  c  n  X 
+hn ns c  o      2.500         2     180.0      !same as hn n  c  o 
+hn ns c  o      2.500         2     180.0      ! same as hn n  c  o 
+cc ns c  cc     2.500         2     180.0      ! same as X  c  n  X 
+hn ns c  cc     2.500         2     180.0      ! same as X  c  n  X 
+c  ns cc nd     1.650         2     180.0      ! same as X  n  cc X 
+hn ns cc nd     1.650         2     180.0      ! same as X  n  cc X 
+c  ns cc nv     1.650         2     180.0      ! same as X  n  cc X 
+hn ns cc nv     1.650         2     180.0      ! same as X  n  cc X 
+hn nv cc nd     1.050         2     180.0      ! same as X  cc nh X 
+hn nv cc ns     1.050         2     180.0      ! same as X  cc nh X 
+c5 c5 c5 oh      -nan         0       0.0
+h1 c5 c5 oh      -nan         0       0.0
+h1 c5 c5 c5      -nan         0       0.0
+oh c5 c5 os      -nan         0       0.0
+c5 c5 c5 os      -nan         0       0.0
+h1 c5 c5 os      -nan         0       0.0
+h1 c5 c5 h1      -nan         0       0.0
+os c5 c3 h1      -nan         0       0.0
+c5 c5 c3 h1      -nan         0       0.0
+h1 c5 c3 h1      -nan         0       0.0
+X  cc cd X      4.000         2     180.0
+X  c  cc X      2.875         2     180.0
+
+IMPHI
+c5 cd na cd     1.100         2     180.0	! Using default value
+c  cc ns hn     1.100         2     180.0	! Using default value
+cc hn nv hn     1.100         2     180.0	! Using default value
+cc na cd nd     1.100         2     180.0	! Using default value
+h5 na cd nc     1.100         2     180.0	! Using default value
+c  cd cc nc     1.100         2     180.0	! Using default value
+X  X  c  o     10.500         2     180.0
+nd ns cc nv     1.100         2     180.0	! Using default value
+
+NONBONDED  NBXMOD 5  GROUP SWITCH CDIEL -
+CUTNB 14.0  CTOFNB 12.0  CTONNB 10.0  EPS 1.0  E14FAC 0.83333333  WMIN 1.4
+!                Emin     Rmin/2              Emin/2     Rmin  (for 1-4's)
+!             (kcal/mol)    (A)
+os      0.00   -0.1700    1.6837      0.00   -0.0850    1.6837
+oh      0.00   -0.2104    1.7210      0.00   -0.1052    1.7210
+ o      0.00   -0.2100    1.6612      0.00   -0.1050    1.6612
+na      0.00   -0.1700    1.8240      0.00   -0.0850    1.8240
+nc      0.00   -0.1700    1.8240      0.00   -0.0850    1.8240
+nd      0.00   -0.1700    1.8240      0.00   -0.0850    1.8240
+ns      0.00   -0.1700    1.8240      0.00   -0.0850    1.8240
+      ! same as n  
+nv      0.00   -0.1700    1.8240      0.00   -0.0850    1.8240
+      ! same as nh 
+c5      0.00    0.0000    0.0000      0.00    0.0000    0.0000
+c5      0.00   -0.0000    0.0000      0.00   -0.0000    0.0000
+c3      0.00   -0.1094    1.9080      0.00   -0.0547    1.9080
+cd      0.00   -0.0860    1.9080      0.00   -0.0430    1.9080
+cc      0.00   -0.0860    1.9080      0.00   -0.0430    1.9080
+ c      0.00   -0.0860    1.9080      0.00   -0.0430    1.9080
+h1      0.00   -0.0157    1.3870      0.00   -0.0078    1.3870
+h2      0.00   -0.0157    1.2870      0.00   -0.0078    1.2870
+ho      0.00   -0.0000    0.0000      0.00   -0.0000    0.0000
+h5      0.00   -0.0150    1.3590      0.00   -0.0075    1.3590
+hn      0.00   -0.0157    0.6000      0.00   -0.0078    0.6000

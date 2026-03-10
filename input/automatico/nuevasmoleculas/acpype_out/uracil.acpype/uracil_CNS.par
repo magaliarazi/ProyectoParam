@@ -1,0 +1,72 @@
+Remarks uracil_CNS.par created by acpype (v: 2023.10.27) on Mon Feb  9 18:01:10 2026
+
+set echo=false end
+
+{ Bonds: atomType1 atomType2 kb r0 }
+BOND   ns_   hn_    473.6   1.0132
+BOND   cc_   h4_    368.7   1.0809
+BOND   cd_   ha_    364.6   1.0835
+BOND    o_    c_    590.6   1.2190
+BOND   ns_    c_    336.1   1.3798
+BOND   ns_   cc_    335.4   1.3804
+BOND    c_   cd_    278.1   1.4728
+BOND   cc_   cd_    386.2   1.3730
+
+{ Angles: aType1 aType2 aType3 kt t0 }
+ANGLe   ns_   cc_   h4_     49.0   115.82
+ANGLe    c_   ns_   hn_     57.4   117.26
+ANGLe    c_   cd_   ha_     43.6   116.38
+ANGLe   cc_   ns_   hn_     57.0   118.91
+ANGLe   cc_   cd_   ha_     45.2   121.70
+ANGLe   cd_   cc_   h4_     44.0   129.11
+ANGLe    o_    c_   ns_     87.2   123.05
+ANGLe    o_    c_   cd_     78.3   123.71
+ANGLe   ns_    c_   ns_     75.0   112.89
+ANGLe   ns_    c_   cd_     68.4   112.20
+ANGLe   ns_   cc_   cd_     68.3   121.45
+ANGLe    c_   ns_    c_     77.2   128.05
+ANGLe    c_   ns_   cc_     78.1   125.18
+ANGLe    c_   cd_   cc_     62.1   121.32
+
+{ Proper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+DIHEdral   cd_    c_   ns_   hn_           2.500    2   180.00
+DIHEdral   ns_    c_   ns_    c_           2.500    2   180.00
+DIHEdral    c_   ns_   cc_   cd_           1.650    2   180.00
+DIHEdral    c_   cd_   cc_   h4_           4.000    2   180.00
+DIHEdral   ns_    c_   cd_   cc_           2.875    2   180.00
+DIHEdral    c_   ns_   cc_   h4_           1.650    2   180.00
+DIHEdral   ns_   cc_   cd_    c_           4.000    2   180.00
+DIHEdral    o_    c_   ns_   cc_           2.500    2   180.00
+DIHEdral    o_    c_   cd_   ha_           2.875    2   180.00
+DIHEdral   ns_    c_   ns_   cc_           2.500    2   180.00
+DIHEdral   hn_   ns_   cc_   h4_           1.650    2   180.00
+DIHEdral   cd_   cc_   ns_   hn_           1.650    2   180.00
+DIHEdral    c_   ns_    c_   cd_           2.500    2   180.00
+DIHEdral    o_    c_   cd_   cc_           2.875    2   180.00
+DIHEdral   ns_   cc_   cd_   ha_           4.000    2   180.00
+DIHEdral   ns_    c_   ns_   hn_           2.500    2   180.00
+DIHEdral    o_    c_   ns_   hn_  MULT 2   2.000    1     0.00
+                                           2.500    2   180.00
+DIHEdral   ns_    c_   cd_   ha_           2.875    2   180.00
+DIHEdral   ha_   cd_   cc_   h4_           4.000    2   180.00
+DIHEdral    o_    c_   ns_    c_           2.500    2   180.00
+
+{ Improper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+IMPRoper    c_   cc_   cd_   ha_           1.1    2   180.00
+IMPRoper   cd_   ns_    c_    o_          10.5    2   180.00
+IMPRoper   cd_   h4_   cc_   ns_           1.1    2   180.00
+IMPRoper    c_   cc_   ns_   hn_           1.1    2   180.00
+IMPRoper    c_    c_   ns_   hn_           1.1    2   180.00
+IMPRoper    o_    c_   ns_   ns_          10.5    2   180.00
+
+{ Nonbonded: Type Emin sigma; (1-4): Emin/2 sigma }
+NONBonded    o_    0.146300    3.048121    0.073150    3.048121
+NONBonded   ns_    0.117400    3.269955    0.058700    3.269955
+NONBonded    c_    0.098800    3.315212    0.049400    3.315212
+NONBonded   cc_    0.098800    3.315212    0.049400    3.315212
+NONBonded   cd_    0.098800    3.315212    0.049400    3.315212
+NONBonded   hn_    0.010000    1.106496    0.005000    1.106496
+NONBonded   ha_    0.016100    2.625479    0.008050    2.625479
+NONBonded   h4_    0.016100    2.536389    0.008050    2.536389
+
+set echo=true end

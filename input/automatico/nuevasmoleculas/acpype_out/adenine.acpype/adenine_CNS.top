@@ -1,0 +1,127 @@
+Remarks adenine_CNS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:24:44 2026
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS na_     14.010
+MASS nc_     14.010
+MASS nb_     14.010
+MASS nv_     14.010
+MASS ca_     12.010
+MASS cd_     12.010
+MASS hn_      1.008
+MASS h5_      1.008
+
+RESIdue UNL
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM N     TYPE= na_   CHARGE=  -0.2623 END
+ATOM N1    TYPE= nc_   CHARGE=  -0.6257 END
+ATOM N2    TYPE= nb_   CHARGE=  -0.6530 END
+ATOM N3    TYPE= nb_   CHARGE=  -0.7490 END
+ATOM N4    TYPE= nv_   CHARGE=  -0.9175 END
+ATOM C     TYPE= ca_   CHARGE=  -0.3608 END
+ATOM C1    TYPE= ca_   CHARGE=   0.5723 END
+ATOM C2    TYPE= ca_   CHARGE=   0.6672 END
+ATOM C3    TYPE= cd_   CHARGE=   0.4357 END
+ATOM C4    TYPE= ca_   CHARGE=   0.6459 END
+ATOM H     TYPE= hn_   CHARGE=   0.3097 END
+ATOM H1    TYPE= h5_   CHARGE=   0.0748 END
+ATOM H2    TYPE= h5_   CHARGE=   0.0571 END
+ATOM H3    TYPE= hn_   CHARGE=   0.4028 END
+ATOM H4    TYPE= hn_   CHARGE=   0.4028 END
+
+{ Bonds: atomName1  atomName2 }
+BOND N     H    
+BOND N4    H3   
+BOND N4    H4   
+BOND C3    H1   
+BOND C4    H2   
+BOND N     C    
+BOND N     C3   
+BOND N1    C1   
+BOND N1    C3   
+BOND N2    C1   
+BOND N2    C4   
+BOND N3    C2   
+BOND N3    C4   
+BOND N4    C2   
+BOND C     C1   
+BOND C     C2   
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe N     C3    H1   
+ANGLe N1    C3    H1   
+ANGLe N2    C4    H2   
+ANGLe N3    C4    H2   
+ANGLe C     N     H    
+ANGLe C2    N4    H3   
+ANGLe C2    N4    H4   
+ANGLe C3    N     H    
+ANGLe H3    N4    H4   
+ANGLe N     C     C1   
+ANGLe N     C     C2   
+ANGLe N     C3    N1   
+ANGLe N1    C1    N2   
+ANGLe N1    C1    C    
+ANGLe N2    C1    C    
+ANGLe N2    C4    N3   
+ANGLe N3    C2    N4   
+ANGLe N3    C2    C    
+ANGLe N4    C2    C    
+ANGLe C     N     C3   
+ANGLe C1    N1    C3   
+ANGLe C1    N2    C4   
+ANGLe C1    C     C2   
+ANGLe C2    N3    C4   
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral H     N     C3    N1   
+DIHEdral N3    C2    N4    H3   
+DIHEdral N3    C2    N4    H4   
+DIHEdral C     N     C3    H1   
+DIHEdral C     C2    N4    H3   
+DIHEdral C     C2    N4    H4   
+DIHEdral C1    N1    C3    H1   
+DIHEdral C1    N2    C4    H2   
+DIHEdral H     N     C     C1   
+DIHEdral C2    N3    C4    H2   
+DIHEdral H     N     C     C2   
+DIHEdral H     N     C3    H1   
+DIHEdral N     C     C1    N1   
+DIHEdral N     C     C1    N2   
+DIHEdral N     C     C2    N3   
+DIHEdral N     C     C2    N4   
+DIHEdral N     C3    N1    C1   
+DIHEdral N1    C1    N2    C4   
+DIHEdral N1    C1    C     C2   
+DIHEdral C     N     C3    N1   
+DIHEdral N2    C1    N1    C3   
+DIHEdral N2    C1    C     C2   
+DIHEdral N2    C4    N3    C2   
+DIHEdral N3    C2    C     C1   
+DIHEdral N3    C4    N2    C1   
+DIHEdral N4    C2    N3    C4   
+DIHEdral N4    C2    C     C1   
+DIHEdral C     C1    N1    C3   
+DIHEdral C     C1    N2    C4   
+DIHEdral C     C2    N3    C4   
+DIHEdral C3    N     C     C1   
+DIHEdral C3    N     C     C2   
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+IMPRoper H     N     C3    C    
+IMPRoper C2    H3    N4    H4   
+IMPRoper H1    N     C3    N1   
+IMPRoper H2    N2    C4    N3   
+IMPRoper N     C     C2    C1   
+IMPRoper C     N2    C1    N1   
+IMPRoper C     N3    C2    N4   
+
+END {RESIdue UNL}
+
+set echo=true end

@@ -1,0 +1,19 @@
+; thymidine_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:59:59 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include thymidine_GMX.itp topology
+#include "thymidine_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_thymidine.itp"
+#endif
+
+[ system ]
+ thymidine
+
+[ molecules ]
+; Compound        nmols
+ thymidine        1     

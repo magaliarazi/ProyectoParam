@@ -1,0 +1,20 @@
+; lidocaine_GMX.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:52:46 2026
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               2               yes             0.5     0.8333333333
+
+; Include lidocaine_GMX.itp topology
+#include "lidocaine_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_lidocaine.itp"
+#endif
+
+[ system ]
+ lidocaine
+
+[ molecules ]
+; Compound        nmols
+ lidocaine        1     

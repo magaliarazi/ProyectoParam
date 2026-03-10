@@ -1,0 +1,18 @@
+REMARK aspartic-acid_NEW.pdb created by acpype (v: 2023.10.27) on Mon Feb  9 17:29:14 2026
+ATOM      1    O ASP Z   1      -0.661   1.596   0.895  1.00  0.00           O
+ATOM      2  OD1 ASP Z   1       2.010  -0.157   1.121  1.00  0.00           O
+ATOM      3  OXT ASP Z   1      -1.974   0.972  -0.843  1.00  0.00           O
+ATOM      4  OD2 ASP Z   1       2.217   0.566  -1.022  1.00  0.00           O
+ATOM      5    N ASP Z   1      -1.803  -1.694   0.097  1.00  0.00           N
+ATOM      6   CA ASP Z   1      -0.747  -0.745   0.352  1.00  0.00           C
+ATOM      7   CB ASP Z   1       0.503  -1.078  -0.468  1.00  0.00           C
+ATOM      8    C ASP Z   1      -1.200   0.676   0.059  1.00  0.00           C
+ATOM      9   CG ASP Z   1       1.656  -0.135  -0.191  1.00  0.00           C
+ATOM     10   HA ASP Z   1      -0.515  -0.800   1.422  1.00  0.00           H
+ATOM     11  HB1 ASP Z   1       0.284  -1.017  -1.541  1.00  0.00           H
+ATOM     12  HB2 ASP Z   1       0.851  -2.099  -0.267  1.00  0.00           H
+ATOM     13   H1 ASP Z   1      -2.070  -1.672  -0.887  1.00  0.00           H
+ATOM     14   H2 ASP Z   1      -2.636  -1.446   0.629  1.00  0.00           H
+ATOM     15    H ASP Z   1      -0.965   2.504   0.686  1.00  0.00           H
+ATOM     16  HD1 ASP Z   1       2.756   0.452   1.308  1.00  0.00           H
+END

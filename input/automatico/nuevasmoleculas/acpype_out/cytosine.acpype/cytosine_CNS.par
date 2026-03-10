@@ -1,0 +1,84 @@
+Remarks cytosine_CNS.par created by acpype (v: 2023.10.27) on Mon Feb  9 17:39:42 2026
+
+set echo=false end
+
+{ Bonds: atomType1 atomType2 kb r0 }
+BOND   ns_   hn_    473.6   1.0132
+BOND   nv_   hn_    477.5   1.0114
+BOND   cd_   ha_    364.6   1.0835
+BOND   cd_   h4_    367.3   1.0818
+BOND    o_    c_    590.6   1.2190
+BOND   ns_   cc_    335.4   1.3804
+BOND   ns_    c_    336.1   1.3798
+BOND   nv_   cc_    349.3   1.3685
+BOND   nc_    c_    342.3   1.3744
+BOND   nc_   cd_    417.8   1.3171
+BOND   cc_   cd_    386.2   1.3730
+BOND   cd_   cd_    321.5   1.4279
+
+{ Angles: aType1 aType2 aType3 kt t0 }
+ANGLe   nc_   cd_   h4_     50.4   118.14
+ANGLe   cc_   ns_   hn_     57.0   118.91
+ANGLe   cc_   nv_   hn_     58.0   116.50
+ANGLe   cc_   cd_   ha_     45.2   121.70
+ANGLe   cd_   cd_   h4_     43.0   126.75
+ANGLe    c_   ns_   hn_     57.4   117.26
+ANGLe   cd_   cd_   ha_     43.8   121.85
+ANGLe   hn_   nv_   hn_     46.4   115.28
+ANGLe    o_    c_   ns_     87.2   123.05
+ANGLe    o_    c_   nc_     87.1   124.01
+ANGLe   ns_   cc_   nv_     73.9   117.07
+ANGLe   ns_   cc_   cd_     68.3   121.45
+ANGLe   ns_    c_   nc_     74.0   116.35
+ANGLe   nv_   cc_   cd_     67.2   126.47
+ANGLe   nc_   cd_   cd_     68.5   120.70
+ANGLe   cc_   ns_    c_     78.1   125.18
+ANGLe   cc_   cd_   cd_     64.6   116.21
+ANGLe    c_   nc_   cd_     81.6   120.34
+
+{ Proper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+DIHEdral    o_    c_   ns_   cc_           2.500    2   180.00
+DIHEdral   cc_   cd_   cd_   h4_           4.000    2   180.00
+DIHEdral   nv_   cc_   ns_   hn_           1.650    2   180.00
+DIHEdral   nc_   cd_   cd_   ha_           4.000    2   180.00
+DIHEdral   cd_   cc_   ns_   hn_           1.650    2   180.00
+DIHEdral   nv_   cc_   cd_   cd_           4.000    2   180.00
+DIHEdral    c_   nc_   cd_   h4_           4.750    2   180.00
+DIHEdral   cd_   cd_   nc_    c_           4.750    2   180.00
+DIHEdral   ns_   cc_   cd_   ha_           4.000    2   180.00
+DIHEdral   cd_   cc_   ns_    c_           1.650    2   180.00
+DIHEdral   nc_    c_   ns_   hn_           2.500    2   180.00
+DIHEdral   nc_    c_   ns_   cc_           2.500    2   180.00
+DIHEdral   ns_   cc_   nv_   hn_           1.050    2   180.00
+DIHEdral   ns_    c_   nc_   cd_           4.000    2   180.00
+DIHEdral    o_    c_   ns_   hn_  MULT 2   2.000    1     0.00
+                                           2.500    2   180.00
+DIHEdral   nv_   cc_   ns_    c_           1.650    2   180.00
+DIHEdral    o_    c_   nc_   cd_           4.000    2   180.00
+DIHEdral   ns_   cc_   cd_   cd_           4.000    2   180.00
+DIHEdral   cd_   cc_   nv_   hn_           1.050    2   180.00
+DIHEdral   nv_   cc_   cd_   ha_           4.000    2   180.00
+DIHEdral   ha_   cd_   cd_   h4_           4.000    2   180.00
+DIHEdral   nc_   cd_   cd_   cc_           4.000    2   180.00
+
+{ Improper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+IMPRoper    o_    c_   ns_   nc_          10.5    2   180.00
+IMPRoper    c_   cc_   ns_   hn_           1.1    2   180.00
+IMPRoper   cc_   hn_   nv_   hn_           1.1    2   180.00
+IMPRoper   cd_   ns_   cc_   nv_           1.1    2   180.00
+IMPRoper   cc_   cd_   cd_   ha_           1.1    2   180.00
+IMPRoper   cd_   h4_   cd_   nc_           1.1    2   180.00
+
+{ Nonbonded: Type Emin sigma; (1-4): Emin/2 sigma }
+NONBonded    o_    0.146300    3.048121    0.073150    3.048121
+NONBonded   ns_    0.117400    3.269955    0.058700    3.269955
+NONBonded   nv_    0.112000    3.368132    0.056000    3.368132
+NONBonded   nc_    0.094100    3.384168    0.047050    3.384168
+NONBonded   cc_    0.098800    3.315212    0.049400    3.315212
+NONBonded   cd_    0.098800    3.315212    0.049400    3.315212
+NONBonded    c_    0.098800    3.315212    0.049400    3.315212
+NONBonded   hn_    0.010000    1.106496    0.005000    1.106496
+NONBonded   ha_    0.016100    2.625479    0.008050    2.625479
+NONBonded   h4_    0.016100    2.536389    0.008050    2.536389
+
+set echo=true end

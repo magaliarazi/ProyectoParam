@@ -1,0 +1,19 @@
+; amoxicillin_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:25:53 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include amoxicillin_GMX.itp topology
+#include "amoxicillin_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_amoxicillin.itp"
+#endif
+
+[ system ]
+ amoxicillin
+
+[ molecules ]
+; Compound        nmols
+ amoxicillin      1     

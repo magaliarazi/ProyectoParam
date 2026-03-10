@@ -1,0 +1,20 @@
+; tryptophan_GMX.top created by acpype (v: 2023.10.27) on Mon Feb  9 18:00:44 2026
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               2               yes             0.5     0.8333333333
+
+; Include tryptophan_GMX.itp topology
+#include "tryptophan_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_tryptophan.itp"
+#endif
+
+[ system ]
+ tryptophan
+
+[ molecules ]
+; Compound        nmols
+ tryptophan       1     

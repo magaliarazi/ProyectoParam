@@ -1,0 +1,15 @@
+; minim.mdp - Minimización de energía simple
+
+integrator  = steep      ; algoritmo de minimización
+emtol       = 1000.0     ; fuerza máxima tolerada (kJ/mol/nm)
+emstep      = 0.01       ; paso máximo (nm)
+nsteps      = 50000      ; número máximo de pasos
+
+; parámetros de corte
+nstlist     = 1
+cutoff-scheme = Verlet
+ns_type     = grid
+coulombtype = PME
+rcoulomb    = 1.0
+rvdw        = 1.0
+pbc         = xyz

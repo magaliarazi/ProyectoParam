@@ -1,0 +1,3 @@
+Número total de átomos: 487
+Número de moléculas distintas: 8
+

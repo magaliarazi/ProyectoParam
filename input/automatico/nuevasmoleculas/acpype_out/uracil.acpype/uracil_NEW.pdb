@@ -1,0 +1,14 @@
+REMARK uracil_NEW.pdb created by acpype (v: 2023.10.27) on Mon Feb  9 18:01:10 2026
+ATOM      1    O UNL Z   1       2.326   0.965   0.000  1.00  0.00           O
+ATOM      2   O1 UNL Z   1      -2.297   1.023   0.001  1.00  0.00           O
+ATOM      3    N UNL Z   1       0.018   1.020  -0.000  1.00  0.00           N
+ATOM      4   N1 UNL Z   1       1.164  -1.022   0.000  1.00  0.00           N
+ATOM      5    C UNL Z   1       1.252   0.363   0.000  1.00  0.00           C
+ATOM      6   C1 UNL Z   1      -1.232   0.414  -0.000  1.00  0.00           C
+ATOM      7   C2 UNL Z   1      -0.027  -1.696   0.000  1.00  0.00           C
+ATOM      8   C3 UNL Z   1      -1.205  -1.068  -0.000  1.00  0.00           C
+ATOM      9    H UNL Z   1       0.038   2.036  -0.000  1.00  0.00           H
+ATOM     10   H1 UNL Z   1       2.019  -1.570   0.000  1.00  0.00           H
+ATOM     11   H2 UNL Z   1      -2.144  -1.606  -0.000  1.00  0.00           H
+ATOM     12   H3 UNL Z   1       0.047  -2.776   0.000  1.00  0.00           H
+END

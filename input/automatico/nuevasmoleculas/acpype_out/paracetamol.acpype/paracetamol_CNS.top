@@ -1,0 +1,154 @@
+Remarks paracetamol_CNS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:55:34 2026
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS oh_     16.000
+MASS o_      16.000
+MASS ns_     14.010
+MASS ca_     12.010
+MASS c_      12.010
+MASS c3_     12.010
+MASS ha_      1.008
+MASS hn_      1.008
+MASS hc_      1.008
+MASS ho_      1.008
+
+RESIdue UNL
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM O     TYPE= oh_   CHARGE=  -0.4991 END
+ATOM O1    TYPE= o_    CHARGE=  -0.5931 END
+ATOM N     TYPE= ns_   CHARGE=  -0.4721 END
+ATOM C     TYPE= ca_   CHARGE=   0.0356 END
+ATOM C1    TYPE= ca_   CHARGE=  -0.1345 END
+ATOM C2    TYPE= ca_   CHARGE=  -0.1345 END
+ATOM C3    TYPE= ca_   CHARGE=  -0.1580 END
+ATOM C4    TYPE= ca_   CHARGE=  -0.1580 END
+ATOM C5    TYPE= ca_   CHARGE=   0.0961 END
+ATOM C6    TYPE= c_    CHARGE=   0.6661 END
+ATOM C7    TYPE= c3_   CHARGE=  -0.1781 END
+ATOM H     TYPE= ha_   CHARGE=   0.1530 END
+ATOM H1    TYPE= ha_   CHARGE=   0.1530 END
+ATOM H2    TYPE= hn_   CHARGE=   0.3135 END
+ATOM H3    TYPE= ha_   CHARGE=   0.1435 END
+ATOM H4    TYPE= ha_   CHARGE=   0.1435 END
+ATOM H5    TYPE= hc_   CHARGE=   0.0684 END
+ATOM H6    TYPE= hc_   CHARGE=   0.0684 END
+ATOM H7    TYPE= hc_   CHARGE=   0.0684 END
+ATOM H8    TYPE= ho_   CHARGE=   0.4180 END
+
+{ Bonds: atomName1  atomName2 }
+BOND O     H8   
+BOND N     H2   
+BOND C1    H    
+BOND C2    H1   
+BOND C3    H3   
+BOND C4    H4   
+BOND C7    H5   
+BOND C7    H6   
+BOND C7    H7   
+BOND O     C5   
+BOND O1    C6   
+BOND N     C    
+BOND N     C6   
+BOND C     C1   
+BOND C     C2   
+BOND C1    C3   
+BOND C2    C4   
+BOND C3    C5   
+BOND C4    C5   
+BOND C6    C7   
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe C     N     H2   
+ANGLe C     C1    H    
+ANGLe C     C2    H1   
+ANGLe C1    C3    H3   
+ANGLe C2    C4    H4   
+ANGLe C3    C1    H    
+ANGLe C4    C2    H1   
+ANGLe C5    O     H8   
+ANGLe C5    C3    H3   
+ANGLe C5    C4    H4   
+ANGLe C6    N     H2   
+ANGLe C6    C7    H5   
+ANGLe C6    C7    H6   
+ANGLe C6    C7    H7   
+ANGLe H5    C7    H6   
+ANGLe H5    C7    H7   
+ANGLe H6    C7    H7   
+ANGLe O     C5    C3   
+ANGLe O     C5    C4   
+ANGLe O1    C6    N    
+ANGLe O1    C6    C7   
+ANGLe N     C     C1   
+ANGLe N     C     C2   
+ANGLe N     C6    C7   
+ANGLe C     N     C6   
+ANGLe C     C1    C3   
+ANGLe C     C2    C4   
+ANGLe C1    C     C2   
+ANGLe C1    C3    C5   
+ANGLe C2    C4    C5   
+ANGLe C3    C5    C4   
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral O     C5    C3    H3   
+DIHEdral O     C5    C4    H4   
+DIHEdral O1    C6    N     H2   
+DIHEdral O1    C6    C7    H5   
+DIHEdral O1    C6    C7    H6   
+DIHEdral O1    C6    C7    H7   
+DIHEdral N     C     C1    H    
+DIHEdral N     C     C2    H1   
+DIHEdral N     C6    C7    H5   
+DIHEdral N     C6    C7    H6   
+DIHEdral N     C6    C7    H7   
+DIHEdral C     C1    C3    H3   
+DIHEdral C     C2    C4    H4   
+DIHEdral C1    C     N     H2   
+DIHEdral C1    C     C2    H1   
+DIHEdral C2    C     N     H2   
+DIHEdral C2    C     C1    H    
+DIHEdral H8    O     C5    C3   
+DIHEdral C3    C5    C4    H4   
+DIHEdral H8    O     C5    C4   
+DIHEdral C4    C5    C3    H3   
+DIHEdral C5    C3    C1    H    
+DIHEdral C5    C4    C2    H1   
+DIHEdral C7    C6    N     H2   
+DIHEdral H     C1    C3    H3   
+DIHEdral H1    C2    C4    H4   
+DIHEdral O     C5    C3    C1   
+DIHEdral O     C5    C4    C2   
+DIHEdral O1    C6    N     C    
+DIHEdral N     C     C1    C3   
+DIHEdral N     C     C2    C4   
+DIHEdral C     N     C6    C7   
+DIHEdral C     C1    C3    C5   
+DIHEdral C     C2    C4    C5   
+DIHEdral C1    C     N     C6   
+DIHEdral C1    C     C2    C4   
+DIHEdral C1    C3    C5    C4   
+DIHEdral C2    C     N     C6   
+DIHEdral C2    C     C1    C3   
+DIHEdral C2    C4    C5    C3   
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+IMPRoper C6    C     N     H2   
+IMPRoper C     C3    C1    H    
+IMPRoper C     C4    C2    H1   
+IMPRoper C1    C5    C3    H3   
+IMPRoper C2    C5    C4    H4   
+IMPRoper C1    C2    C     N    
+IMPRoper O     C5    C4    C3   
+IMPRoper C7    N     C6    O1   
+
+END {RESIdue UNL}
+
+set echo=true end

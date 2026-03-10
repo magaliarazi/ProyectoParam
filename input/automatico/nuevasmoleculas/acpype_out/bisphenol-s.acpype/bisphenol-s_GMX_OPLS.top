@@ -1,0 +1,19 @@
+; bisphenol-s_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:34:25 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include bisphenol-s_GMX.itp topology
+#include "bisphenol-s_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_bisphenol-s.itp"
+#endif
+
+[ system ]
+ bisphenol-s
+
+[ molecules ]
+; Compound        nmols
+ bisphenol-s      1     

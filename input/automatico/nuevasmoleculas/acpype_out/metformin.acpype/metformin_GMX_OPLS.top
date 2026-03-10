@@ -1,0 +1,19 @@
+; metformin_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:54:14 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include metformin_GMX.itp topology
+#include "metformin_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_metformin.itp"
+#endif
+
+[ system ]
+ metformin
+
+[ molecules ]
+; Compound        nmols
+ metformin        1     

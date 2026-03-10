@@ -1,0 +1,171 @@
+* Topology File.
+* 
+   99   1
+MASS     1 os     16.000000
+MASS     2 oh     16.000000
+MASS     3       0.00000
+                          ATTN, need revision
+MASS     4 c6      0.000000
+MASS     5 h1      1.008000
+MASS     6 h2      1.008000
+MASS     7 ho      1.008000
+
+RESI UNL  -0.004
+GROUP
+ATOM O     os     -0.438600
+ATOM O1    oh     -0.600800
+ATOM O2    oh     -0.576800
+ATOM O3    oh     -0.583800
+ATOM O4    oh     -0.645800
+ATOM C     c6      0.074100
+ATOM C1    c6      0.104100
+ATOM C2    c6      0.084100
+ATOM C3    c6      0.290900
+ATOM C4    c6      0.095400
+ATOM H     h1      0.103700
+ATOM H1    h1      0.096700
+ATOM H2    h1      0.090700
+ATOM H3    h2      0.089700
+ATOM H4    h1      0.062700
+ATOM H5    h1      0.062700
+ATOM H6    ho      0.419000
+ATOM H7    ho      0.424000
+ATOM H8    ho      0.415000
+ATOM H9    ho      0.429000
+
+BOND O     C3           	! dist	    1.4318
+BOND O     C4           	! dist	    1.4288
+BOND O1    C            	! dist	    1.4286
+BOND O1    H6           	! dist	    0.9725
+BOND O2    C1           	! dist	    1.4217
+BOND O2    H7           	! dist	    0.9725
+BOND O3    C2           	! dist	    1.4203
+BOND O3    H8           	! dist	    0.9726
+BOND O4    C3           	! dist	    1.4246
+BOND O4    H9           	! dist	    0.9722
+BOND C     C1           	! dist	    1.5306
+BOND C     C2           	! dist	    1.5300
+BOND C     H            	! dist	    1.0960
+BOND C1    C3           	! dist	    1.5341
+BOND C1    H1           	! dist	    1.0973
+BOND C2    C4           	! dist	    1.5261
+BOND C2    H2           	! dist	    1.0972
+BOND C3    H3           	! dist	    1.0956
+BOND C4    H4           	! dist	    1.0965
+BOND C4    H5           	! dist	    1.0956
+
+ANGL O     C3    O4            	! angle	  112.0069
+os c6 oh    0.000       0.000      !ATTN, need revision
+ANGL O     C3    C1            	! angle	  110.1153
+ANGL O     C3    H3            	! angle	  107.7853
+ANGL O     C4    C2            	! angle	  111.3333
+ANGL O     C4    H4            	! angle	  109.9030
+ANGL O     C4    H5            	! angle	  107.8198
+ANGL O1    C     C1            	! angle	  110.3696
+ANGL O1    C     C2            	! angle	  109.1126
+ANGL O1    C     H             	! angle	  106.3787
+ANGL O2    C1    C             	! angle	  110.8416
+ANGL O2    C1    C3            	! angle	  109.9678
+ANGL O2    C1    H1            	! angle	  107.6658
+ANGL O3    C2    C             	! angle	  110.8644
+ANGL O3    C2    C4            	! angle	  109.4518
+ANGL O3    C2    H2            	! angle	  107.8699
+ANGL O4    C3    C1            	! angle	  110.8902
+ANGL O4    C3    H3            	! angle	  107.0071
+ANGL C     O1    H6            	! angle	  107.2744
+ANGL C     C1    C3            	! angle	  111.9248
+ANGL C     C1    H1            	! angle	  107.6557
+ANGL C     C2    C4            	! angle	  110.8505
+ANGL C     C2    H2            	! angle	  108.7080
+ANGL C1    O2    H7            	! angle	  107.5740
+ANGL C1    C     C2            	! angle	  108.5845
+ANGL C1    C     H             	! angle	  111.4094
+ANGL C1    C3    H3            	! angle	  108.8922
+ANGL C2    O3    H8            	! angle	  107.7542
+ANGL C2    C     H             	! angle	  110.9597
+ANGL C2    C4    H4            	! angle	  111.9610
+ANGL C2    C4    H5            	! angle	  109.6768
+ANGL C3    O     C4            	! angle	  113.5175
+ANGL C3    O4    H9            	! angle	  107.1590
+ANGL C3    C1    H1            	! angle	  108.6390
+ANGL C4    C2    H2            	! angle	  109.0248
+ANGL H4    C4    H5            	! angle	  105.9227
+
+DIHE C4    O     C3    O4   	! dihe	   65.6264
+c6 os c6 oh   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE C4    O     C3    C1   	! dihe	  -58.2643
+c6 os c6 c6   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE C4    O     C3    H3   	! dihe	 -176.9246
+c6 os c6 h2   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE C3    O     C4    C2   	! dihe	   59.3282
+DIHE C3    O     C4    H4   	! dihe	  -65.3098
+c6 os c6 h1   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE C3    O     C4    H5   	! dihe	  179.6755
+DIHE H6    O1    C     C1   	! dihe	   56.8046
+ho oh c6 c6   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE H6    O1    C     C2   	! dihe	  176.0438
+DIHE H6    O1    C     H    	! dihe	  -64.1913
+ho oh c6 h1   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE H7    O2    C1    C    	! dihe	 -179.0042
+DIHE H7    O2    C1    C3   	! dihe	   56.7042
+DIHE H7    O2    C1    H1   	! dihe	  -61.4984
+DIHE H8    O3    C2    C    	! dihe	  -58.3598
+DIHE H8    O3    C2    C4   	! dihe	   64.2271
+DIHE H8    O3    C2    H2   	! dihe	 -177.2767
+DIHE H9    O4    C3    O    	! dihe	   82.9913
+ho oh c6 os   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE H9    O4    C3    C1   	! dihe	 -153.5529
+DIHE H9    O4    C3    H3   	! dihe	  -34.9225
+ho oh c6 h2   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE O1    C     C1    O2   	! dihe	  -56.8146
+oh c6 c6 oh   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE C2    C     C1    O2   	! dihe	 -176.3738
+c6 c6 c6 oh   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE H     C     C1    O2   	! dihe	   61.1333
+h1 c6 c6 oh   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE O1    C     C1    C3   	! dihe	   66.3551
+DIHE C2    C     C1    C3   	! dihe	  -53.2042
+c6 c6 c6 c6   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE H     C     C1    C3   	! dihe	 -175.6971
+h1 c6 c6 c6   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE O1    C     C1    H1   	! dihe	 -174.3265
+DIHE C2    C     C1    H1   	! dihe	   66.1143
+DIHE H     C     C1    H1   	! dihe	  -56.3786
+h1 c6 c6 h1   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE O1    C     C2    O3   	! dihe	   54.3808
+DIHE C1    C     C2    O3   	! dihe	  174.7229
+DIHE H     C     C2    O3   	! dihe	  -62.5120
+DIHE O1    C     C2    C4   	! dihe	  -67.3904
+DIHE C1    C     C2    C4   	! dihe	   52.9518
+DIHE H     C     C2    C4   	! dihe	  175.7169
+DIHE O1    C     C2    H2   	! dihe	  172.7910
+DIHE C1    C     C2    H2   	! dihe	  -66.8669
+DIHE H     C     C2    H2   	! dihe	   55.8982
+DIHE O2    C1    C3    O    	! dihe	  179.1000
+oh c6 c6 os   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE C     C1    C3    O    	! dihe	   55.4377
+c6 c6 c6 os   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE H1    C1    C3    O    	! dihe	  -63.3000
+h1 c6 c6 os   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE O2    C1    C3    O4   	! dihe	   54.5640
+DIHE C     C1    C3    O4   	! dihe	  -69.0983
+DIHE H1    C1    C3    O4   	! dihe	  172.1641
+DIHE O2    C1    C3    H3   	! dihe	  -62.9206
+oh c6 c6 h2   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE C     C1    C3    H3   	! dihe	  173.4171
+c6 c6 c6 h2   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE H1    C1    C3    H3   	! dihe	   54.6795
+h1 c6 c6 h2   1    0.000         0.000           0.000      ! ATTN, need revision
+DIHE O3    C2    C4    O    	! dihe	 -178.7695
+DIHE C     C2    C4    O    	! dihe	  -56.1743
+DIHE H2    C2    C4    O    	! dihe	   63.4547
+DIHE O3    C2    C4    H4   	! dihe	  -55.2963
+DIHE C     C2    C4    H4   	! dihe	   67.2989
+DIHE H2    C2    C4    H4   	! dihe	 -173.0720
+DIHE O3    C2    C4    H5   	! dihe	   61.9839
+DIHE C     C2    C4    H5   	! dihe	 -175.4208
+DIHE H2    C2    C4    H5   	! dihe	  -55.7918
+     ! ATTN, need revision
+
+
+

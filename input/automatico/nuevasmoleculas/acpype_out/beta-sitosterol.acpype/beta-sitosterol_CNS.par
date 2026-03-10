@@ -1,0 +1,135 @@
+Remarks beta-sitosterol_CNS.par created by acpype (v: 2023.10.27) on Mon Feb  9 17:30:40 2026
+
+set echo=false end
+
+{ Bonds: atomType1 atomType2 kb r0 }
+BOND   oh_   ho_    535.5   0.9725
+BOND   c5_   hc_    346.4   1.0954
+BOND   c6_   hc_    342.8   1.0979
+BOND   c3_   hc_    345.2   1.0962
+BOND   c2_   ha_    357.3   1.0882
+BOND   c6_   h1_    342.0   1.0984
+BOND   oh_   c6_    285.2   1.4241
+BOND   c5_   c5_    220.1   1.5483
+BOND   c5_   c6_    226.5   1.5389
+BOND   c5_   c3_    227.6   1.5372
+BOND   c6_   c6_    226.8   1.5384
+BOND   c6_   c2_    245.0   1.5133
+BOND   c6_   c3_    223.8   1.5428
+BOND   c3_   c3_    228.9   1.5354
+BOND   c2_   c2_    436.0   1.3379
+
+{ Angles: aType1 aType2 aType3 kt t0 }
+ANGLe   oh_   c6_   h1_     56.4   109.96
+ANGLe   c5_   c5_   hc_     42.6   111.17
+ANGLe   c5_   c6_   hc_     43.2   109.34
+ANGLe   c5_   c3_   hc_     43.1   110.53
+ANGLe   c6_   c5_   hc_     43.8   106.42
+ANGLe   c6_   c6_   hc_     43.2   109.45
+ANGLe   c6_   c3_   hc_     42.9   110.63
+ANGLe   c6_   c2_   ha_     42.5   116.57
+ANGLe   c3_   c5_   hc_     43.6   107.79
+ANGLe   c3_   c3_   hc_     43.3   109.68
+ANGLe   c2_   c2_   ha_     46.4   120.39
+ANGLe   c2_   c6_   hc_     43.9   109.31
+ANGLe   c6_   c6_   h1_     43.3   109.18
+ANGLe   c6_   oh_   ho_     65.2   107.07
+ANGLe   hc_   c6_   hc_     35.9   106.62
+ANGLe   hc_   c5_   hc_     35.9   107.22
+ANGLe   hc_   c3_   hc_     35.8   107.73
+ANGLe   oh_   c6_   c6_     76.6   110.05
+ANGLe   c5_   c5_   c6_     59.3   113.75
+ANGLe   c5_   c5_   c5_     61.8   103.83
+ANGLe   c5_   c5_   c3_     59.3   113.60
+ANGLe   c5_   c6_   c6_     60.2   111.04
+ANGLe   c6_   c6_   c6_     60.2   111.06
+ANGLe   c6_   c6_   c2_     60.6   111.41
+ANGLe   c6_   c6_   c3_     60.0   111.43
+ANGLe   c5_   c3_   c3_     59.6   113.70
+ANGLe   c6_   c5_   c3_     60.3   110.56
+ANGLe   c6_   c2_   c2_     61.2   123.02
+ANGLe   c6_   c2_   c6_     59.9   115.96
+ANGLe   c3_   c3_   c3_     59.9   112.63
+ANGLe   c2_   c6_   c3_     60.9   109.77
+
+{ Proper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+DIHEdral   c6_   c2_   c2_   c6_  MULT 3   0.150    1     0.00
+                                           5.780    2   180.00
+                                           1.330    3   180.00
+DIHEdral   hc_   c3_   c3_   hc_           0.120    3     0.00
+DIHEdral   c3_   c6_   c6_   c6_           0.520    3     0.00
+DIHEdral   c6_   c5_   c5_   c6_           0.520    3     0.00
+DIHEdral   c6_   c6_   c6_   c6_           0.520    3     0.00
+DIHEdral   hc_   c5_   c3_   hc_           0.120    3     0.00
+DIHEdral   c5_   c6_   c6_   c6_           0.520    3     0.00
+DIHEdral   c3_   c3_   c3_   hc_           0.130    3     0.00
+DIHEdral   c3_   c3_   c5_   hc_           0.130    3     0.00
+DIHEdral   oh_   c6_   c6_   hc_           0.090    3     0.00
+DIHEdral   c2_   c6_   c6_   h1_           0.156    3     0.00
+DIHEdral   c2_   c2_   c6_   c6_           0.000    0     0.00
+DIHEdral   c5_   c5_   c5_   c5_           0.520    3     0.00
+DIHEdral   oh_   c6_   c6_   c2_           0.156    3     0.00
+DIHEdral   c5_   c5_   c5_   hc_           0.130    3     0.00
+DIHEdral   c3_   c3_   c3_   c3_           0.520    3     0.00
+DIHEdral   hc_   c6_   c6_   h1_           0.156    3     0.00
+DIHEdral   c2_   c6_   c6_   c6_           0.156    3     0.00
+DIHEdral   c5_   c5_   c5_   c3_           0.520    3     0.00
+DIHEdral   c3_   c6_   c2_   c6_           0.000    0     0.00
+DIHEdral   c2_   c6_   c3_   hc_           0.156    3     0.00
+DIHEdral   c6_   c5_   c3_   hc_           0.130    3     0.00
+DIHEdral   hc_   c5_   c5_   hc_           0.120    3     0.00
+DIHEdral   c6_   c6_   c2_   ha_           0.000    0     0.00
+DIHEdral   hc_   c6_   c6_   hc_           0.120    3     0.00
+DIHEdral   c5_   c5_   c6_   c6_           0.520    3     0.00
+DIHEdral   c6_   c5_   c5_   hc_           0.130    3     0.00
+DIHEdral   c6_   c6_   c6_   h1_           0.156    3     0.00
+DIHEdral   c6_   c6_   c5_   c5_           0.520    3     0.00
+DIHEdral   c6_   c2_   c6_   c6_           0.000    0     0.00
+DIHEdral   c6_   c2_   c2_   ha_           6.650    2   180.00
+DIHEdral   c2_   c2_   c6_   hc_           0.260    3   180.00
+DIHEdral   c6_   c6_   c6_   c3_           0.520    3     0.00
+DIHEdral   c5_   c6_   c6_   c2_           0.156    3     0.00
+DIHEdral   hc_   c5_   c6_   hc_           0.120    3     0.00
+DIHEdral   c5_   c3_   c3_   hc_           0.130    3     0.00
+DIHEdral   ho_   oh_   c6_   h1_           0.123    3     0.00
+DIHEdral   c2_   c6_   c6_   hc_           0.156    3     0.00
+DIHEdral   c6_   c6_   c2_   c2_           0.000    0     0.00
+DIHEdral   c5_   c5_   c3_   c3_           0.520    3     0.00
+DIHEdral   c6_   c6_   c3_   hc_           0.130    3     0.00
+DIHEdral   c6_   c6_   c6_   c2_           0.156    3     0.00
+DIHEdral   c5_   c5_   c3_   hc_           0.130    3     0.00
+DIHEdral   c5_   c3_   c3_   c3_           0.520    3     0.00
+DIHEdral   c5_   c6_   c6_   hc_           0.130    3     0.00
+DIHEdral   hc_   c6_   c2_   ha_           0.000    0     0.00
+DIHEdral   c6_   c6_   c2_   c6_           0.000    0     0.00
+DIHEdral   oh_   c6_   c6_   c6_           0.180    3     0.00
+DIHEdral   c6_   c6_   c5_   hc_           0.130    3     0.00
+DIHEdral   ho_   oh_   c6_   c6_           0.060    3     0.00
+DIHEdral   c6_   c5_   c5_   c3_           0.520    3     0.00
+DIHEdral   c3_   c6_   c6_   hc_           0.130    3     0.00
+DIHEdral   c2_   c2_   c6_   c3_           0.000    0     0.00
+DIHEdral   c6_   c5_   c5_   c5_           0.520    3     0.00
+DIHEdral   c3_   c5_   c5_   c3_           0.520    3     0.00
+DIHEdral   c5_   c5_   c6_   hc_           0.130    3     0.00
+DIHEdral   c6_   c2_   c6_   hc_           0.150    3     0.00
+DIHEdral   c3_   c5_   c5_   hc_           0.130    3     0.00
+DIHEdral   c6_   c6_   c6_   hc_           0.130    3     0.00
+DIHEdral   c6_   c6_   c5_   c3_           0.520    3     0.00
+DIHEdral   c3_   c5_   c6_   hc_           0.130    3     0.00
+
+{ Improper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+IMPRoper   c2_   c6_   c2_   c6_           1.1    2   180.00
+IMPRoper   c2_   c6_   c2_   ha_           1.1    2   180.00
+
+{ Nonbonded: Type Emin sigma; (1-4): Emin/2 sigma }
+NONBonded   oh_    0.093000    3.242871    0.046500    3.242871
+NONBonded   c5_    0.107800    3.397710    0.053900    3.397710
+NONBonded   c6_    0.107800    3.397710    0.053900    3.397710
+NONBonded   c3_    0.107800    3.397710    0.053900    3.397710
+NONBonded   c2_    0.098800    3.315212    0.049400    3.315212
+NONBonded   hc_    0.020800    2.600177    0.010400    2.600177
+NONBonded   ha_    0.016100    2.625479    0.008050    2.625479
+NONBonded   h1_    0.020800    2.421997    0.010400    2.421997
+NONBonded   ho_    0.004700    0.537925    0.002350    0.537925
+
+set echo=true end

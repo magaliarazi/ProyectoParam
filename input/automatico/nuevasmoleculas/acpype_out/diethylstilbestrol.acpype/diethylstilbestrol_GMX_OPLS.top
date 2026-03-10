@@ -1,0 +1,19 @@
+; diethylstilbestrol_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:43:33 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include diethylstilbestrol_GMX.itp topology
+#include "diethylstilbestrol_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_diethylstilbestrol.itp"
+#endif
+
+[ system ]
+ diethylstilbestrol
+
+[ molecules ]
+; Compound        nmols
+ diethylstilbestrol 1     

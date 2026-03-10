@@ -1,0 +1,100 @@
+* Topology File.
+* 
+   99   1
+MASS     1 o      16.000000
+MASS     2 n      14.010000
+                          same as n  
+MASS     3 nh     14.010000
+                          same as nh 
+MASS     4 nc     14.010000
+MASS     5 cc     12.010000
+MASS     6 cd     12.010000
+MASS     7 c      12.010000
+MASS     8 hn      1.008000
+MASS     9 ha      1.008000
+MASS    10 h4      1.008000
+
+RESI UNL  -0.001
+GROUP
+ATOM O     o      -0.607500
+ATOM N     ns     -0.496100
+ATOM N1    nv     -0.864600
+ATOM N2    nc     -0.651100
+ATOM C     cc      0.334600
+ATOM C1    cd     -0.489600
+ATOM C2    c       0.821900
+ATOM C3    cd      0.568500
+ATOM H     hn      0.332500
+ATOM H1    ha      0.155000
+ATOM H2    h4      0.035800
+ATOM H3    hn      0.429800
+ATOM H4    hn      0.429800
+
+BOND O     C2           	! dist	    1.2314
+BOND N     C            	! dist	    1.3809
+BOND N     C2           	! dist	    1.3927
+BOND N     H            	! dist	    1.0157
+BOND N1    C            	! dist	    1.3670
+BOND N1    H3           	! dist	    1.0125
+BOND N1    H4           	! dist	    1.0121
+BOND N2    C2           	! dist	    1.3826
+BOND N2    C3           	! dist	    1.2926
+BOND C     C1           	! dist	    1.3432
+BOND C1    C3           	! dist	    1.4720
+BOND C1    H1           	! dist	    1.0819
+BOND C3    H2           	! dist	    1.1019
+
+ANGL O     C2    N             	! angle	  120.1888
+ANGL O     C2    N2            	! angle	  121.8562
+ANGL N     C     N1            	! angle	  120.3319
+ANGL N     C     C1            	! angle	  117.8482
+ANGL N     C2    N2            	! angle	  117.9550
+ANGL N1    C     C1            	! angle	  121.8198
+ANGL N2    C3    C1            	! angle	  125.5784
+ANGL N2    C3    H2            	! angle	  119.1389
+ANGL C     N     C2            	! angle	  124.4351
+ANGL C     N     H             	! angle	  116.9565
+ANGL C     N1    H3            	! angle	  120.3669
+ANGL C     N1    H4            	! angle	  119.1563
+ANGL C     C1    C3            	! angle	  116.2804
+ANGL C     C1    H1            	! angle	  124.2403
+ANGL C1    C3    H2            	! angle	  115.2827
+ANGL C2    N     H             	! angle	  118.6084
+ANGL C2    N2    C3            	! angle	  117.9028
+ANGL C3    C1    H1            	! angle	  119.4792
+ANGL H3    N1    H4            	! angle	  120.4768
+
+DIHE C2    N     C     N1   	! dihe	  180.0000
+DIHE H     N     C     N1   	! dihe	   -0.0000
+DIHE C2    N     C     C1   	! dihe	    0.0000
+DIHE H     N     C     C1   	! dihe	  180.0000
+DIHE C     N     C2    O    	! dihe	  180.0000
+DIHE H     N     C2    O    	! dihe	    0.0000
+DIHE C     N     C2    N2   	! dihe	   -0.0000
+DIHE H     N     C2    N2   	! dihe	  180.0000
+DIHE H3    N1    C     N    	! dihe	  180.0000
+DIHE H4    N1    C     N    	! dihe	   -0.0648
+DIHE H3    N1    C     C1   	! dihe	   -0.0000
+DIHE H4    N1    C     C1   	! dihe	  179.9352
+DIHE C3    N2    C2    O    	! dihe	  180.0000
+DIHE C3    N2    C2    N    	! dihe	    0.0000
+DIHE C2    N2    C3    C1   	! dihe	   -0.0000
+DIHE C2    N2    C3    H2   	! dihe	 -179.9405
+DIHE N     C     C1    C3   	! dihe	    0.0000
+DIHE N1    C     C1    C3   	! dihe	  180.0000
+DIHE N     C     C1    H1   	! dihe	  180.0000
+DIHE N1    C     C1    H1   	! dihe	   -0.0000
+DIHE C     C1    C3    N2   	! dihe	    0.0000
+DIHE H1    C1    C3    N2   	! dihe	  180.0000
+DIHE C     C1    C3    H2   	! dihe	  179.9425
+DIHE H1    C1    C3    H2   	! dihe	   -0.0575
+
+IMPH C2    C     N     H    
+IMPH C     H3    N1    H4   
+IMPH C1    N     C     N1   
+IMPH C     C3    C1    H1   
+IMPH N2    N     C2    O    
+IMPH C1    H2    C3    N2   
+
+
+

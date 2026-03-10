@@ -1,0 +1,99 @@
+Remarks guanine_CNS.par created by acpype (v: 2023.10.27) on Mon Feb  9 17:46:17 2026
+
+set echo=false end
+
+{ Bonds: atomType1 atomType2 kb r0 }
+BOND   na_   hn_    481.8   1.0095
+BOND   ns_   hn_    473.6   1.0132
+BOND   nv_   hn_    477.5   1.0114
+BOND   cd_   h5_    366.8   1.0821
+BOND    o_    c_    590.6   1.2190
+BOND   na_   cd_    332.4   1.3830
+BOND   ns_    c_    336.1   1.3798
+BOND   ns_   cd_    339.9   1.3765
+BOND   nc_   cc_    356.0   1.3629
+BOND   nc_   cd_    417.8   1.3171
+BOND   nv_   cd_    347.0   1.3704
+BOND   cd_   cc_    386.2   1.3730
+BOND   cd_    c_    278.1   1.4728
+
+{ Angles: aType1 aType2 aType3 kt t0 }
+ANGLe   na_   cd_   h5_     47.9   120.83
+ANGLe   nc_   cd_   h5_     48.9   125.29
+ANGLe   cd_   na_   hn_     55.4   125.24
+ANGLe    c_   ns_   hn_     57.4   117.26
+ANGLe   cd_   ns_   hn_     56.9   119.91
+ANGLe   cd_   nv_   hn_     57.9   116.72
+ANGLe   hn_   nv_   hn_     46.4   115.28
+ANGLe    o_    c_   ns_     87.2   123.05
+ANGLe    o_    c_   cd_     78.3   123.71
+ANGLe   na_   cd_   cc_     72.0   108.99
+ANGLe   na_   cd_    c_     64.7   125.13
+ANGLe   na_   cd_   nc_     76.5   113.02
+ANGLe   ns_    c_   cd_     68.4   112.20
+ANGLe   ns_   cd_   nc_     73.4   123.46
+ANGLe   ns_   cd_   nv_     74.0   116.91
+ANGLe   nc_   cc_   nc_     72.3   124.41
+ANGLe   nc_   cc_   cd_     69.7   117.99
+ANGLe   nc_   cd_   nv_     74.7   119.87
+ANGLe   cd_   na_   cd_     82.8   110.90
+ANGLe   cc_   nc_   cd_     86.1   109.15
+ANGLe   cc_   cd_    c_     62.1   121.32
+ANGLe    c_   ns_   cd_     78.1   125.38
+
+{ Proper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+DIHEdral   nc_   cd_   ns_    c_           1.650    2   180.00
+DIHEdral   cd_   cc_   nc_   cd_           4.750    2   180.00
+DIHEdral   ns_   cd_   nc_   cc_           4.750    2   180.00
+DIHEdral    o_    c_   cd_   na_           2.875    2   180.00
+DIHEdral   cd_    c_   ns_   hn_           2.500    2   180.00
+DIHEdral   cc_   nc_   cd_   h5_           4.750    2   180.00
+DIHEdral   nv_   cd_   ns_   hn_           1.650    2   180.00
+DIHEdral   nc_   cd_   na_   cd_           1.700    2   180.00
+DIHEdral   nc_   cc_   cd_    c_           4.000    2   180.00
+DIHEdral   cc_   cd_   na_   cd_           1.700    2   180.00
+DIHEdral   ns_   cd_   nv_   hn_           1.050    2   180.00
+DIHEdral    o_    c_   ns_   cd_           2.500    2   180.00
+DIHEdral   na_   cd_   cc_   nc_           4.000    2   180.00
+DIHEdral    o_    c_   ns_   hn_  MULT 2   2.000    1     0.00
+                                           2.500    2   180.00
+DIHEdral    c_   cd_   na_   hn_           1.700    2   180.00
+DIHEdral   na_   cd_   nc_   cc_           4.750    2   180.00
+DIHEdral    c_   cd_   na_   cd_           1.700    2   180.00
+DIHEdral    o_    c_   cd_   cc_           2.875    2   180.00
+DIHEdral   nv_   cd_   ns_    c_           1.650    2   180.00
+DIHEdral   na_   cd_    c_   ns_           2.875    2   180.00
+DIHEdral   cd_   na_   cd_   h5_           1.700    2   180.00
+DIHEdral   hn_   na_   cd_   h5_           1.700    2   180.00
+DIHEdral   cd_    c_   ns_   cd_           2.500    2   180.00
+DIHEdral   nc_   cd_   na_   hn_           1.700    2   180.00
+DIHEdral   ns_    c_   cd_   cc_           2.875    2   180.00
+DIHEdral   nc_   cd_   ns_   hn_           1.650    2   180.00
+DIHEdral   cc_   cd_   na_   hn_           1.700    2   180.00
+DIHEdral   nc_   cc_   nc_   cd_           4.750    2   180.00
+DIHEdral   nc_   cd_   nv_   hn_           1.050    2   180.00
+DIHEdral   nv_   cd_   nc_   cc_           4.750    2   180.00
+
+{ Improper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+IMPRoper   cd_   nc_   cc_   nc_           1.1    2   180.00
+IMPRoper    c_   cc_   cd_   na_           1.1    2   180.00
+IMPRoper   cd_   cd_   na_   hn_           1.1    2   180.00
+IMPRoper   cd_   hn_   nv_   hn_           1.1    2   180.00
+IMPRoper   h5_   na_   cd_   nc_           1.1    2   180.00
+IMPRoper   nc_   ns_   cd_   nv_           1.1    2   180.00
+IMPRoper    c_   cd_   ns_   hn_           1.1    2   180.00
+IMPRoper    o_    c_   ns_   cd_          10.5    2   180.00
+
+{ Nonbonded: Type Emin sigma; (1-4): Emin/2 sigma }
+NONBonded    o_    0.146300    3.048121    0.073150    3.048121
+NONBonded   na_    0.204200    3.205810    0.102100    3.205810
+NONBonded   ns_    0.117400    3.269955    0.058700    3.269955
+NONBonded   nc_    0.094100    3.384168    0.047050    3.384168
+NONBonded   nv_    0.112000    3.368132    0.056000    3.368132
+NONBonded   cd_    0.098800    3.315212    0.049400    3.315212
+NONBonded   cc_    0.098800    3.315212    0.049400    3.315212
+NONBonded    c_    0.098800    3.315212    0.049400    3.315212
+NONBonded   hn_    0.010000    1.106496    0.005000    1.106496
+NONBonded   h5_    0.016100    2.447299    0.008050    2.447299
+
+set echo=true end

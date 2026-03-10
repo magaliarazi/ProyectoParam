@@ -1,0 +1,21 @@
+CHARGE     -0.00 ( 0 )
+Formula: H5 C2 N1 O2 
+ATOM      1  O   GLY     1      -1.649   0.657  -0.010 -0.604100        oh
+ATOM      2  OXT GLY     1      -0.484  -1.293  -0.001 -0.559000         o
+ATOM      3  N   GLY     1       1.901  -0.081  -0.009 -0.895800        n8
+ATOM      4  CA  GLY     1       0.734   0.787   0.008  0.118800        c3
+ATOM      5  C   GLY     1      -0.502  -0.069   0.012  0.583100         c
+ATOM      6  HA1 GLY     1       0.733   1.421  -0.882  0.090700        h1
+ATOM      7  HA2 GLY     1       0.746   1.409   0.907  0.090700        h1
+ATOM      8  H1  GLY     1       1.874  -0.684  -0.830  0.364800        hn
+ATOM      9  H2  GLY     1       1.889  -0.697   0.803  0.364800        hn
+ATOM     10  H   GLY     1      -2.445   0.084  -0.026  0.445000        ho
+BOND    1    1    5    1      O    C
+BOND    2    1   10    1      O    H
+BOND    3    2    5    2    OXT    C
+BOND    4    3    4    1      N   CA
+BOND    5    3    8    1      N   H1
+BOND    6    3    9    1      N   H2
+BOND    7    4    5    1     CA    C
+BOND    8    4    6    1     CA  HA1
+BOND    9    4    7    1     CA  HA2

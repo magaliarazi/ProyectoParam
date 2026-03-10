@@ -1,0 +1,112 @@
+import os
+import pandas as pd
+
+def extraer_datos_itp(ruta_archivo):
+    datos = {'atoms': [], 'bonds': [], 'angles': [], 'impropers': [], 'molecule_name': ''}
+
+    with open(ruta_archivo, 'r') as f:
+        lineas = f.readlines()
+
+    seccion_actual = None
+    improper_section = False
+
+    for linea in lineas:
+        linea = linea.strip()
+        if not linea or linea.startswith(';'):
+            continue
+
+        # Detectar secciones
+        if linea.startswith('['):
+            seccion_actual = linea.strip('[] ').lower()
+            improper_section = False
+            if 'dihedrals' in seccion_actual:
+                # Detectar si es proper o improper por comentario
+                improper_section = 'impropers' in ''.join(lineas[lineas.index(linea):lineas.index(linea)+5]).lower()
+            continue
+
+        partes = linea.split()
+        if seccion_actual == 'atoms' and len(partes) >= 7:
+            datos['atoms'].append({
+                'id': int(partes[0]),
+                'elemento': partes[1],
+                'residue': partes[3],
+                'atom_name': partes[4],
+                'charge': float(partes[6])
+            })
+        elif seccion_actual == 'bonds' and len(partes) >= 4:
+            datos['bonds'].append({'ai': int(partes[0]), 'aj': int(partes[1]), 'dist': float(partes[3])})
+        elif seccion_actual == 'angles' and len(partes) >= 5:
+            datos['angles'].append({'ai': int(partes[0]), 'aj': int(partes[1]), 'ak': int(partes[2]), 'angle': float(partes[4])})
+        elif seccion_actual == 'dihedrals' and len(partes) >= 6:
+            if improper_section:
+                datos['impropers'].append({'i': int(partes[0]), 'j': int(partes[1]), 'k': int(partes[2]), 'l': int(partes[3])})
+        elif seccion_actual == 'moleculetype' and not datos['molecule_name']:
+            datos['molecule_name'] = partes[0]
+
+    # Warning si falta algo
+    if not datos['atoms']:
+        print(f"Warning: {ruta_archivo} no tiene átomos")
+    if not datos['bonds']:
+        print(f"Warning: {ruta_archivo} no tiene bonds")
+    if not datos['angles']:
+        print(f"Warning: {ruta_archivo} no tiene angles")
+
+    return datos
+
+def procesar_directorio(ruta_directorio):
+    features = []
+    for archivo in os.listdir(ruta_directorio):
+        if archivo.endswith('.itp'):
+            ruta = os.path.join(ruta_directorio, archivo)
+            mol = extraer_datos_itp(ruta)
+
+            # Diccionarios de ayuda
+            ady = {a['id']: [] for a in mol['atoms']}
+            distancias = {}
+            id2element = {a['id']: a['elemento'] for a in mol['atoms']}
+            improper_atoms = set()
+            for imp in mol['impropers']:
+                improper_atoms.update([imp['i'], imp['j'], imp['k'], imp['l']])
+
+            for b in mol['bonds']:
+                ady[b['ai']].append(b['aj'])
+                ady[b['aj']].append(b['ai'])
+                distancias[tuple(sorted((b['ai'], b['aj'])))] = b['dist']
+
+            # Procesar cada átomo
+            for a in mol['atoms']:
+                id_a = a['id']
+                vecinos_ids = ady.get(id_a, [])
+                vecinos_elem = sorted([id2element[v] for v in vecinos_ids])
+
+                # Bond lengths promedio
+                bond_lengths = [distancias[tuple(sorted((id_a, v)))] for v in vecinos_ids if tuple(sorted((id_a, v))) in distancias]
+                avg_dist = sum(bond_lengths)/len(bond_lengths) if bond_lengths else 0
+
+                # Angles promedio donde el átomo participa (ai, aj, ak)
+                angulos_atomo = [ang['angle'] for ang in mol['angles'] if id_a in [ang['ai'], ang['aj'], ang['ak']]]
+                avg_angle = sum(angulos_atomo)/len(angulos_atomo) if angulos_atomo else 0
+
+                features.append({
+                    'molecule': mol['molecule_name'],
+                    'atom_id': id_a,
+                    'atom_type': a['elemento'],
+                    'residue': a['residue'],
+                    'charge': a['charge'],
+                    'coordination': len(vecinos_ids),
+                    'neighbors': '_'.join(vecinos_elem),
+                    'avg_bond_len': avg_dist,
+                    'avg_angle': avg_angle,
+                    'is_planar': int(id_a in improper_atoms)
+                })
+
+    df = pd.DataFrame(features)
+    return df
+
+# ------------------------------
+# EJEMPLO DE USO
+# ------------------------------
+ruta_directorio = '/proyectoParam/input
+df = procesar_directorio(ruta_directorio)
+df.to_csv('dataset_flor.csv', index=False)
+print(df.head())

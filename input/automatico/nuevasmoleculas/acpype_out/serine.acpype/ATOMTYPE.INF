@@ -1,0 +1,73 @@
+====================================================================================
+-------------------------------ring property (I)------------------------------------
+
+====================================================================================
+-------------------------------ring property (II)------------------------------------
+
+====================================================================================
+-------------------------------ring property (III)-----------------------------------
+atom[ 1] (OG  ) is not in any ring (nr[1]=1)
+atom[ 2] (O   ) is not in any ring (nr[2]=1)
+atom[ 3] (OXT ) is not in any ring (nr[3]=1)
+atom[ 4] (N   ) is not in any ring (nr[4]=1)
+atom[ 5] (CA  ) is not in any ring (nr[5]=1)
+atom[ 6] (CB  ) is not in any ring (nr[6]=1)
+atom[ 7] (C   ) is not in any ring (nr[7]=1)
+atom[ 8] (HA  ) is not in any ring (nr[8]=1)
+atom[ 9] (HB1 ) is not in any ring (nr[9]=1)
+atom[10] (HB2 ) is not in any ring (nr[10]=1)
+atom[11] (H1  ) is not in any ring (nr[11]=1)
+atom[12] (H2  ) is not in any ring (nr[12]=1)
+atom[13] (H   ) is not in any ring (nr[13]=1)
+atom[14] (H3  ) is not in any ring (nr[14]=1)
+
+====================================================================================
+-------------------------------aromatic property------------------------------------
+
+====================================================================================
+-------------------------------electronic property----------------------------------
+atom [ 1] (OG  ) is an electron-withdrew atom
+atom [ 2] (O   ) is an electron-withdrew atom
+atom [ 3] (OXT ) is an electron-withdrew atom
+atom [ 4] (N   ) is an electron-withdrew atom
+atom [ 5] (CA  ) is not an electron-withdrew atom
+atom [ 6] (CB  ) is not an electron-withdrew atom
+atom [ 7] (C   ) is not an electron-withdrew atom
+atom [ 8] (HA  ) is not an electron-withdrew atom
+atom [ 9] (HB1 ) is not an electron-withdrew atom
+atom [10] (HB2 ) is not an electron-withdrew atom
+atom [11] (H1  ) is not an electron-withdrew atom
+atom [12] (H2  ) is not an electron-withdrew atom
+atom [13] (H   ) is not an electron-withdrew atom
+atom [14] (H3  ) is not an electron-withdrew atom
+
+====================================================================================
+--------------------------------connectivity property-------------------------------
+atom[ 1] (OG  )     6    CB
+atom[ 1] (OG  )    13     H
+atom[ 2] (O   )     7     C
+atom[ 2] (O   )    14    H3
+atom[ 3] (OXT )     7     C
+atom[ 4] (N   )     5    CA
+atom[ 4] (N   )    11    H1
+atom[ 4] (N   )    12    H2
+atom[ 5] (CA  )     4     N
+atom[ 5] (CA  )     6    CB
+atom[ 5] (CA  )     7     C
+atom[ 5] (CA  )     8    HA
+atom[ 6] (CB  )     1    OG
+atom[ 6] (CB  )     5    CA
+atom[ 6] (CB  )     9   HB1
+atom[ 6] (CB  )    10   HB2
+atom[ 7] (C   )     2     O
+atom[ 7] (C   )     3   OXT
+atom[ 7] (C   )     5    CA
+atom[ 8] (HA  )     5    CA
+atom[ 9] (HB1 )     6    CB
+atom[10] (HB2 )     6    CB
+atom[11] (H1  )     4     N
+atom[12] (H2  )     4     N
+atom[13] (H   )     1    OG
+atom[14] (H3  )     2     O
+----------------------------------------END-----------------------------------------
+

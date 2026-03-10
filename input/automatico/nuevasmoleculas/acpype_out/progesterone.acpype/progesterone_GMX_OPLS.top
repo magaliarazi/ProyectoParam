@@ -1,0 +1,19 @@
+; progesterone_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:55:42 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include progesterone_GMX.itp topology
+#include "progesterone_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_progesterone.itp"
+#endif
+
+[ system ]
+ progesterone
+
+[ molecules ]
+; Compound        nmols
+ progesterone     1     

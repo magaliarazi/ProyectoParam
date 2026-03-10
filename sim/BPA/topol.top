@@ -1,0 +1,11 @@
+; Topología de la molécula BPA con parámetros de la tutora
+#include "BPA.itp"
+
+[ system ]
+; nombre del sistema
+BPA molecule in water
+
+[ molecules ]
+; molécula  # número
+BPA       1
+SOL               872

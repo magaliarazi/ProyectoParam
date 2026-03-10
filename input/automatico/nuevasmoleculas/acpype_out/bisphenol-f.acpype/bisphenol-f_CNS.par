@@ -1,0 +1,51 @@
+Remarks bisphenol-f_CNS.par created by acpype (v: 2023.10.27) on Mon Feb  9 17:33:16 2026
+
+set echo=false end
+
+{ Bonds: atomType1 atomType2 kb r0 }
+BOND   oh_   ho_    535.5   0.9725
+BOND   c3_   hc_    345.2   1.0962
+BOND   ca_   ha_    360.7   1.0860
+BOND   oh_   ca_    348.6   1.3644
+BOND   c3_   ca_    243.9   1.5147
+BOND   ca_   ca_    354.2   1.3986
+
+{ Angles: aType1 aType2 aType3 kt t0 }
+ANGLe   ca_   c3_   hc_     43.6   110.63
+ANGLe   ca_   ca_   ha_     44.9   119.88
+ANGLe   ca_   oh_   ho_     67.4   108.58
+ANGLe   hc_   c3_   hc_     35.8   107.73
+ANGLe   oh_   ca_   ca_     78.9   119.90
+ANGLe   c3_   ca_   ca_     60.7   120.83
+ANGLe   ca_   c3_   ca_     60.8   112.31
+ANGLe   ca_   ca_   ca_     63.7   120.02
+
+{ Proper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+DIHEdral   oh_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   ho_   oh_   ca_   ca_           0.855    2   180.00
+DIHEdral   c3_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   ca_   c3_   ca_   ca_           0.000    2   180.00
+DIHEdral   oh_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   ha_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   c3_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   ca_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   ca_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   ca_   ca_   oh_   ho_           0.855    2   180.00
+DIHEdral   ca_   ca_   c3_   hc_           0.000    0     0.00
+
+{ Improper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+IMPRoper   oh_   ca_   ca_   ca_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   c3_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   ha_           1.1    2   180.00
+IMPRoper   c3_   ca_   ca_   ca_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   oh_           1.1    2   180.00
+
+{ Nonbonded: Type Emin sigma; (1-4): Emin/2 sigma }
+NONBonded   oh_    0.093000    3.242871    0.046500    3.242871
+NONBonded   c3_    0.107800    3.397710    0.053900    3.397710
+NONBonded   ca_    0.098800    3.315212    0.049400    3.315212
+NONBonded   hc_    0.020800    2.600177    0.010400    2.600177
+NONBonded   ha_    0.016100    2.625479    0.008050    2.625479
+NONBonded   ho_    0.004700    0.537925    0.002350    0.537925
+
+set echo=true end

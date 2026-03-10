@@ -1,0 +1,220 @@
+Remarks tryptophan_CNS.top created by acpype (v: 2023.10.27) on Mon Feb  9 18:00:44 2026
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS oh_     16.000
+MASS o_      16.000
+MASS na_     14.010
+MASS n8_     14.010
+MASS cc_     12.010
+MASS c3_     12.010
+MASS ca_     12.010
+MASS cd_     12.010
+MASS c_      12.010
+MASS hc_      1.008
+MASS h1_      1.008
+MASS h4_      1.008
+MASS hn_      1.008
+MASS ha_      1.008
+MASS ho_      1.008
+
+RESIdue TRP
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM O     TYPE= oh_   CHARGE=  -0.6161 END
+ATOM OXT   TYPE= o_    CHARGE=  -0.5470 END
+ATOM NE1   TYPE= na_   CHARGE=  -0.1924 END
+ATOM N     TYPE= n8_   CHARGE=  -0.9108 END
+ATOM CG    TYPE= cc_   CHARGE=  -0.1534 END
+ATOM CB    TYPE= c3_   CHARGE=  -0.0092 END
+ATOM CD2   TYPE= ca_   CHARGE=  -0.0898 END
+ATOM CA    TYPE= c3_   CHARGE=   0.1405 END
+ATOM CE2   TYPE= ca_   CHARGE=  -0.0472 END
+ATOM CD1   TYPE= cd_   CHARGE=  -0.1041 END
+ATOM CE3   TYPE= ca_   CHARGE=  -0.0820 END
+ATOM CZ2   TYPE= ca_   CHARGE=  -0.1490 END
+ATOM C     TYPE= c_    CHARGE=   0.6441 END
+ATOM CZ3   TYPE= ca_   CHARGE=  -0.1580 END
+ATOM CH2   TYPE= ca_   CHARGE=  -0.1110 END
+ATOM HB1   TYPE= hc_   CHARGE=   0.0737 END
+ATOM HB2   TYPE= hc_   CHARGE=   0.0737 END
+ATOM HA    TYPE= h1_   CHARGE=   0.0537 END
+ATOM HD1   TYPE= h4_   CHARGE=   0.1620 END
+ATOM HE1   TYPE= hn_   CHARGE=   0.2987 END
+ATOM HE3   TYPE= ha_   CHARGE=   0.1580 END
+ATOM HZ2   TYPE= ha_   CHARGE=   0.1310 END
+ATOM HZ3   TYPE= ha_   CHARGE=   0.1310 END
+ATOM H1    TYPE= hn_   CHARGE=   0.3648 END
+ATOM H2    TYPE= hn_   CHARGE=   0.3648 END
+ATOM HH2   TYPE= ha_   CHARGE=   0.1290 END
+ATOM H     TYPE= ho_   CHARGE=   0.4450 END
+
+{ Bonds: atomName1  atomName2 }
+BOND O     H    
+BOND NE1   HE1  
+BOND N     H1   
+BOND N     H2   
+BOND CB    HB1  
+BOND CB    HB2  
+BOND CA    HA   
+BOND CD1   HD1  
+BOND CE3   HE3  
+BOND CZ2   HZ2  
+BOND CZ3   HZ3  
+BOND CH2   HH2  
+BOND O     C    
+BOND OXT   C    
+BOND NE1   CE2  
+BOND NE1   CD1  
+BOND N     CA   
+BOND CG    CB   
+BOND CG    CD2  
+BOND CG    CD1  
+BOND CB    CA   
+BOND CD2   CE2  
+BOND CD2   CE3  
+BOND CA    C    
+BOND CE2   CZ2  
+BOND CE3   CZ3  
+BOND CZ2   CH2  
+BOND CZ3   CH2  
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe NE1   CD1   HD1  
+ANGLe N     CA    HA   
+ANGLe CG    CB    HB1  
+ANGLe CG    CB    HB2  
+ANGLe CG    CD1   HD1  
+ANGLe CB    CA    HA   
+ANGLe CD2   CE3   HE3  
+ANGLe CA    N     H1   
+ANGLe CA    N     H2   
+ANGLe CA    CB    HB1  
+ANGLe CA    CB    HB2  
+ANGLe CE2   NE1   HE1  
+ANGLe CE2   CZ2   HZ2  
+ANGLe CD1   NE1   HE1  
+ANGLe CE3   CZ3   HZ3  
+ANGLe CZ2   CH2   HH2  
+ANGLe C     O     H    
+ANGLe C     CA    HA   
+ANGLe CZ3   CE3   HE3  
+ANGLe CZ3   CH2   HH2  
+ANGLe CH2   CZ2   HZ2  
+ANGLe CH2   CZ3   HZ3  
+ANGLe HB1   CB    HB2  
+ANGLe H1    N     H2   
+ANGLe O     C     OXT  
+ANGLe O     C     CA   
+ANGLe OXT   C     CA   
+ANGLe NE1   CE2   CD2  
+ANGLe NE1   CE2   CZ2  
+ANGLe NE1   CD1   CG   
+ANGLe N     CA    CB   
+ANGLe N     CA    C    
+ANGLe CG    CB    CA   
+ANGLe CG    CD2   CE2  
+ANGLe CG    CD2   CE3  
+ANGLe CB    CG    CD2  
+ANGLe CB    CG    CD1  
+ANGLe CB    CA    C    
+ANGLe CD2   CG    CD1  
+ANGLe CD2   CE2   CZ2  
+ANGLe CD2   CE3   CZ3  
+ANGLe CE2   NE1   CD1  
+ANGLe CE2   CD2   CE3  
+ANGLe CE2   CZ2   CH2  
+ANGLe CE3   CZ3   CH2  
+ANGLe CZ2   CH2   CZ3  
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral O     C     CA    HA   
+DIHEdral H     O     C     OXT  
+DIHEdral OXT   C     CA    HA   
+DIHEdral NE1   CE2   CZ2   HZ2  
+DIHEdral N     CA    CB    HB1  
+DIHEdral N     CA    CB    HB2  
+DIHEdral CG    CB    CA    HA   
+DIHEdral CG    CD2   CE3   HE3  
+DIHEdral CG    CD1   NE1   HE1  
+DIHEdral CB    CG    CD1   HD1  
+DIHEdral CB    CA    N     H1   
+DIHEdral CB    CA    N     H2   
+DIHEdral CD2   CG    CB    HB1  
+DIHEdral CD2   CG    CB    HB2  
+DIHEdral CD2   CG    CD1   HD1  
+DIHEdral CD2   CE2   NE1   HE1  
+DIHEdral CD2   CE2   CZ2   HZ2  
+DIHEdral CD2   CE3   CZ3   HZ3  
+DIHEdral H     O     C     CA   
+DIHEdral CE2   NE1   CD1   HD1  
+DIHEdral CE2   CD2   CE3   HE3  
+DIHEdral CE2   CZ2   CH2   HH2  
+DIHEdral CD1   CG    CB    HB1  
+DIHEdral CD1   CG    CB    HB2  
+DIHEdral CE3   CZ3   CH2   HH2  
+DIHEdral CZ2   CE2   NE1   HE1  
+DIHEdral CZ2   CH2   CZ3   HZ3  
+DIHEdral C     CA    N     H1   
+DIHEdral C     CA    N     H2   
+DIHEdral C     CA    CB    HB1  
+DIHEdral C     CA    CB    HB2  
+DIHEdral CZ3   CH2   CZ2   HZ2  
+DIHEdral CH2   CZ3   CE3   HE3  
+DIHEdral HB1   CB    CA    HA   
+DIHEdral HB2   CB    CA    HA   
+DIHEdral HA    CA    N     H1   
+DIHEdral HA    CA    N     H2   
+DIHEdral HD1   CD1   NE1   HE1  
+DIHEdral HE3   CE3   CZ3   HZ3  
+DIHEdral HZ2   CZ2   CH2   HH2  
+DIHEdral HZ3   CZ3   CH2   HH2  
+DIHEdral O     C     CA    N    
+DIHEdral O     C     CA    CB   
+DIHEdral OXT   C     CA    N    
+DIHEdral OXT   C     CA    CB   
+DIHEdral NE1   CE2   CD2   CG   
+DIHEdral NE1   CE2   CD2   CE3  
+DIHEdral NE1   CE2   CZ2   CH2  
+DIHEdral NE1   CD1   CG    CB   
+DIHEdral NE1   CD1   CG    CD2  
+DIHEdral N     CA    CB    CG   
+DIHEdral CG    CB    CA    C    
+DIHEdral CG    CD2   CE2   CZ2  
+DIHEdral CG    CD2   CE3   CZ3  
+DIHEdral CG    CD1   NE1   CE2  
+DIHEdral CB    CG    CD2   CE2  
+DIHEdral CB    CG    CD2   CE3  
+DIHEdral CD2   CG    CB    CA   
+DIHEdral CD2   CE2   NE1   CD1  
+DIHEdral CD2   CE2   CZ2   CH2  
+DIHEdral CD2   CE3   CZ3   CH2  
+DIHEdral CA    CB    CG    CD1  
+DIHEdral CE2   CD2   CG    CD1  
+DIHEdral CE2   CD2   CE3   CZ3  
+DIHEdral CE2   CZ2   CH2   CZ3  
+DIHEdral CD1   NE1   CE2   CZ2  
+DIHEdral CD1   CG    CD2   CE3  
+DIHEdral CE3   CD2   CE2   CZ2  
+DIHEdral CE3   CZ3   CH2   CZ2  
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+IMPRoper CE2   CD1   NE1   HE1  
+IMPRoper CG    HD1   CD1   NE1  
+IMPRoper CD2   CZ3   CE3   HE3  
+IMPRoper CE2   CH2   CZ2   HZ2  
+IMPRoper CE3   CH2   CZ3   HZ3  
+IMPRoper CZ2   CZ3   CH2   HH2  
+IMPRoper CB    CD2   CG    CD1  
+IMPRoper CE2   CE3   CD2   CG   
+IMPRoper CD2   CZ2   CE2   NE1  
+IMPRoper O     C     OXT   CA   
+
+END {RESIdue TRP}
+
+set echo=true end

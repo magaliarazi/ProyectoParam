@@ -1,0 +1,20 @@
+; alanine_GMX.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:25:18 2026
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               2               yes             0.5     0.8333333333
+
+; Include alanine_GMX.itp topology
+#include "alanine_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_alanine.itp"
+#endif
+
+[ system ]
+ alanine
+
+[ molecules ]
+; Compound        nmols
+ alanine          1     

@@ -1,0 +1,97 @@
+====================================================================================
+-------------------------------ring property (I)------------------------------------
+
+====================================================================================
+-------------------------------ring property (II)------------------------------------
+
+====================================================================================
+-------------------------------ring property (III)-----------------------------------
+atom[ 1] (SD  ) is not in any ring (nr[1]=1)
+atom[ 2] (O   ) is not in any ring (nr[2]=1)
+atom[ 3] (OXT ) is not in any ring (nr[3]=1)
+atom[ 4] (N   ) is not in any ring (nr[4]=1)
+atom[ 5] (CB  ) is not in any ring (nr[5]=1)
+atom[ 6] (CA  ) is not in any ring (nr[6]=1)
+atom[ 7] (CG  ) is not in any ring (nr[7]=1)
+atom[ 8] (C   ) is not in any ring (nr[8]=1)
+atom[ 9] (CE  ) is not in any ring (nr[9]=1)
+atom[10] (HB1 ) is not in any ring (nr[10]=1)
+atom[11] (HB2 ) is not in any ring (nr[11]=1)
+atom[12] (HA  ) is not in any ring (nr[12]=1)
+atom[13] (HG1 ) is not in any ring (nr[13]=1)
+atom[14] (HG2 ) is not in any ring (nr[14]=1)
+atom[15] (H1  ) is not in any ring (nr[15]=1)
+atom[16] (H2  ) is not in any ring (nr[16]=1)
+atom[17] (HE1 ) is not in any ring (nr[17]=1)
+atom[18] (HE2 ) is not in any ring (nr[18]=1)
+atom[19] (HE3 ) is not in any ring (nr[19]=1)
+atom[20] (H   ) is not in any ring (nr[20]=1)
+
+====================================================================================
+-------------------------------aromatic property------------------------------------
+
+====================================================================================
+-------------------------------electronic property----------------------------------
+atom [ 1] (SD  ) is an electron-withdrew atom
+atom [ 2] (O   ) is an electron-withdrew atom
+atom [ 3] (OXT ) is an electron-withdrew atom
+atom [ 4] (N   ) is an electron-withdrew atom
+atom [ 5] (CB  ) is not an electron-withdrew atom
+atom [ 6] (CA  ) is not an electron-withdrew atom
+atom [ 7] (CG  ) is not an electron-withdrew atom
+atom [ 8] (C   ) is not an electron-withdrew atom
+atom [ 9] (CE  ) is not an electron-withdrew atom
+atom [10] (HB1 ) is not an electron-withdrew atom
+atom [11] (HB2 ) is not an electron-withdrew atom
+atom [12] (HA  ) is not an electron-withdrew atom
+atom [13] (HG1 ) is not an electron-withdrew atom
+atom [14] (HG2 ) is not an electron-withdrew atom
+atom [15] (H1  ) is not an electron-withdrew atom
+atom [16] (H2  ) is not an electron-withdrew atom
+atom [17] (HE1 ) is not an electron-withdrew atom
+atom [18] (HE2 ) is not an electron-withdrew atom
+atom [19] (HE3 ) is not an electron-withdrew atom
+atom [20] (H   ) is not an electron-withdrew atom
+
+====================================================================================
+--------------------------------connectivity property-------------------------------
+atom[ 1] (SD  )     7    CG
+atom[ 1] (SD  )     9    CE
+atom[ 2] (O   )     8     C
+atom[ 2] (O   )    20     H
+atom[ 3] (OXT )     8     C
+atom[ 4] (N   )     6    CA
+atom[ 4] (N   )    15    H1
+atom[ 4] (N   )    16    H2
+atom[ 5] (CB  )     6    CA
+atom[ 5] (CB  )     7    CG
+atom[ 5] (CB  )    10   HB1
+atom[ 5] (CB  )    11   HB2
+atom[ 6] (CA  )     4     N
+atom[ 6] (CA  )     5    CB
+atom[ 6] (CA  )     8     C
+atom[ 6] (CA  )    12    HA
+atom[ 7] (CG  )     1    SD
+atom[ 7] (CG  )     5    CB
+atom[ 7] (CG  )    13   HG1
+atom[ 7] (CG  )    14   HG2
+atom[ 8] (C   )     2     O
+atom[ 8] (C   )     3   OXT
+atom[ 8] (C   )     6    CA
+atom[ 9] (CE  )     1    SD
+atom[ 9] (CE  )    17   HE1
+atom[ 9] (CE  )    18   HE2
+atom[ 9] (CE  )    19   HE3
+atom[10] (HB1 )     5    CB
+atom[11] (HB2 )     5    CB
+atom[12] (HA  )     6    CA
+atom[13] (HG1 )     7    CG
+atom[14] (HG2 )     7    CG
+atom[15] (H1  )     4     N
+atom[16] (H2  )     4     N
+atom[17] (HE1 )     9    CE
+atom[18] (HE2 )     9    CE
+atom[19] (HE3 )     9    CE
+atom[20] (H   )     2     O
+----------------------------------------END-----------------------------------------
+

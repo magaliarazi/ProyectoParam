@@ -1,0 +1,73 @@
+Remarks paracetamol_CNS.par created by acpype (v: 2023.10.27) on Mon Feb  9 17:55:34 2026
+
+set echo=false end
+
+{ Bonds: atomType1 atomType2 kb r0 }
+BOND   oh_   ho_    535.5   0.9725
+BOND   ns_   hn_    473.6   1.0132
+BOND   ca_   ha_    360.7   1.0860
+BOND   c3_   hc_    345.2   1.0962
+BOND   oh_   ca_    348.6   1.3644
+BOND    o_    c_    590.6   1.2190
+BOND   ns_   ca_    306.7   1.4070
+BOND   ns_    c_    336.1   1.3798
+BOND   ca_   ca_    354.2   1.3986
+BOND    c_   c3_    234.8   1.5270
+
+{ Angles: aType1 aType2 aType3 kt t0 }
+ANGLe   ca_   ns_   hn_     56.7   116.04
+ANGLe   ca_   ca_   ha_     44.9   119.88
+ANGLe   ca_   oh_   ho_     67.4   108.58
+ANGLe    c_   ns_   hn_     57.4   117.26
+ANGLe    c_   c3_   hc_     43.6   108.95
+ANGLe   hc_   c3_   hc_     35.8   107.73
+ANGLe   oh_   ca_   ca_     78.9   119.90
+ANGLe    o_    c_   ns_     87.2   123.05
+ANGLe    o_    c_   c3_     76.5   122.90
+ANGLe   ns_   ca_   ca_     67.3   120.19
+ANGLe   ns_    c_   c3_     66.1   115.03
+ANGLe   ca_   ns_    c_     76.6   127.51
+ANGLe   ca_   ca_   ca_     63.7   120.02
+
+{ Proper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+DIHEdral    o_    c_   ns_   hn_  MULT 2   2.000    1     0.00
+                                           2.500    2   180.00
+DIHEdral   ns_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral    o_    c_   c3_   hc_  MULT 2   4.030    1     0.00
+                                           3.660    2   180.00
+DIHEdral   oh_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   ca_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral    o_    c_   ns_   ca_           2.500    2   180.00
+DIHEdral   oh_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   ha_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   ca_   ns_    c_   c3_  MULT 3   1.410    1   180.00
+                                           1.030    2   180.00
+                                           0.870    3     0.00
+DIHEdral   ca_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   ca_   ca_   ns_    c_           1.410    2   180.00
+DIHEdral   ns_    c_   c3_   hc_           0.000    2   180.00
+DIHEdral   c3_    c_   ns_   hn_           2.500    2   180.00
+DIHEdral   ho_   oh_   ca_   ca_           0.855    2   180.00
+DIHEdral   ns_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   ca_   ca_   ns_   hn_           0.450    2   180.00
+
+{ Improper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+IMPRoper   oh_   ca_   ca_   ca_           1.1    2   180.00
+IMPRoper    c_   ca_   ns_   hn_           1.1    2   180.00
+IMPRoper   c3_   ns_    c_    o_          10.5    2   180.00
+IMPRoper   ca_   ca_   ca_   ha_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   ns_           1.1    2   180.00
+
+{ Nonbonded: Type Emin sigma; (1-4): Emin/2 sigma }
+NONBonded   oh_    0.093000    3.242871    0.046500    3.242871
+NONBonded    o_    0.146300    3.048121    0.073150    3.048121
+NONBonded   ns_    0.117400    3.269955    0.058700    3.269955
+NONBonded   ca_    0.098800    3.315212    0.049400    3.315212
+NONBonded    c_    0.098800    3.315212    0.049400    3.315212
+NONBonded   c3_    0.107800    3.397710    0.053900    3.397710
+NONBonded   ha_    0.016100    2.625479    0.008050    2.625479
+NONBonded   hn_    0.010000    1.106496    0.005000    1.106496
+NONBonded   hc_    0.020800    2.600177    0.010400    2.600177
+NONBonded   ho_    0.004700    0.537925    0.002350    0.537925
+
+set echo=true end

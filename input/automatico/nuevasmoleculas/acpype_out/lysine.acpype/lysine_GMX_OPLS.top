@@ -1,0 +1,19 @@
+; lysine_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:54:09 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include lysine_GMX.itp topology
+#include "lysine_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_lysine.itp"
+#endif
+
+[ system ]
+ lysine
+
+[ molecules ]
+; Compound        nmols
+ lysine           1     

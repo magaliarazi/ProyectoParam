@@ -1,0 +1,39 @@
+CHARGE      0.00 ( 0 )
+Formula: H11 C5 N1 O2 
+ATOM      1  O   VAL     1      -1.545  -1.473  -0.263 -0.311000        oh
+ATOM      2  OXT VAL     1      -1.731   0.376   1.030 -0.363000         o
+ATOM      3  N   VAL     1      -0.256   1.767  -0.857 -0.331000        n8
+ATOM      4  CB  VAL     1       1.380   0.013  -0.231 -0.139000        c3
+ATOM      5  CA  VAL     1      -0.046   0.324  -0.745 -0.018000        c3
+ATOM      6  CG1 VAL     1       1.732  -1.477  -0.163 -0.218000        c3
+ATOM      7  CG2 VAL     1       1.652   0.684   1.120 -0.218000        c3
+ATOM      8  C   VAL     1      -1.186  -0.214   0.108  0.315000         c
+ATOM      9  HB  VAL     1       2.084   0.457  -0.950  0.093000        hc
+ATOM     10  HA  VAL     1      -0.159  -0.097  -1.752  0.132000        h1
+ATOM     11  HG11VAL     1       1.557  -1.958  -1.130  0.082833        hc
+ATOM     12  HG12VAL     1       1.129  -1.995   0.591  0.082833        hc
+ATOM     13  HG13VAL     1       2.787  -1.617   0.097  0.082833        hc
+ATOM     14  HG21VAL     1       0.989   0.297   1.901  0.082833        hc
+ATOM     15  HG22VAL     1       2.682   0.493   1.440  0.082833        hc
+ATOM     16  HG23VAL     1       1.529   1.770   1.072  0.082833        hc
+ATOM     17  H1  VAL     1      -1.141   1.951  -1.328  0.158500        hn
+ATOM     18  H2  VAL     1       0.468   2.174  -1.448  0.158500        hn
+ATOM     19  H   VAL     1      -2.275  -1.823   0.291  0.243000        ho
+BOND    1    1    8    1      O    C
+BOND    2    1   19    1      O    H
+BOND    3    2    8    2    OXT    C
+BOND    4    3    5    1      N   CA
+BOND    5    3   17    1      N   H1
+BOND    6    3   18    1      N   H2
+BOND    7    4    5    1     CB   CA
+BOND    8    4    6    1     CB  CG1
+BOND    9    4    7    1     CB  CG2
+BOND   10    4    9    1     CB   HB
+BOND   11    5    8    1     CA    C
+BOND   12    5   10    1     CA   HA
+BOND   13    6   11    1    CG1 HG11
+BOND   14    6   12    1    CG1 HG12
+BOND   15    6   13    1    CG1 HG13
+BOND   16    7   14    1    CG2 HG21
+BOND   17    7   15    1    CG2 HG22
+BOND   18    7   16    1    CG2 HG23

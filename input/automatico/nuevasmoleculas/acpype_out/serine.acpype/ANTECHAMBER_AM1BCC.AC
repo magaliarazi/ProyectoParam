@@ -1,0 +1,29 @@
+CHARGE      0.00 ( 0 )
+Formula: H7 C3 N1 O3 
+ATOM      1  OG  SER     1       1.916   1.031  -0.206 -0.593800        31
+ATOM      2  O   SER     1      -0.915   1.473   0.693 -0.610100        31
+ATOM      3  OXT SER     1      -1.688   0.044  -0.896 -0.549000        32
+ATOM      4  N   SER     1      -0.178  -1.961   0.315 -0.890800        21
+ATOM      5  CA  SER     1       0.250  -0.572   0.467  0.093500        11
+ATOM      6  CB  SER     1       1.504  -0.323  -0.365  0.138400        11
+ATOM      7  C   SER     1      -0.890   0.309  -0.007  0.594100        14
+ATOM      8  HA  SER     1       0.435  -0.371   1.528  0.088700        91
+ATOM      9  HB1 SER     1       2.329  -0.974  -0.056  0.063200        91
+ATOM     10  HB2 SER     1       1.320  -0.486  -1.433  0.063200        91
+ATOM     11  H1  SER     1      -0.383  -2.161  -0.664  0.368300        91
+ATOM     12  H2  SER     1      -1.042  -2.118   0.832  0.368300        91
+ATOM     13  H   SER     1       2.102   1.171   0.738  0.414000        91
+ATOM     14  H3  SER     1      -1.643   2.061   0.399  0.450000        91
+BOND    1    1    6    1     OG   CB
+BOND    2    1   13    1     OG    H
+BOND    3    2    7    1      O    C
+BOND    4    2   14    1      O   H3
+BOND    5    3    7    2    OXT    C
+BOND    6    4    5    1      N   CA
+BOND    7    4   11    1      N   H1
+BOND    8    4   12    1      N   H2
+BOND    9    5    6    1     CA   CB
+BOND   10    5    7    1     CA    C
+BOND   11    5    8    1     CA   HA
+BOND   12    6    9    1     CB  HB1
+BOND   13    6   10    1     CB  HB2

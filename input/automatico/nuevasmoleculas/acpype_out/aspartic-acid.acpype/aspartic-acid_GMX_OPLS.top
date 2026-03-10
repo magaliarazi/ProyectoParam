@@ -1,0 +1,19 @@
+; aspartic-acid_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:29:14 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include aspartic-acid_GMX.itp topology
+#include "aspartic-acid_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_aspartic-acid.itp"
+#endif
+
+[ system ]
+ aspartic-acid
+
+[ molecules ]
+; Compound        nmols
+ aspartic-acid    1     

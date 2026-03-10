@@ -1,0 +1,20 @@
+; deoxyribose_GMX.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:39:43 2026
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               2               yes             0.5     0.8333333333
+
+; Include deoxyribose_GMX.itp topology
+#include "deoxyribose_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_deoxyribose.itp"
+#endif
+
+[ system ]
+ deoxyribose
+
+[ molecules ]
+; Compound        nmols
+ deoxyribose      1     

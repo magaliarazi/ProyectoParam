@@ -1,0 +1,156 @@
+Remarks deoxyribose_CNS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:39:43 2026
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS os_     16.000
+MASS oh_     16.000
+MASS c5_     12.010
+MASS c3_     12.010
+MASS h1_      1.008
+MASS hc_      1.008
+MASS h2_      1.008
+MASS ho_      1.008
+
+RESIdue UNL
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM O     TYPE= os_   CHARGE=  -0.4496 END
+ATOM O1    TYPE= oh_   CHARGE=  -0.5918 END
+ATOM O2    TYPE= oh_   CHARGE=  -0.5988 END
+ATOM O3    TYPE= oh_   CHARGE=  -0.5948 END
+ATOM C     TYPE= c5_   CHARGE=   0.1181 END
+ATOM C1    TYPE= c5_   CHARGE=   0.0551 END
+ATOM C2    TYPE= c5_   CHARGE=  -0.1394 END
+ATOM C3    TYPE= c5_   CHARGE=   0.3349 END
+ATOM C4    TYPE= c3_   CHARGE=   0.1284 END
+ATOM H     TYPE= h1_   CHARGE=   0.0527 END
+ATOM H1    TYPE= h1_   CHARGE=   0.0787 END
+ATOM H2    TYPE= hc_   CHARGE=   0.0822 END
+ATOM H3    TYPE= hc_   CHARGE=   0.0822 END
+ATOM H4    TYPE= h2_   CHARGE=   0.1037 END
+ATOM H5    TYPE= h1_   CHARGE=   0.0487 END
+ATOM H6    TYPE= h1_   CHARGE=   0.0487 END
+ATOM H7    TYPE= ho_   CHARGE=   0.4070 END
+ATOM H8    TYPE= ho_   CHARGE=   0.4160 END
+ATOM H9    TYPE= ho_   CHARGE=   0.4180 END
+
+{ Bonds: atomName1  atomName2 }
+BOND O1    H7   
+BOND O2    H8   
+BOND O3    H9   
+BOND C     H    
+BOND C1    H1   
+BOND C2    H2   
+BOND C2    H3   
+BOND C3    H4   
+BOND C4    H5   
+BOND C4    H6   
+BOND O     C1   
+BOND O     C3   
+BOND O1    C    
+BOND O2    C3   
+BOND O3    C4   
+BOND C     C1   
+BOND C     C2   
+BOND C1    C4   
+BOND C2    C3   
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe O     C1    H1   
+ANGLe O     C3    H4   
+ANGLe O1    C     H    
+ANGLe O2    C3    H4   
+ANGLe O3    C4    H5   
+ANGLe O3    C4    H6   
+ANGLe C     O1    H7   
+ANGLe C     C1    H1   
+ANGLe C     C2    H2   
+ANGLe C     C2    H3   
+ANGLe C1    C     H    
+ANGLe C1    C4    H5   
+ANGLe C1    C4    H6   
+ANGLe C2    C     H    
+ANGLe C2    C3    H4   
+ANGLe C3    O2    H8   
+ANGLe C3    C2    H2   
+ANGLe C3    C2    H3   
+ANGLe C4    O3    H9   
+ANGLe C4    C1    H1   
+ANGLe H2    C2    H3   
+ANGLe H5    C4    H6   
+ANGLe O     C1    C    
+ANGLe O     C1    C4   
+ANGLe O     C3    O2   
+ANGLe O     C3    C2   
+ANGLe O1    C     C1   
+ANGLe O1    C     C2   
+ANGLe O2    C3    C2   
+ANGLe O3    C4    C1   
+ANGLe C     C1    C4   
+ANGLe C     C2    C3   
+ANGLe C1    O     C3   
+ANGLe C1    C     C2   
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral O     C1    C     H    
+DIHEdral O     C1    C4    H5   
+DIHEdral O     C1    C4    H6   
+DIHEdral O     C3    O2    H8   
+DIHEdral O     C3    C2    H2   
+DIHEdral O     C3    C2    H3   
+DIHEdral O1    C     C1    H1   
+DIHEdral O1    C     C2    H2   
+DIHEdral O1    C     C2    H3   
+DIHEdral O2    C3    C2    H2   
+DIHEdral O2    C3    C2    H3   
+DIHEdral O3    C4    C1    H1   
+DIHEdral C     C1    C4    H5   
+DIHEdral C     C1    C4    H6   
+DIHEdral C     C2    C3    H4   
+DIHEdral C1    O     C3    H4   
+DIHEdral C1    C     O1    H7   
+DIHEdral C1    C     C2    H2   
+DIHEdral C1    C     C2    H3   
+DIHEdral C1    C4    O3    H9   
+DIHEdral C2    C     O1    H7   
+DIHEdral C2    C     C1    H1   
+DIHEdral C2    C3    O2    H8   
+DIHEdral C3    O     C1    H1   
+DIHEdral C3    C2    C     H    
+DIHEdral C4    C1    C     H    
+DIHEdral H     C     O1    H7   
+DIHEdral H     C     C1    H1   
+DIHEdral H     C     C2    H2   
+DIHEdral H     C     C2    H3   
+DIHEdral H1    C1    C4    H5   
+DIHEdral H1    C1    C4    H6   
+DIHEdral H2    C2    C3    H4   
+DIHEdral H3    C2    C3    H4   
+DIHEdral H4    C3    O2    H8   
+DIHEdral H5    C4    O3    H9   
+DIHEdral H6    C4    O3    H9   
+DIHEdral O     C1    C     O1   
+DIHEdral O     C1    C     C2   
+DIHEdral O     C1    C4    O3   
+DIHEdral O     C3    C2    C    
+DIHEdral O1    C     C1    C4   
+DIHEdral O1    C     C2    C3   
+DIHEdral C1    O     C3    O2   
+DIHEdral O2    C3    C2    C    
+DIHEdral O3    C4    C1    C    
+DIHEdral C3    O     C1    C    
+DIHEdral C1    O     C3    C2   
+DIHEdral C1    C     C2    C3   
+DIHEdral C2    C     C1    C4   
+DIHEdral C3    O     C1    C4   
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+
+END {RESIdue UNL}
+
+set echo=true end

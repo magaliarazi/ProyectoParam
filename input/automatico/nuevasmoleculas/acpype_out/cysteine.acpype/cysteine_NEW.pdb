@@ -1,0 +1,16 @@
+REMARK cysteine_NEW.pdb created by acpype (v: 2023.10.27) on Mon Feb  9 17:39:31 2026
+ATOM      1   SG CYS Z   1       2.227   1.123   0.044  1.00  0.00           S
+ATOM      2    O CYS Z   1      -1.365   1.172   0.912  1.00  0.00           O
+ATOM      3  OXT CYS Z   1      -1.177   0.496  -1.245  1.00  0.00           O
+ATOM      4    N CYS Z   1      -0.435  -1.983   0.159  1.00  0.00           N
+ATOM      5   CA CYS Z   1       0.126  -0.659   0.434  1.00  0.00           C
+ATOM      6   CB CYS Z   1       1.492  -0.519  -0.240  1.00  0.00           C
+ATOM      7    C CYS Z   1      -0.869   0.372  -0.065  1.00  0.00           C
+ATOM      8   HA CYS Z   1       0.237  -0.551   1.520  1.00  0.00           H
+ATOM      9  HB1 CYS Z   1       2.189  -1.270   0.148  1.00  0.00           H
+ATOM     10  HB2 CYS Z   1       1.416  -0.663  -1.323  1.00  0.00           H
+ATOM     11   H1 CYS Z   1      -1.294  -2.108   0.695  1.00  0.00           H
+ATOM     12   H2 CYS Z   1       0.209  -2.702   0.486  1.00  0.00           H
+ATOM     13   HG CYS Z   1       1.339   1.824  -0.676  1.00  0.00           H
+ATOM     14    H CYS Z   1      -1.992   1.837   0.557  1.00  0.00           H
+END

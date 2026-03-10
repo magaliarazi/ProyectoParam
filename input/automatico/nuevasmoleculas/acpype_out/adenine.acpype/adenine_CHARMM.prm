@@ -1,0 +1,71 @@
+* Force Field Parameter File.
+* 
+
+BOND
+ca na  420.50   1.384
+cd na  425.80   1.380
+hn na  408.40   1.010
+ca nc  467.70   1.352
+cd nc  525.40   1.317
+ca nb  488.00   1.339
+nv ca  417.90   1.386	! same as  ca nh
+nv hn  404.60   1.012	! same as  hn nh
+nv hn  404.60   1.012
+ca ca  461.10   1.398
+cd h5  351.80   1.082
+ca h5  343.20   1.088
+
+ANGLE
+na ca ca   69.100     118.340
+na cd nc   74.900     112.220
+na cd h5   49.600     121.550
+nc ca nb   70.800     126.500
+nc ca ca   69.500     119.720
+nc cd h5   50.600     125.520
+nb ca ca   68.800     122.940
+nb ca nb   70.900     127.260
+nb ca h5   51.900     115.820
+nb ca nv   72.700     116.940	! same as nb ca nh
+nv ca ca   68.300     120.950	! same as ca ca nh
+ca na cd   67.400     113.150
+ca na hn   46.600     125.540
+ca nc cd   72.500     104.880
+ca nb ca   68.300     117.220
+ca ca ca   66.600     120.020
+ca nv hn   48.400     116.070	! same as ca nh hn
+ca nv hn   48.400     116.070
+cd na hn   46.800     125.500
+hn nv hn   40.100     115.120	! same as hn nh hn
+
+DIHEDRAL
+X  ca na X      0.300         2     180.0
+X  cd na X      1.700         2     180.0
+X  ca nc X      4.800         2     180.0
+X  cd nc X      4.750         2     180.0
+X  ca nb X      4.800         2     180.0
+hn nv ca nb     1.050         2     180.0      ! same as X  ca nh X 
+hn nv ca ca     1.050         2     180.0      ! same as X  ca nh X 
+X  ca ca X      3.625         2     180.0
+
+IMPHI
+X  X  na hn     1.100         2     180.0
+ca hn nv hn     1.100         2     180.0	! Using default value
+ca ca ca na     1.100         2     180.0	! Using default value
+ca nb ca nc     1.100         2     180.0	! Using default value
+ca nb ca nv     1.100         2     180.0	! Using default value
+h5 na cd nc     1.100         2     180.0	! Using default value
+h5 nb ca nb     1.100         2     180.0	! Using default value
+
+NONBONDED  NBXMOD 5  GROUP SWITCH CDIEL -
+CUTNB 14.0  CTOFNB 12.0  CTONNB 10.0  EPS 1.0  E14FAC 0.83333333  WMIN 1.4
+!                Emin     Rmin/2              Emin/2     Rmin  (for 1-4's)
+!             (kcal/mol)    (A)
+na      0.00   -0.1700    1.8240      0.00   -0.0850    1.8240
+nc      0.00   -0.1700    1.8240      0.00   -0.0850    1.8240
+nb      0.00   -0.1700    1.8240      0.00   -0.0850    1.8240
+nv      0.00   -0.1700    1.8240      0.00   -0.0850    1.8240
+      ! same as nh 
+ca      0.00   -0.0860    1.9080      0.00   -0.0430    1.9080
+cd      0.00   -0.0860    1.9080      0.00   -0.0430    1.9080
+hn      0.00   -0.0157    0.6000      0.00   -0.0078    0.6000
+h5      0.00   -0.0150    1.3590      0.00   -0.0075    1.3590

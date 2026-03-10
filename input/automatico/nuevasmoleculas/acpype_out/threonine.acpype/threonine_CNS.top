@@ -1,0 +1,129 @@
+Remarks threonine_CNS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:59:57 2026
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS oh_     16.000
+MASS o_      16.000
+MASS n8_     14.010
+MASS c3_     12.010
+MASS c_      12.010
+MASS h1_      1.008
+MASS hc_      1.008
+MASS hn_      1.008
+MASS ho_      1.008
+
+RESIdue THR
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM OG1   TYPE= oh_   CHARGE=  -0.5988 END
+ATOM O     TYPE= oh_   CHARGE=  -0.6091 END
+ATOM OXT   TYPE= o_    CHARGE=  -0.5500 END
+ATOM N     TYPE= n8_   CHARGE=  -0.8918 END
+ATOM CB    TYPE= c3_   CHARGE=   0.1551 END
+ATOM CA    TYPE= c3_   CHARGE=   0.0975 END
+ATOM CG2   TYPE= c3_   CHARGE=  -0.1051 END
+ATOM C     TYPE= c_    CHARGE=   0.5941 END
+ATOM HA    TYPE= h1_   CHARGE=   0.0877 END
+ATOM HB    TYPE= h1_   CHARGE=   0.0567 END
+ATOM HG21  TYPE= hc_   CHARGE=   0.0544 END
+ATOM HG22  TYPE= hc_   CHARGE=   0.0544 END
+ATOM HG23  TYPE= hc_   CHARGE=   0.0544 END
+ATOM H1    TYPE= hn_   CHARGE=   0.3688 END
+ATOM H2    TYPE= hn_   CHARGE=   0.3688 END
+ATOM HG1   TYPE= ho_   CHARGE=   0.4140 END
+ATOM H     TYPE= ho_   CHARGE=   0.4490 END
+
+{ Bonds: atomName1  atomName2 }
+BOND OG1   HG1  
+BOND O     H    
+BOND N     H1   
+BOND N     H2   
+BOND CB    HB   
+BOND CA    HA   
+BOND CG2   HG21 
+BOND CG2   HG22 
+BOND CG2   HG23 
+BOND OG1   CB   
+BOND O     C    
+BOND OXT   C    
+BOND N     CA   
+BOND CB    CA   
+BOND CB    CG2  
+BOND CA    C    
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe OG1   CB    HB   
+ANGLe N     CA    HA   
+ANGLe CB    OG1   HG1  
+ANGLe CB    CA    HA   
+ANGLe CB    CG2   HG21 
+ANGLe CB    CG2   HG22 
+ANGLe CB    CG2   HG23 
+ANGLe CA    N     H1   
+ANGLe CA    N     H2   
+ANGLe CA    CB    HB   
+ANGLe CG2   CB    HB   
+ANGLe C     O     H    
+ANGLe C     CA    HA   
+ANGLe HG21  CG2   HG22 
+ANGLe HG21  CG2   HG23 
+ANGLe HG22  CG2   HG23 
+ANGLe H1    N     H2   
+ANGLe OG1   CB    CA   
+ANGLe OG1   CB    CG2  
+ANGLe O     C     OXT  
+ANGLe O     C     CA   
+ANGLe OXT   C     CA   
+ANGLe N     CA    CB   
+ANGLe N     CA    C    
+ANGLe CB    CA    C    
+ANGLe CA    CB    CG2  
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral OG1   CB    CA    HA   
+DIHEdral OG1   CB    CG2   HG21 
+DIHEdral OG1   CB    CG2   HG22 
+DIHEdral OG1   CB    CG2   HG23 
+DIHEdral O     C     CA    HA   
+DIHEdral OXT   C     O     H    
+DIHEdral OXT   C     CA    HA   
+DIHEdral N     CA    CB    HB   
+DIHEdral CB    CA    N     H1   
+DIHEdral CB    CA    N     H2   
+DIHEdral HG1   OG1   CB    CA   
+DIHEdral CA    CB    CG2   HG21 
+DIHEdral CA    CB    CG2   HG22 
+DIHEdral CA    CB    CG2   HG23 
+DIHEdral CA    C     O     H    
+DIHEdral HG1   OG1   CB    CG2  
+DIHEdral CG2   CB    CA    HA   
+DIHEdral C     CA    N     H1   
+DIHEdral C     CA    N     H2   
+DIHEdral C     CA    CB    HB   
+DIHEdral HA    CA    N     H1   
+DIHEdral HA    CA    N     H2   
+DIHEdral HA    CA    CB    HB   
+DIHEdral HG1   OG1   CB    HB   
+DIHEdral HB    CB    CG2   HG21 
+DIHEdral HB    CB    CG2   HG22 
+DIHEdral HB    CB    CG2   HG23 
+DIHEdral OG1   CB    CA    N    
+DIHEdral OG1   CB    CA    C    
+DIHEdral O     C     CA    N    
+DIHEdral O     C     CA    CB   
+DIHEdral OXT   C     CA    N    
+DIHEdral OXT   C     CA    CB   
+DIHEdral N     CA    CB    CG2  
+DIHEdral CG2   CB    CA    C    
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+IMPRoper CA    OXT   C     O    
+
+END {RESIdue THR}
+
+set echo=true end

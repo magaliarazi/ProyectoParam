@@ -1,0 +1,19 @@
+; stigmasterol_GMX_OPLS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:57:31 2026
+
+; Include forcefield parameters
+#include "ffoplsaa.itp"
+
+; Include stigmasterol_GMX.itp topology
+#include "stigmasterol_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_stigmasterol.itp"
+#endif
+
+[ system ]
+ stigmasterol
+
+[ molecules ]
+; Compound        nmols
+ stigmasterol     1     

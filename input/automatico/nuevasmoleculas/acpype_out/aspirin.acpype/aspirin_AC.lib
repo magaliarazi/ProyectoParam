@@ -1,0 +1,160 @@
+!!index array str
+ "UNL"
+!entry.UNL.unit.atoms table  str name  str type  int typex  int resx  int flags  int seq  int elmnt  dbl chg
+ "O" "os" 0 1 131072 1 8 -0.381200
+ "O1" "oh" 0 1 131072 2 8 -0.605100
+ "O2" "o" 0 1 131072 3 8 -0.565000
+ "O3" "o" 0 1 131072 4 8 -0.518000
+ "C" "ca" 0 1 131072 5 6 0.180100
+ "C1" "ca" 0 1 131072 6 6 -0.147600
+ "C2" "ca" 0 1 131072 7 6 -0.147000
+ "C3" "ca" 0 1 131072 8 6 -0.057000
+ "C4" "ca" 0 1 131072 9 6 -0.082000
+ "C5" "ca" 0 1 131072 10 6 -0.154000
+ "C6" "c" 0 1 131072 11 6 0.665700
+ "C7" "c" 0 1 131072 12 6 0.665100
+ "C8" "c3" 0 1 131072 13 6 -0.147100
+ "H" "ha" 0 1 131072 14 1 0.154000
+ "H1" "ha" 0 1 131072 15 1 0.159000
+ "H2" "ha" 0 1 131072 16 1 0.141000
+ "H3" "ha" 0 1 131072 17 1 0.143000
+ "H4" "hc" 0 1 131072 18 1 0.082700
+ "H5" "hc" 0 1 131072 19 1 0.082700
+ "H6" "hc" 0 1 131072 20 1 0.082700
+ "H7" "ho" 0 1 131072 21 1 0.448000
+!entry.UNL.unit.atomspertinfo table  str pname  str ptype  int ptypex  int pelmnt  dbl pchg
+ "O" "os" 0 -1 0.0
+ "O1" "oh" 0 -1 0.0
+ "O2" "o" 0 -1 0.0
+ "O3" "o" 0 -1 0.0
+ "C" "ca" 0 -1 0.0
+ "C1" "ca" 0 -1 0.0
+ "C2" "ca" 0 -1 0.0
+ "C3" "ca" 0 -1 0.0
+ "C4" "ca" 0 -1 0.0
+ "C5" "ca" 0 -1 0.0
+ "C6" "c" 0 -1 0.0
+ "C7" "c" 0 -1 0.0
+ "C8" "c3" 0 -1 0.0
+ "H" "ha" 0 -1 0.0
+ "H1" "ha" 0 -1 0.0
+ "H2" "ha" 0 -1 0.0
+ "H3" "ha" 0 -1 0.0
+ "H4" "hc" 0 -1 0.0
+ "H5" "hc" 0 -1 0.0
+ "H6" "hc" 0 -1 0.0
+ "H7" "ho" 0 -1 0.0
+!entry.UNL.unit.boundbox array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.UNL.unit.childsequence single int
+ 2
+!entry.UNL.unit.connect array int
+ 0
+ 0
+!entry.UNL.unit.connectivity table  int atom1x  int atom2x  int flags
+ 1 5 1
+ 1 12 1
+ 2 11 1
+ 2 21 1
+ 3 11 2
+ 4 12 2
+ 5 6 4
+ 5 7 4
+ 6 8 4
+ 6 11 1
+ 7 9 4
+ 7 14 1
+ 8 10 4
+ 8 15 1
+ 9 10 4
+ 9 16 1
+ 10 17 1
+ 12 13 1
+ 13 18 1
+ 13 19 1
+ 13 20 1
+!entry.UNL.unit.hierarchy table  str abovetype  int abovex  str belowtype  int belowx
+ "U" 0 "R" 1
+ "R" 1 "A" 1
+ "R" 1 "A" 2
+ "R" 1 "A" 3
+ "R" 1 "A" 4
+ "R" 1 "A" 5
+ "R" 1 "A" 6
+ "R" 1 "A" 7
+ "R" 1 "A" 8
+ "R" 1 "A" 9
+ "R" 1 "A" 10
+ "R" 1 "A" 11
+ "R" 1 "A" 12
+ "R" 1 "A" 13
+ "R" 1 "A" 14
+ "R" 1 "A" 15
+ "R" 1 "A" 16
+ "R" 1 "A" 17
+ "R" 1 "A" 18
+ "R" 1 "A" 19
+ "R" 1 "A" 20
+ "R" 1 "A" 21
+!entry.UNL.unit.name single str
+ "2244"
+!entry.UNL.unit.positions table  dbl x  dbl y  dbl z
+ 1.233000 0.554000 0.779000
+ -0.695000 -2.715000 -0.750000
+ 0.796000 -2.184000 0.869000
+ 1.781000 0.810000 -1.482000
+ -0.086000 0.609000 0.440000
+ -0.793000 -0.551000 0.124000
+ -0.729000 1.846000 0.413000
+ -2.143000 -0.474000 -0.218000
+ -2.079000 1.924000 0.071000
+ -2.785000 0.764000 -0.245000
+ -0.141000 -1.854000 0.148000
+ 2.109000 0.671000 -0.311000
+ 3.530000 0.600000 0.164000
+ -0.185000 2.755000 0.659000
+ -2.725000 -1.361000 -0.456000
+ -2.580000 2.887000 0.051000
+ -3.837000 0.824000 -0.509000
+ 3.729000 1.418000 0.859000
+ 4.205000 0.697000 -0.692000
+ 3.711000 -0.366000 0.643000
+ -0.256000 -3.592000 -0.734000
+!entry.UNL.unit.residueconnect table  int c1x  int c2x  int c3x  int c4x  int c5x  int c6x
+ 0 0 0 0 0 0
+!entry.UNL.unit.residues table  str name  int seq  int childseq  int startatomx  str restype  int imagingx
+ "UNL" 1 22 1 "?" 0
+!entry.UNL.unit.residuesPdbSequenceNumber array int
+ 0
+!entry.UNL.unit.solventcap array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.UNL.unit.velocities table  dbl x  dbl y  dbl z
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0

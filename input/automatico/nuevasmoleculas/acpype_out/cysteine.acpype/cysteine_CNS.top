@@ -1,0 +1,109 @@
+Remarks cysteine_CNS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:39:31 2026
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS sh_     32.060
+MASS oh_     16.000
+MASS o_      16.000
+MASS n8_     14.010
+MASS c3_     12.010
+MASS c_      12.010
+MASS h1_      1.008
+MASS hn_      1.008
+MASS hs_      1.008
+MASS ho_      1.008
+
+RESIdue CYS
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM SG    TYPE= sh_   CHARGE=  -0.3779 END
+ATOM O     TYPE= oh_   CHARGE=  -0.6071 END
+ATOM OXT   TYPE= o_    CHARGE=  -0.5500 END
+ATOM N     TYPE= n8_   CHARGE=  -0.9098 END
+ATOM CA    TYPE= c3_   CHARGE=   0.1365 END
+ATOM CB    TYPE= c3_   CHARGE=   0.0007 END
+ATOM C     TYPE= c_    CHARGE=   0.6371 END
+ATOM HA    TYPE= h1_   CHARGE=   0.0637 END
+ATOM HB1   TYPE= h1_   CHARGE=   0.0942 END
+ATOM HB2   TYPE= h1_   CHARGE=   0.0942 END
+ATOM H1    TYPE= hn_   CHARGE=   0.3703 END
+ATOM H2    TYPE= hn_   CHARGE=   0.3703 END
+ATOM HG    TYPE= hs_   CHARGE=   0.2278 END
+ATOM H     TYPE= ho_   CHARGE=   0.4500 END
+
+{ Bonds: atomName1  atomName2 }
+BOND SG    HG   
+BOND O     H    
+BOND N     H1   
+BOND N     H2   
+BOND CA    HA   
+BOND CB    HB1  
+BOND CB    HB2  
+BOND SG    CB   
+BOND O     C    
+BOND OXT   C    
+BOND N     CA   
+BOND CA    CB   
+BOND CA    C    
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe SG    CB    HB1  
+ANGLe SG    CB    HB2  
+ANGLe N     CA    HA   
+ANGLe CA    N     H1   
+ANGLe CA    N     H2   
+ANGLe CA    CB    HB1  
+ANGLe CA    CB    HB2  
+ANGLe CB    SG    HG   
+ANGLe CB    CA    HA   
+ANGLe C     O     H    
+ANGLe C     CA    HA   
+ANGLe HB1   CB    HB2  
+ANGLe H1    N     H2   
+ANGLe SG    CB    CA   
+ANGLe O     C     OXT  
+ANGLe O     C     CA   
+ANGLe OXT   C     CA   
+ANGLe N     CA    CB   
+ANGLe N     CA    C    
+ANGLe CB    CA    C    
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral SG    CB    CA    HA   
+DIHEdral O     C     CA    HA   
+DIHEdral OXT   C     O     H    
+DIHEdral OXT   C     CA    HA   
+DIHEdral N     CA    CB    HB1  
+DIHEdral N     CA    CB    HB2  
+DIHEdral HG    SG    CB    CA   
+DIHEdral CA    C     O     H    
+DIHEdral CB    CA    N     H1   
+DIHEdral CB    CA    N     H2   
+DIHEdral C     CA    N     H1   
+DIHEdral C     CA    N     H2   
+DIHEdral C     CA    CB    HB1  
+DIHEdral C     CA    CB    HB2  
+DIHEdral HA    CA    N     H1   
+DIHEdral HA    CA    N     H2   
+DIHEdral HA    CA    CB    HB1  
+DIHEdral HA    CA    CB    HB2  
+DIHEdral HG    SG    CB    HB1  
+DIHEdral HG    SG    CB    HB2  
+DIHEdral SG    CB    CA    N    
+DIHEdral SG    CB    CA    C    
+DIHEdral O     C     CA    N    
+DIHEdral O     C     CA    CB   
+DIHEdral OXT   C     CA    N    
+DIHEdral OXT   C     CA    CB   
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+IMPRoper CA    OXT   C     O    
+
+END {RESIdue CYS}
+
+set echo=true end

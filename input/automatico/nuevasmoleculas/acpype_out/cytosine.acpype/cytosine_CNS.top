@@ -1,0 +1,110 @@
+Remarks cytosine_CNS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:39:42 2026
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS o_      16.000
+MASS ns_     14.010
+MASS nv_     14.010
+MASS nc_     14.010
+MASS cc_     12.010
+MASS cd_     12.010
+MASS c_      12.010
+MASS hn_      1.008
+MASS ha_      1.008
+MASS h4_      1.008
+
+RESIdue UNL
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM O     TYPE= o_    CHARGE=  -0.6075 END
+ATOM N     TYPE= ns_   CHARGE=  -0.4961 END
+ATOM N1    TYPE= nv_   CHARGE=  -0.8636 END
+ATOM N2    TYPE= nc_   CHARGE=  -0.6511 END
+ATOM C     TYPE= cc_   CHARGE=   0.3346 END
+ATOM C1    TYPE= cd_   CHARGE=  -0.4896 END
+ATOM C2    TYPE= c_    CHARGE=   0.8219 END
+ATOM C3    TYPE= cd_   CHARGE=   0.5685 END
+ATOM H     TYPE= hn_   CHARGE=   0.3325 END
+ATOM H1    TYPE= ha_   CHARGE=   0.1550 END
+ATOM H2    TYPE= h4_   CHARGE=   0.0358 END
+ATOM H3    TYPE= hn_   CHARGE=   0.4298 END
+ATOM H4    TYPE= hn_   CHARGE=   0.4298 END
+
+{ Bonds: atomName1  atomName2 }
+BOND N     H    
+BOND N1    H3   
+BOND N1    H4   
+BOND C1    H1   
+BOND C3    H2   
+BOND O     C2   
+BOND N     C    
+BOND N     C2   
+BOND N1    C    
+BOND N2    C2   
+BOND N2    C3   
+BOND C     C1   
+BOND C1    C3   
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe N2    C3    H2   
+ANGLe C     N     H    
+ANGLe C     N1    H3   
+ANGLe C     N1    H4   
+ANGLe C     C1    H1   
+ANGLe C1    C3    H2   
+ANGLe C2    N     H    
+ANGLe C3    C1    H1   
+ANGLe H3    N1    H4   
+ANGLe O     C2    N    
+ANGLe O     C2    N2   
+ANGLe N     C     N1   
+ANGLe N     C     C1   
+ANGLe N     C2    N2   
+ANGLe N1    C     C1   
+ANGLe N2    C3    C1   
+ANGLe C     N     C2   
+ANGLe C     C1    C3   
+ANGLe C2    N2    C3   
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral O     C2    N     H    
+DIHEdral N     C     N1    H3   
+DIHEdral N     C     N1    H4   
+DIHEdral N     C     C1    H1   
+DIHEdral N1    C     N     H    
+DIHEdral N1    C     C1    H1   
+DIHEdral N2    C2    N     H    
+DIHEdral N2    C3    C1    H1   
+DIHEdral C     C1    C3    H2   
+DIHEdral C1    C     N     H    
+DIHEdral C1    C     N1    H3   
+DIHEdral C1    C     N1    H4   
+DIHEdral C2    N2    C3    H2   
+DIHEdral H1    C1    C3    H2   
+DIHEdral O     C2    N     C    
+DIHEdral O     C2    N2    C3   
+DIHEdral N     C     C1    C3   
+DIHEdral N     C2    N2    C3   
+DIHEdral N1    C     N     C2   
+DIHEdral N1    C     C1    C3   
+DIHEdral N2    C2    N     C    
+DIHEdral N2    C3    C1    C    
+DIHEdral C1    C     N     C2   
+DIHEdral C1    C3    N2    C2   
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+IMPRoper C2    C     N     H    
+IMPRoper C     H3    N1    H4   
+IMPRoper C     C3    C1    H1   
+IMPRoper C1    H2    C3    N2   
+IMPRoper C1    N     C     N1   
+IMPRoper O     C2    N     N2   
+
+END {RESIdue UNL}
+
+set echo=true end

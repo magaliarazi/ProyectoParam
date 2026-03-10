@@ -1,0 +1,20 @@
+; glucose_GMX.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:46:14 2026
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               2               yes             0.5     0.8333333333
+
+; Include glucose_GMX.itp topology
+#include "glucose_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_glucose.itp"
+#endif
+
+[ system ]
+ glucose
+
+[ molecules ]
+; Compound        nmols
+ glucose          1     

@@ -1,0 +1,69 @@
+* Topology File.
+* 
+   99   1
+MASS     1 oh     16.000000
+MASS     2 o      16.000000
+MASS     3 n3     14.010000
+                          same as n3 
+MASS     4 c3     12.010000
+MASS     5 c      12.010000
+MASS     6 h1      1.008000
+MASS     7 hn      1.008000
+MASS     8 ho      1.008000
+
+RESI GLY  -0.001
+GROUP
+ATOM O     oh     -0.604100
+ATOM OXT   o      -0.559000
+ATOM N     n8     -0.895800
+ATOM CA    c3      0.118800
+ATOM C     c       0.583100
+ATOM HA1   h1      0.090700
+ATOM HA2   h1      0.090700
+ATOM H1    hn      0.364800
+ATOM H2    hn      0.364800
+ATOM H     ho      0.445000
+
+BOND O     C            	! dist	    1.3576
+BOND O     H            	! dist	    0.9809
+BOND OXT   C            	! dist	    1.2242
+BOND N     CA           	! dist	    1.4545
+BOND N     H1           	! dist	    1.0190
+BOND N     H2           	! dist	    1.0193
+BOND CA    C            	! dist	    1.5035
+BOND CA    HA1          	! dist	    1.0927
+BOND CA    HA2          	! dist	    1.0933
+
+ANGL O     C     OXT           	! angle	  123.1557
+ANGL O     C     CA            	! angle	  112.9573
+ANGL OXT   C     CA            	! angle	  123.8580
+ANGL N     CA    C             	! angle	  108.6543
+ANGL N     CA    HA1           	! angle	  109.7220
+ANGL N     CA    HA2           	! angle	  109.8967
+ANGL CA    N     H1            	! angle	  109.9557
+ANGL CA    N     H2            	! angle	  109.9923
+ANGL C     O     H             	! angle	  111.9300
+ANGL C     CA    HA1           	! angle	  109.3749
+ANGL C     CA    HA2           	! angle	  109.3148
+ANGL HA1   CA    HA2           	! angle	  109.8562
+ANGL H1    N     H2            	! angle	  106.4933
+
+DIHE H     O     C     OXT  	! dihe	    0.6998
+DIHE H     O     C     CA   	! dihe	  178.8073
+DIHE H1    N     CA    C    	! dihe	   58.4705
+DIHE H2    N     CA    C    	! dihe	  -58.4985
+DIHE H1    N     CA    HA1  	! dihe	  -61.0664
+DIHE H2    N     CA    HA1  	! dihe	 -178.0354
+DIHE H1    N     CA    HA2  	! dihe	  178.0377
+DIHE H2    N     CA    HA2  	! dihe	   61.0687
+DIHE N     CA    C     O    	! dihe	 -178.2717
+DIHE HA1   CA    C     O    	! dihe	  -58.5183
+DIHE HA2   CA    C     O    	! dihe	   61.7984
+DIHE N     CA    C     OXT  	! dihe	   -0.1796
+DIHE HA1   CA    C     OXT  	! dihe	  119.5738
+DIHE HA2   CA    C     OXT  	! dihe	 -120.1096
+
+IMPH CA    OXT   C     O    
+
+
+

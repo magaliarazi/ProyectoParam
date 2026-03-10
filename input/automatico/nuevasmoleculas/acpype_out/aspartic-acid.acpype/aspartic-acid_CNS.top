@@ -1,0 +1,121 @@
+Remarks aspartic-acid_CNS.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:29:14 2026
+
+set echo=false end
+
+autogenerate angles=True dihedrals=True end
+
+{ atomType  mass }
+MASS oh_     16.000
+MASS o_      16.000
+MASS n8_     14.010
+MASS c3_     12.010
+MASS c_      12.010
+MASS h1_      1.008
+MASS hc_      1.008
+MASS hn_      1.008
+MASS ho_      1.008
+
+RESIdue ASP
+
+GROUP
+
+{ atomName  atomType  Charge }
+ATOM O     TYPE= oh_   CHARGE=  -0.5961 END
+ATOM OD1   TYPE= oh_   CHARGE=  -0.6051 END
+ATOM OXT   TYPE= o_    CHARGE=  -0.5500 END
+ATOM OD2   TYPE= o_    CHARGE=  -0.5390 END
+ATOM N     TYPE= n8_   CHARGE=  -0.8958 END
+ATOM CA    TYPE= c3_   CHARGE=   0.1435 END
+ATOM CB    TYPE= c3_   CHARGE=  -0.1274 END
+ATOM C     TYPE= c_    CHARGE=   0.5801 END
+ATOM CG    TYPE= c_    CHARGE=   0.6371 END
+ATOM HA    TYPE= h1_   CHARGE=   0.1147 END
+ATOM HB1   TYPE= hc_   CHARGE=   0.0997 END
+ATOM HB2   TYPE= hc_   CHARGE=   0.0997 END
+ATOM H1    TYPE= hn_   CHARGE=   0.3703 END
+ATOM H2    TYPE= hn_   CHARGE=   0.3703 END
+ATOM H     TYPE= ho_   CHARGE=   0.4490 END
+ATOM HD1   TYPE= ho_   CHARGE=   0.4490 END
+
+{ Bonds: atomName1  atomName2 }
+BOND O     H    
+BOND OD1   HD1  
+BOND N     H1   
+BOND N     H2   
+BOND CA    HA   
+BOND CB    HB1  
+BOND CB    HB2  
+BOND O     C    
+BOND OD1   CG   
+BOND OXT   C    
+BOND OD2   CG   
+BOND N     CA   
+BOND CA    CB   
+BOND CA    C    
+BOND CB    CG   
+
+{ Angles: atomName1 atomName2 atomName3}
+ANGLe N     CA    HA   
+ANGLe CA    N     H1   
+ANGLe CA    N     H2   
+ANGLe CA    CB    HB1  
+ANGLe CA    CB    HB2  
+ANGLe CB    CA    HA   
+ANGLe C     O     H    
+ANGLe C     CA    HA   
+ANGLe CG    OD1   HD1  
+ANGLe CG    CB    HB1  
+ANGLe CG    CB    HB2  
+ANGLe HB1   CB    HB2  
+ANGLe H1    N     H2   
+ANGLe O     C     OXT  
+ANGLe O     C     CA   
+ANGLe OD1   CG    OD2  
+ANGLe OD1   CG    CB   
+ANGLe OXT   C     CA   
+ANGLe OD2   CG    CB   
+ANGLe N     CA    CB   
+ANGLe N     CA    C    
+ANGLe CA    CB    CG   
+ANGLe CB    CA    C    
+
+{ Proper Dihedrals: name1 name2 name3 name4 }
+DIHEdral O     C     CA    HA   
+DIHEdral OD1   CG    CB    HB1  
+DIHEdral OD1   CG    CB    HB2  
+DIHEdral H     O     C     OXT  
+DIHEdral OXT   C     CA    HA   
+DIHEdral OD2   CG    OD1   HD1  
+DIHEdral OD2   CG    CB    HB1  
+DIHEdral OD2   CG    CB    HB2  
+DIHEdral N     CA    CB    HB1  
+DIHEdral N     CA    CB    HB2  
+DIHEdral H     O     C     CA   
+DIHEdral CB    CA    N     H1   
+DIHEdral CB    CA    N     H2   
+DIHEdral CB    CG    OD1   HD1  
+DIHEdral C     CA    N     H1   
+DIHEdral C     CA    N     H2   
+DIHEdral C     CA    CB    HB1  
+DIHEdral C     CA    CB    HB2  
+DIHEdral CG    CB    CA    HA   
+DIHEdral HA    CA    N     H1   
+DIHEdral HA    CA    N     H2   
+DIHEdral HA    CA    CB    HB1  
+DIHEdral HA    CA    CB    HB2  
+DIHEdral O     C     CA    N    
+DIHEdral O     C     CA    CB   
+DIHEdral OD1   CG    CB    CA   
+DIHEdral OXT   C     CA    N    
+DIHEdral OXT   C     CA    CB   
+DIHEdral OD2   CG    CB    CA   
+DIHEdral N     CA    CB    CG   
+DIHEdral C     CA    CB    CG   
+
+{ Improper Dihedrals: aName1 aName2 aName3 aName4 }
+IMPRoper O     C     OXT   CA   
+IMPRoper CB    OD2   CG    OD1  
+
+END {RESIdue ASP}
+
+set echo=true end

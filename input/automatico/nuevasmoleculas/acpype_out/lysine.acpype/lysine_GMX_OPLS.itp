@@ -1,0 +1,243 @@
+; lysine_GMX_OPLS.itp created by acpype (v: 2023.10.27) on Mon Feb  9 17:54:09 2026
+
+; For OPLS atomtypes manual fine tuning
+; AC_at:OPLS_at:OPLScode: Possible_Alternatives (see ffoplsaa.atp and ffoplsaanb.itp)
+; oh:OH:opls_154: ['167']
+; o:O:opls_236: ['272']
+; n8:x:opls_x: []
+; c3:CT:opls_135: ['136', '137', '149', '157', '158', '206', '209', '210', '223B', '224B', '245', '246', '274', '283', '284', '285', '292', '292B', '293B', '296', '307', '308', '505']
+; c:C:opls_235: ['271']
+; hc:HC:opls_140: []
+; h1:HC:opls_140: []
+; hn:H:opls_240: ['241', '290', '301', '304', '310', '504', '513']
+; ho:HO:opls_155: ['168']
+
+[ moleculetype ]
+;name            nrexcl
+ lysine           3
+
+[ atoms ]
+;   nr  type  resi  res  atom  cgnr     charge      mass       ; qtot   bond_type
+     1 opls_154     1   LYS     O    1    -0.602100     15.99940 ; qtot -0.602  OH  
+     2 opls_236     1   LYS   OXT    2    -0.560000     15.99940 ; qtot -1.162  O   
+     3 opls_x     1   LYS     N    3    -0.894800      0.00000 ; qtot -2.057  x   
+     4 opls_x     1   LYS    NZ    4    -0.916800      0.00000 ; qtot -2.974  x   
+     5 opls_135     1   LYS    CG    5    -0.076400     12.01100 ; qtot -3.050  CT  
+     6 opls_135     1   LYS    CB    6    -0.073400     12.01100 ; qtot -3.123  CT  
+     7 opls_135     1   LYS    CD    7    -0.084400     12.01100 ; qtot -3.208  CT  
+     8 opls_135     1   LYS    CA    8     0.137500     12.01100 ; qtot -3.070  CT  
+     9 opls_135     1   LYS    CE    9     0.159800     12.01100 ; qtot -2.911  CT  
+    10 opls_235     1   LYS     C   10     0.584100     12.01100 ; qtot -2.326  C   
+    11 opls_140     1   LYS   HG1   11     0.051700      1.00800 ; qtot -2.275  HC  
+    12 opls_140     1   LYS   HG2   12     0.051700      1.00800 ; qtot -2.223  HC  
+    13 opls_140     1   LYS   HB1   13     0.057200      1.00800 ; qtot -2.166  HC  
+    14 opls_140     1   LYS   HB2   14     0.057200      1.00800 ; qtot -2.109  HC  
+    15 opls_140     1   LYS   HD1   15     0.047200      1.00800 ; qtot -2.061  HC  
+    16 opls_140     1   LYS   HD2   16     0.047200      1.00800 ; qtot -2.014  HC  
+    17 opls_140     1   LYS    HA   17     0.093700      1.00800 ; qtot -1.921  HC  
+    18 opls_140     1   LYS   HE1   18     0.025200      1.00800 ; qtot -1.895  HC  
+    19 opls_140     1   LYS   HE2   19     0.025200      1.00800 ; qtot -1.870  HC  
+    20 opls_240     1   LYS    H1   20     0.364800      1.00800 ; qtot -1.505  H   
+    21 opls_240     1   LYS    H2   21     0.364800      1.00800 ; qtot -1.141  H   
+    22 opls_240     1   LYS   HZ1   22     0.348300      1.00800 ; qtot -0.792  H   
+    23 opls_240     1   LYS   HZ2   23     0.348300      1.00800 ; qtot -0.444  H   
+    24 opls_155     1   LYS     H   24     0.444000      1.00800 ; qtot  0.000  HO  
+
+[ bonds ]
+;   ai     aj funct   r             k
+     1     10   1 ;    1.3556e-01    3.0064e+05 ;      O - C          OH - C     
+     1     24   1 ;    9.7250e-02    4.4811e+05 ;      O - H          OH - HO    
+     2     10   1 ;    1.2190e-01    4.9421e+05 ;    OXT - C           O - C     
+     3      8   1 ;    1.4651e-01    2.1239e+05 ;      N - CA          x - CT    
+     3     20   1 ;    1.0192e-01    3.8550e+05 ;      N - H1          x - H     
+     3     21   1 ;    1.0192e-01    3.8550e+05 ;      N - H2          x - H     
+     4      9   1 ;    1.4651e-01    2.1239e+05 ;     NZ - CE          x - CT    
+     4     22   1 ;    1.0192e-01    3.8550e+05 ;     NZ - HZ1         x - H     
+     4     23   1 ;    1.0192e-01    3.8550e+05 ;     NZ - HZ2         x - H     
+     5      6   1 ;    1.5354e-01    1.9154e+05 ;     CG - CB         CT - CT    
+     5      7   1 ;    1.5354e-01    1.9154e+05 ;     CG - CD         CT - CT    
+     5     11   1 ;    1.0962e-01    2.8891e+05 ;     CG - HG1        CT - HC    
+     5     12   1 ;    1.0962e-01    2.8891e+05 ;     CG - HG2        CT - HC    
+     6      8   1 ;    1.5354e-01    1.9154e+05 ;     CB - CA         CT - CT    
+     6     13   1 ;    1.0962e-01    2.8891e+05 ;     CB - HB1        CT - HC    
+     6     14   1 ;    1.0962e-01    2.8891e+05 ;     CB - HB2        CT - HC    
+     7      9   1 ;    1.5354e-01    1.9154e+05 ;     CD - CE         CT - CT    
+     7     15   1 ;    1.0962e-01    2.8891e+05 ;     CD - HD1        CT - HC    
+     7     16   1 ;    1.0962e-01    2.8891e+05 ;     CD - HD2        CT - HC    
+     8     10   1 ;    1.5270e-01    1.9652e+05 ;     CA - C          CT - C     
+     8     17   1 ;    1.0969e-01    2.8804e+05 ;     CA - HA         CT - HC    
+     9     18   1 ;    1.0969e-01    2.8804e+05 ;     CE - HE1        CT - HC    
+     9     19   1 ;    1.0969e-01    2.8804e+05 ;     CE - HE2        CT - HC    
+
+[ pairs ]
+;   ai     aj    funct
+     1      3      1 ;      O - N     
+     1      6      1 ;      O - CB    
+     1     17      1 ;      O - HA    
+     2      3      1 ;    OXT - N     
+     2      6      1 ;    OXT - CB    
+     2     17      1 ;    OXT - HA    
+     3      5      1 ;      N - CG    
+     3     13      1 ;      N - HB1   
+     3     14      1 ;      N - HB2   
+     4      5      1 ;     NZ - CG    
+     4     15      1 ;     NZ - HD1   
+     4     16      1 ;     NZ - HD2   
+     5     10      1 ;     CG - C     
+     5     17      1 ;     CG - HA    
+     5     18      1 ;     CG - HE1   
+     5     19      1 ;     CG - HE2   
+     6      9      1 ;     CB - CE    
+     6     15      1 ;     CB - HD1   
+     6     16      1 ;     CB - HD2   
+     6     20      1 ;     CB - H1    
+     6     21      1 ;     CB - H2    
+     7      8      1 ;     CD - CA    
+     7     13      1 ;     CD - HB1   
+     7     14      1 ;     CD - HB2   
+     7     22      1 ;     CD - HZ1   
+     7     23      1 ;     CD - HZ2   
+     8     11      1 ;     CA - HG1   
+     8     12      1 ;     CA - HG2   
+     9     11      1 ;     CE - HG1   
+     9     12      1 ;     CE - HG2   
+    10     13      1 ;      C - HB1   
+    10     14      1 ;      C - HB2   
+    10     20      1 ;      C - H1    
+    10     21      1 ;      C - H2    
+    11     13      1 ;    HG1 - HB1   
+    11     14      1 ;    HG1 - HB2   
+    11     15      1 ;    HG1 - HD1   
+    11     16      1 ;    HG1 - HD2   
+    12     13      1 ;    HG2 - HB1   
+    12     14      1 ;    HG2 - HB2   
+    12     15      1 ;    HG2 - HD1   
+    12     16      1 ;    HG2 - HD2   
+    13     17      1 ;    HB1 - HA    
+    14     17      1 ;    HB2 - HA    
+    15     18      1 ;    HD1 - HE1   
+    15     19      1 ;    HD1 - HE2   
+    16     18      1 ;    HD2 - HE1   
+    16     19      1 ;    HD2 - HE2   
+    17     20      1 ;     HA - H1    
+    17     21      1 ;     HA - H2    
+    18     22      1 ;    HE1 - HZ1   
+    18     23      1 ;    HE1 - HZ2   
+    19     22      1 ;    HE2 - HZ1   
+    19     23      1 ;    HE2 - HZ2   
+    24      2      1 ;      H - OXT   
+    24      8      1 ;      H - CA    
+
+[ angles ]
+;   ai     aj     ak    funct   theta         cth
+     1     10      2      1 ;    1.2209e+02    8.5379e+02 ;      O - C    - OXT      OH -    C - O   
+     1     10      8      1 ;    1.1274e+02    6.4785e+02 ;      O - C    - CA       OH -    C - CT  
+     2     10      8      1 ;    1.2290e+02    6.3973e+02 ;    OXT - C    - CA        O -    C - CT  
+     3      8      6      1 ;    1.1091e+02    5.4794e+02 ;      N - CA   - CB        x -   CT - CT  
+     3      8     10      1 ;    1.1096e+02    5.4944e+02 ;      N - CA   - C         x -   CT - C   
+     3      8     17      1 ;    1.0812e+02    4.0342e+02 ;      N - CA   - HA        x -   CT - HC  
+     4      9      7      1 ;    1.1091e+02    5.4794e+02 ;     NZ - CE   - CD        x -   CT - CT  
+     4      9     18      1 ;    1.0812e+02    4.0342e+02 ;     NZ - CE   - HE1       x -   CT - HC  
+     4      9     19      1 ;    1.0812e+02    4.0342e+02 ;     NZ - CE   - HE2       x -   CT - HC  
+     5      6      8      1 ;    1.1263e+02    5.0099e+02 ;     CG - CB   - CA       CT -   CT - CT  
+     5      6     13      1 ;    1.0968e+02    3.6208e+02 ;     CG - CB   - HB1      CT -   CT - HC  
+     5      6     14      1 ;    1.0968e+02    3.6208e+02 ;     CG - CB   - HB2      CT -   CT - HC  
+     5      7      9      1 ;    1.1263e+02    5.0099e+02 ;     CG - CD   - CE       CT -   CT - CT  
+     5      7     15      1 ;    1.0968e+02    3.6208e+02 ;     CG - CD   - HD1      CT -   CT - HC  
+     5      7     16      1 ;    1.0968e+02    3.6208e+02 ;     CG - CD   - HD2      CT -   CT - HC  
+     6      5      7      1 ;    1.1263e+02    5.0099e+02 ;     CB - CG   - CD       CT -   CT - CT  
+     6      5     11      1 ;    1.0968e+02    3.6208e+02 ;     CB - CG   - HG1      CT -   CT - HC  
+     6      5     12      1 ;    1.0968e+02    3.6208e+02 ;     CB - CG   - HG2      CT -   CT - HC  
+     6      8     10      1 ;    1.1143e+02    5.0509e+02 ;     CB - CA   - C        CT -   CT - C   
+     6      8     17      1 ;    1.0959e+02    3.6217e+02 ;     CB - CA   - HA       CT -   CT - HC  
+     7      5     11      1 ;    1.0968e+02    3.6208e+02 ;     CD - CG   - HG1      CT -   CT - HC  
+     7      5     12      1 ;    1.0968e+02    3.6208e+02 ;     CD - CG   - HG2      CT -   CT - HC  
+     7      9     18      1 ;    1.0959e+02    3.6217e+02 ;     CD - CE   - HE1      CT -   CT - HC  
+     7      9     19      1 ;    1.0959e+02    3.6217e+02 ;     CD - CE   - HE2      CT -   CT - HC  
+     8      3     20      1 ;    1.0961e+02    4.7003e+02 ;     CA - N    - H1       CT -    x - H   
+     8      3     21      1 ;    1.0961e+02    4.7003e+02 ;     CA - N    - H2       CT -    x - H   
+     8      6     13      1 ;    1.0968e+02    3.6208e+02 ;     CA - CB   - HB1      CT -   CT - HC  
+     8      6     14      1 ;    1.0968e+02    3.6208e+02 ;     CA - CB   - HB2      CT -   CT - HC  
+     9      4     22      1 ;    1.0961e+02    4.7003e+02 ;     CE - NZ   - HZ1      CT -    x - H   
+     9      4     23      1 ;    1.0961e+02    4.7003e+02 ;     CE - NZ   - HZ2      CT -    x - H   
+     9      7     15      1 ;    1.0968e+02    3.6208e+02 ;     CE - CD   - HD1      CT -   CT - HC  
+     9      7     16      1 ;    1.0968e+02    3.6208e+02 ;     CE - CD   - HD2      CT -   CT - HC  
+    10      1     24      1 ;    1.0654e+02    5.7287e+02 ;      C - O    - H         C -   OH - HO  
+    10      8     17      1 ;    1.0837e+02    3.6602e+02 ;      C - CA   - HA        C -   CT - HC  
+    11      5     12      1 ;    1.0773e+02    2.9957e+02 ;    HG1 - CG   - HG2      HC -   CT - HC  
+    13      6     14      1 ;    1.0773e+02    2.9957e+02 ;    HB1 - CB   - HB2      HC -   CT - HC  
+    15      7     16      1 ;    1.0773e+02    2.9957e+02 ;    HD1 - CD   - HD2      HC -   CT - HC  
+    18      9     19      1 ;    1.0855e+02    2.9824e+02 ;    HE1 - CE   - HE2      HC -   CT - HC  
+    20      3     21      1 ;    1.0638e+02    4.0074e+02 ;     H1 - N    - H2        H -    x - H   
+    22      4     23      1 ;    1.0638e+02    4.0074e+02 ;    HZ1 - NZ   - HZ2       H -    x - H   
+
+[ dihedrals ] ; propers
+; for gromacs 4.5 or higher, using funct 9
+;    i      j      k      l   func   phase     kd      pn
+     1     10      8      3      9 ;   180.00   0.00000   2 ;      O-     C-    CA-     N
+     1     10      8      6      9 ;   180.00   0.00000   2 ;      O-     C-    CA-    CB
+     1     10      8     17      9 ;   180.00   0.00000   2 ;      O-     C-    CA-    HA
+     2     10      8      3      9 ;   180.00   0.00000   2 ;    OXT-     C-    CA-     N
+     2     10      8      6      9 ;     0.00   2.84512   1 ;    OXT-     C-    CA-    CB
+     2     10      8      6      9 ;   180.00   0.83680   2 ;    OXT-     C-    CA-    CB
+     2     10      8      6      9 ;   180.00   1.84096   3 ;    OXT-     C-    CA-    CB
+     2     10      8     17      9 ;     0.00   3.34720   1 ;    OXT-     C-    CA-    HA
+     2     10      8     17      9 ;   180.00   0.33472   3 ;    OXT-     C-    CA-    HA
+     3      8      6      5      9 ;     0.00   2.17568   3 ;      N-    CA-    CB-    CG
+     3      8      6     13      9 ;     0.00   0.20920   3 ;      N-    CA-    CB-   HB1
+     3      8      6     14      9 ;     0.00   0.20920   3 ;      N-    CA-    CB-   HB2
+     4      9      7      5      9 ;     0.00   2.17568   3 ;     NZ-    CE-    CD-    CG
+     4      9      7     15      9 ;     0.00   0.20920   3 ;     NZ-    CE-    CD-   HD1
+     4      9      7     16      9 ;     0.00   0.20920   3 ;     NZ-    CE-    CD-   HD2
+     5      6      8     10      9 ;     0.00   0.00000   0 ;     CG-    CB-    CA-     C
+     5      6      8     10      9 ;     0.00   0.16736   2 ;     CG-    CB-    CA-     C
+     5      6      8     10      9 ;   180.00   1.92464   1 ;     CG-    CB-    CA-     C
+     5      6      8     17      9 ;     0.00   0.65084   3 ;     CG-    CB-    CA-    HA
+     5      7      9     18      9 ;     0.00   0.65084   3 ;     CG-    CD-    CE-   HE1
+     5      7      9     19      9 ;     0.00   0.65084   3 ;     CG-    CD-    CE-   HE2
+     6      5      7      9      9 ;     0.00   2.17568   3 ;     CB-    CG-    CD-    CE
+     6      5      7     15      9 ;     0.00   0.54392   3 ;     CB-    CG-    CD-   HD1
+     6      5      7     16      9 ;     0.00   0.54392   3 ;     CB-    CG-    CD-   HD2
+     6      8      3     20      9 ;   180.00   0.12552   3 ;     CB-    CA-     N-    H1
+     6      8      3     21      9 ;   180.00   0.12552   3 ;     CB-    CA-     N-    H2
+     7      5      6      8      9 ;     0.00   2.17568   3 ;     CD-    CG-    CB-    CA
+     7      5      6     13      9 ;     0.00   0.54392   3 ;     CD-    CG-    CB-   HB1
+     7      5      6     14      9 ;     0.00   0.54392   3 ;     CD-    CG-    CB-   HB2
+     7      9      4     22      9 ;   180.00   0.12552   3 ;     CD-    CE-    NZ-   HZ1
+     7      9      4     23      9 ;   180.00   0.12552   3 ;     CD-    CE-    NZ-   HZ2
+     8      6      5     11      9 ;     0.00   0.54392   3 ;     CA-    CB-    CG-   HG1
+     8      6      5     12      9 ;     0.00   0.54392   3 ;     CA-    CB-    CG-   HG2
+     9      7      5     11      9 ;     0.00   0.54392   3 ;     CE-    CD-    CG-   HG1
+     9      7      5     12      9 ;     0.00   0.54392   3 ;     CE-    CD-    CG-   HG2
+    10      8      3     20      9 ;     0.00   1.25520   3 ;      C-    CA-     N-    H1
+    10      8      3     21      9 ;     0.00   1.25520   3 ;      C-    CA-     N-    H2
+    10      8      6     13      9 ;     0.00   0.65084   3 ;      C-    CA-    CB-   HB1
+    10      8      6     14      9 ;     0.00   0.65084   3 ;      C-    CA-    CB-   HB2
+    11      5      6     13      9 ;     0.00   0.50208   3 ;    HG1-    CG-    CB-   HB1
+    11      5      6     14      9 ;     0.00   0.50208   3 ;    HG1-    CG-    CB-   HB2
+    11      5      7     15      9 ;     0.00   0.50208   3 ;    HG1-    CG-    CD-   HD1
+    11      5      7     16      9 ;     0.00   0.50208   3 ;    HG1-    CG-    CD-   HD2
+    12      5      6     13      9 ;     0.00   0.50208   3 ;    HG2-    CG-    CB-   HB1
+    12      5      6     14      9 ;     0.00   0.50208   3 ;    HG2-    CG-    CB-   HB2
+    12      5      7     15      9 ;     0.00   0.50208   3 ;    HG2-    CG-    CD-   HD1
+    12      5      7     16      9 ;     0.00   0.50208   3 ;    HG2-    CG-    CD-   HD2
+    13      6      8     17      9 ;     0.00   0.65084   3 ;    HB1-    CB-    CA-    HA
+    14      6      8     17      9 ;     0.00   0.65084   3 ;    HB2-    CB-    CA-    HA
+    15      7      9     18      9 ;     0.00   0.65084   3 ;    HD1-    CD-    CE-   HE1
+    15      7      9     19      9 ;     0.00   0.65084   3 ;    HD1-    CD-    CE-   HE2
+    16      7      9     18      9 ;     0.00   0.65084   3 ;    HD2-    CD-    CE-   HE1
+    16      7      9     19      9 ;     0.00   0.65084   3 ;    HD2-    CD-    CE-   HE2
+    17      8      3     20      9 ;     0.00   1.25520   3 ;     HA-    CA-     N-    H1
+    17      8      3     21      9 ;     0.00   1.25520   3 ;     HA-    CA-     N-    H2
+    18      9      4     22      9 ;     0.00   1.25520   3 ;    HE1-    CE-    NZ-   HZ1
+    18      9      4     23      9 ;     0.00   1.25520   3 ;    HE1-    CE-    NZ-   HZ2
+    19      9      4     22      9 ;     0.00   1.25520   3 ;    HE2-    CE-    NZ-   HZ1
+    19      9      4     23      9 ;     0.00   1.25520   3 ;    HE2-    CE-    NZ-   HZ2
+    24      1     10      2      9 ;     0.00   7.94960   1 ;      H-     O-     C-   OXT
+    24      1     10      2      9 ;   180.00   9.62320   2 ;      H-     O-     C-   OXT
+    24      1     10      8      9 ;   180.00   7.53120   2 ;      H-     O-     C-    CA
+
+[ dihedrals ] ; impropers
+; treated as propers in GROMACS to use correct AMBER analytical function
+;    i      j      k      l   func   phase     kd      pn
+     1     10      2      8      4 ;   180.00   4.60240   2 ;      O-     C-   OXT-    CA

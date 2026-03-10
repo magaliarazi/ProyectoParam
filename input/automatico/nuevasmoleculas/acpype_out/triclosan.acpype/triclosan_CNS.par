@@ -1,0 +1,52 @@
+Remarks triclosan_CNS.par created by acpype (v: 2023.10.27) on Mon Feb  9 18:00:26 2026
+
+set echo=false end
+
+{ Bonds: atomType1 atomType2 kb r0 }
+BOND   oh_   ho_    535.5   0.9725
+BOND   ca_   ha_    360.7   1.0860
+BOND   cl_   ca_    188.0   1.7572
+BOND   os_   ca_    343.3   1.3688
+BOND   oh_   ca_    348.6   1.3644
+BOND   ca_   ca_    354.2   1.3986
+
+{ Angles: aType1 aType2 aType3 kt t0 }
+ANGLe   ca_   ca_   ha_     44.9   119.88
+ANGLe   ca_   oh_   ho_     67.4   108.58
+ANGLe   cl_   ca_   ca_     64.1   119.38
+ANGLe   os_   ca_   ca_     79.0   119.11
+ANGLe   oh_   ca_   ca_     78.9   119.90
+ANGLe   ca_   os_   ca_     89.7   119.87
+ANGLe   ca_   ca_   ca_     63.7   120.02
+
+{ Proper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+DIHEdral   cl_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   ca_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   cl_   ca_   ca_   os_           3.625    2   180.00
+DIHEdral   ha_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   ca_   os_   ca_   ca_           0.900    2   180.00
+DIHEdral   ca_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   cl_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   ca_   ca_   oh_   ho_           0.855    2   180.00
+DIHEdral   oh_   ca_   ca_   ha_           3.625    2   180.00
+DIHEdral   os_   ca_   ca_   oh_           3.625    2   180.00
+DIHEdral   oh_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   os_   ca_   ca_   ca_           3.625    2   180.00
+DIHEdral   os_   ca_   ca_   ha_           3.625    2   180.00
+
+{ Improper Dihedrals: aType1 aType2 aType3 aType4 kt period phase }
+IMPRoper   ca_   ca_   ca_   os_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   ha_           1.1    2   180.00
+IMPRoper   cl_   ca_   ca_   ca_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   oh_           1.1    2   180.00
+IMPRoper   ca_   ca_   ca_   cl_           1.1    2   180.00
+
+{ Nonbonded: Type Emin sigma; (1-4): Emin/2 sigma }
+NONBonded   cl_    0.263800    3.465952    0.131900    3.465952
+NONBonded   os_    0.072600    3.156098    0.036300    3.156098
+NONBonded   oh_    0.093000    3.242871    0.046500    3.242871
+NONBonded   ca_    0.098800    3.315212    0.049400    3.315212
+NONBonded   ha_    0.016100    2.625479    0.008050    2.625479
+NONBonded   ho_    0.004700    0.537925    0.002350    0.537925
+
+set echo=true end

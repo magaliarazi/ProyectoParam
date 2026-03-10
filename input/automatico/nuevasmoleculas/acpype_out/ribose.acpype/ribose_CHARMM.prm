@@ -1,0 +1,46 @@
+* Force Field Parameter File.
+* 
+
+BOND
+os c6    0.00   0.000	!ATTN, need revision
+os c6    0.00   0.000
+ho oh  371.40   0.973
+oh c6    0.00   0.000
+c6 c6    0.00   0.000
+c6 h1    0.00   0.000
+
+ANGLE
+os c6 c6    0.000       0.000
+os c6 h1    0.000       0.000
+oh c6 c6    0.000       0.000
+oh c6 h1    0.000       0.000
+c6 c6 c6    0.000       0.000
+c6 c6 h1    0.000       0.000
+c6 oh ho    0.000       0.000
+
+DIHEDRAL
+c6 os c6 c6      -nan         0       0.0
+c6 os c6 h1      -nan         0       0.0
+ho oh c6 c6      -nan         0       0.0
+ho oh c6 h1      -nan         0       0.0
+c6 c6 c6 oh      -nan         0       0.0
+h1 c6 c6 oh      -nan         0       0.0
+h1 c6 c6 c6      -nan         0       0.0
+oh c6 c6 oh      -nan         0       0.0
+c6 c6 c6 c6      -nan         0       0.0
+h1 c6 c6 h1      -nan         0       0.0
+oh c6 c6 os      -nan         0       0.0
+c6 c6 c6 os      -nan         0       0.0
+h1 c6 c6 os      -nan         0       0.0
+
+NONBONDED  NBXMOD 5  GROUP SWITCH CDIEL -
+CUTNB 14.0  CTOFNB 12.0  CTONNB 10.0  EPS 1.0  E14FAC 0.83333333  WMIN 1.4
+!                Emin     Rmin/2              Emin/2     Rmin  (for 1-4's)
+!             (kcal/mol)    (A)
+os      0.00   -0.1700    1.6837      0.00   -0.0850    1.6837
+oh      0.00   -0.2104    1.7210      0.00   -0.1052    1.7210
+c6      0.00    0.0000    0.0000      0.00    0.0000    0.0000
+c6      0.00   -0.0000    0.0000      0.00   -0.0000    0.0000
+h1      0.00   -0.0157    1.3870      0.00   -0.0078    1.3870
+h2      0.00   -0.0157    1.2870      0.00   -0.0078    1.2870
+ho      0.00   -0.0000    0.0000      0.00   -0.0000    0.0000

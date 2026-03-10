@@ -1,0 +1,20 @@
+; thymidine_GMX.top created by acpype (v: 2023.10.27) on Mon Feb  9 17:59:59 2026
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+1               2               yes             0.5     0.8333333333
+
+; Include thymidine_GMX.itp topology
+#include "thymidine_GMX.itp"
+
+; Ligand position restraints
+#ifdef POSRES_LIG
+#include "posre_thymidine.itp"
+#endif
+
+[ system ]
+ thymidine
+
+[ molecules ]
+; Compound        nmols
+ thymidine        1     
