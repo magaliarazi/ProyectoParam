@@ -1,0 +1,89 @@
+import torch
+import pickle
+from torch_geometric.data import Data
+from pathlib import Path
+
+# =====================================================
+# 1. FUNCIÓN DE TRANSFORMACIÓN
+# =====================================================
+def preparar_datos_para_gnn(archivo_pkl):
+    """
+    Toma el diccionario de grafos (human-readable) y lo convierte
+    en una lista de objetos Data de PyTorch Geometric (machine-readable).
+    """
+    if not Path(archivo_pkl).exists():
+        print(f"❌ Error: No se encuentra el archivo {archivo_pkl}")
+        return None
+
+    with open(archivo_pkl, "rb") as f:
+        dataset = pickle.load(f)
+    
+    lista_grafos_torch = []
+    
+    # Mapeo de elementos químicos a índices numéricos
+    # Esto es necesario porque las redes neuronales solo entienden números
+    elem_map = {'H': 0, 'C': 1, 'O': 2, 'N': 3, 'S': 4, 'F': 5, 'Cl': 6, 'Br': 7}
+    
+    print(f"🔄 Transformando {len(dataset)} moléculas a formato Tensor...")
+
+    for mol_name, mol_data in dataset.items():
+        # --- A. Procesar Nodos (Features y Labels) ---
+        nodos_id = sorted(mol_data["nodos"].keys())
+        features = []
+        
+        for idx in nodos_id:
+            n = mol_data["nodos"][idx]
+            # Extraemos: [Masa, Carga, ID_Elemento, Es_Planar]
+            features.append([
+                n["masa"], 
+                n["carga_target"], 
+                elem_map.get(n["elemento"], 8), # 8 si es un elemento desconocido
+                n.get("es_planar", 0)
+            ])
+            
+        x = torch.tensor(features, dtype=torch.float)
+        
+        # --- B. Procesar Aristas (Conectividad) ---
+        edge_indices = []
+        for arista in mol_data["aristas"]:
+            u, v = arista["indices"]
+            # Ajustamos los IDs a base 0 (PyTorch usa índices desde 0, no desde 1)
+            # Restamos -1 asumiendo que tus IDs de átomos en el ITP empiezan en 1
+            idx_u, idx_v = u - 1, v - 1
+            
+            # Agregamos ambos sentidos (Grafo no dirigido)
+            edge_indices.append([idx_u, idx_v])
+            edge_indices.append([idx_v, idx_u])
+            
+        # El formato debe ser [2, num_enlaces * 2]
+        edge_index = torch.tensor(edge_indices, dtype=torch.long).t().contiguous()
+        
+        # --- C. Crear Objeto Data de PyTorch Geometric ---
+        # Guardamos también el nombre de la molécula para trazabilidad
+        grafo = Data(x=x, edge_index=edge_index)
+        grafo.mol_name = mol_name
+        
+        lista_grafos_torch.append(grafo)
+
+    return lista_grafos_torch
+
+# =====================================================
+# 2. BLOQUE DE EJECUCIÓN
+# =====================================================
+if __name__ == "__main__":
+    # 1. Definir nombres de archivos
+    INPUT_FILE = "dataset_grafos.pkl"
+    OUTPUT_FILE = "dataset_final_gnn.pt"
+
+    # 2. Ejecutar transformación
+    dataset_torch = preparar_datos_para_gnn(INPUT_FILE)
+    
+    if dataset_torch:
+        # 3. Guardar el resultado
+        # torch.save es el estándar para serializar tensores en PyTorch
+        torch.save(dataset_torch, OUTPUT_FILE)
+        
+        print(f"\n✨ Proceso finalizado con éxito.")
+        print(f"📊 Moléculas procesadas: {len(dataset_torch)}")
+        print(f"💾 Dataset guardado en: {OUTPUT_FILE}")
+        print(f"🚀 Ya puedes usar este archivo para alimentar tu modelo GNN.")

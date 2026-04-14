@@ -1,0 +1,1 @@
+ruta_itp = BASE / "input" / "validacion_externa"

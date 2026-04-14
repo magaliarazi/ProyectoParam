@@ -1,0 +1,6 @@
+element,mass,coordination,neighbor_config,n_dihedrals,is_planar,avg_bond_len_A,C_count,H_count,O_count,N_count,real,predicho,nombre_real,nombre_predicho,correcto
+5,15.9994,1,0,2,0,1.21,1,0,0,0,17,15,OE,O,False
+0,12.011,2,1,0,0,1.335,2,0,0,0,0,7,C,F,False
+0,12.011,3,24,6,1,1.47,0,0,0,2,0,12,C,NOpt,False
+0,12.011,4,13,1,0,1.4025,1,0,0,0,0,7,C,F,False
+5,15.9994,2,14,2,0,1.2005,1,1,0,0,15,16,O,OA,False

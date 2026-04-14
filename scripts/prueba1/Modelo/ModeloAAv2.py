@@ -12,7 +12,7 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 # CONFIG
 # ======================================
 # Ajustado a la ruta de tu archivo preprocesado
-DATA_PATH = "/home/marazi/proyectoParam/scripts/prueba1/Preprocesamiento/output2/preprocessed_all_atom.csv"
+DATA_PATH = "/home/marazi/proyectoParam/scripts/prueba1/Preprocesamiento/tabla_all_atom.csv"
 MODEL_PATH = "mlp_model_AA.joblib"
 SCALER_PATH = "scaler_AA.joblib"
 TEST_SIZE = 0.2
