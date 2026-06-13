@@ -1,5 +1,5 @@
 """
-extract_dataset_v4.py
+extract_dataset_v3.py
 ---------------------
 Lee archivos .mol2 e .itp del ATB y genera un CSV con todas las features
 por átomo + atomtype y charge como targets.
@@ -11,8 +11,12 @@ Solución al problema de RDKit con mol2 del ATB:
     RDKit desde cero (RWMol) para acceder a anillos, aromaticidad y
     cargas de Gasteiger.
 
+Match mol2 ↔ itp:
+  - Siempre por índice posicional (confirmado por la tutora:
+    el orden de átomos en mol2 e itp es siempre el mismo).
+
 Uso:
-    python extract_dataset_v4.py --input carpeta/ --output dataset.csv
+
 
 Dependencias:
     pip install rdkit pandas numpy
@@ -136,16 +140,13 @@ def parse_mol2(mol2_path: Path):
 def parse_itp(itp_path: Path) -> dict:
     """
     Parsea [ atoms ] del itp.
-    Devuelve {atom_name: {atomtype, charge}}
+    Devuelve {atom_idx (1-based): {atomtype, charge}}
 
-    Si los atom_name son genéricos (duplicados como 'C', 'H', etc.),
-    también construye un índice por posición: {atom_idx (1-based): {...}}
-    accesible via la clave especial '__by_index__'.
+    El match se realiza siempre por índice posicional, ya que la tutora
+    confirmó que el orden de átomos en mol2 e itp es siempre el mismo.
     """
-    result   = {}
-    by_index = {}   # {1-based idx: {atomtype, charge}}
+    by_index = {}
     in_block = False
-    counter  = 0
 
     with open(itp_path) as f:
         for line in f:
@@ -160,15 +161,13 @@ def parse_itp(itp_path: Path) -> dict:
             if in_block:
                 parts = line.split()
                 if len(parts) >= 7:
-                    counter  += 1
-                    atom_idx  = int(parts[0])
-                    atom_name = parts[4]
-                    data      = {"atomtype": parts[1], "charge": float(parts[6])}
-                    result[atom_name] = data
-                    by_index[atom_idx] = data
+                    atom_idx           = int(parts[0])
+                    by_index[atom_idx] = {
+                        "atomtype": parts[1],
+                        "charge":   float(parts[6]),
+                    }
 
-    result["__by_index__"] = by_index
-    return result
+    return by_index
 
 
 # =============================================================================
@@ -182,21 +181,18 @@ def build_rdkit_mol(atoms: dict, bonds: list):
     atom_id es 1-based (como en el mol2), rdkit_idx es 0-based.
     """
     rw = Chem.RWMol()
-    id_to_idx = {}  # mol2 atom_id → rdkit idx
+    id_to_idx = {}
 
-    # Agregar átomos
     for atom_id in sorted(atoms.keys()):
         atom  = atoms[atom_id]
         elem  = atom["element"]
         try:
             rd_atom = Chem.Atom(elem)
         except Exception:
-            # Elemento desconocido para RDKit → usar carbono como fallback
             rd_atom = Chem.Atom("C")
         idx = rw.AddAtom(rd_atom)
         id_to_idx[atom_id] = idx
 
-    # Agregar enlaces
     for a1, a2, btype_str in bonds:
         if a1 not in id_to_idx or a2 not in id_to_idx:
             continue
@@ -208,12 +204,10 @@ def build_rdkit_mol(atoms: dict, bonds: list):
         except Exception:
             pass
 
-    # Sanitizar (necesario para aromaticidad y anillos)
     try:
         Chem.SanitizeMol(rw)
     except Exception:
         try:
-            # Intentar sanitización parcial si la completa falla
             Chem.SanitizeMol(rw, Chem.SanitizeFlags.SANITIZE_ALL ^
                                   Chem.SanitizeFlags.SANITIZE_PROPERTIES)
         except Exception:
@@ -251,27 +245,27 @@ def is_planar_geometry(center, neighbors, threshold=0.1):
 # =============================================================================
 
 def extract_molecule(mol2_path: Path, itp_path: Path) -> list:
-    mol_name  = mol2_path.stem
-    atoms, bonds = parse_mol2(mol2_path)
-    itp_data  = parse_itp(itp_path) if itp_path.exists() else {}
+    mol_name      = mol2_path.stem
+    atoms, bonds  = parse_mol2(mol2_path)
+    itp_by_index  = parse_itp(itp_path) if itp_path.exists() else {}
 
     if not atoms:
         print(f"  [WARN] No se parsearon átomos de {mol2_path.name}")
         return []
 
-    # Construir grafo propio (para vecinos, bond types, geometría)
+    # Construir grafo propio
     graph = {aid: [] for aid in atoms}
     for a1, a2, btype in bonds:
         if a1 in graph and a2 in graph:
             graph[a1].append((a2, btype))
             graph[a2].append((a1, btype))
 
-    # Construir mol RDKit para features de anillo, aromaticidad y Gasteiger
+    # Construir mol RDKit
     mol, id_to_idx = build_rdkit_mol(atoms, bonds)
 
-    has_rdkit    = mol is not None
+    has_rdkit     = mol is not None
     has_gasteiger = False
-    ring_info    = None
+    ring_info     = None
 
     if has_rdkit:
         try:
@@ -281,7 +275,7 @@ def extract_molecule(mol2_path: Path, itp_path: Path) -> list:
             pass
         ring_info = mol.GetRingInfo()
 
-    # n_dihedrals por átomo (desde grafo propio)
+    # n_dihedrals por átomo
     dihedral_counts = {aid: 0 for aid in atoms}
     for a1, a2, _ in bonds:
         if a1 not in graph or a2 not in graph:
@@ -334,12 +328,9 @@ def extract_molecule(mol2_path: Path, itp_path: Path) -> list:
                 n_electroneg_1 += 1
 
             btype_norm = btype_str.lower()
-            if btype_norm in ("ar",):
+            if btype_norm == "ar":
                 bond_type_counts["aromatic"] += 1
-            elif btype_norm == "2":
-                bond_type_counts["double"] += 1
-            elif btype_norm == "3":
-                # triple → contamos como double para degree_of_unsat
+            elif btype_norm in ("2", "3"):
                 bond_type_counts["double"] += 1
             else:
                 bond_type_counts["single"] += 1
@@ -386,15 +377,14 @@ def extract_molecule(mol2_path: Path, itp_path: Path) -> list:
         else:
             planar = False
 
-        # Features de RDKit (anillo, aromaticidad, Gasteiger, formal_charge)
+        # Features RDKit
         rdkit_idx = id_to_idx.get(atom_id)
-
         if has_rdkit and rdkit_idx is not None:
-            rd_atom     = mol.GetAtomWithIdx(rdkit_idx)
-            is_in_ring  = ring_info.NumAtomRings(rdkit_idx) > 0
-            atom_rings  = [r for r in ring_info.AtomRings() if rdkit_idx in r]
-            ring_size   = min(len(r) for r in atom_rings) if atom_rings else 0
-            is_aromatic = rd_atom.GetIsAromatic()
+            rd_atom       = mol.GetAtomWithIdx(rdkit_idx)
+            is_in_ring    = ring_info.NumAtomRings(rdkit_idx) > 0
+            atom_rings    = [r for r in ring_info.AtomRings() if rdkit_idx in r]
+            ring_size     = min(len(r) for r in atom_rings) if atom_rings else 0
+            is_aromatic   = rd_atom.GetIsAromatic()
             formal_charge = rd_atom.GetFormalCharge()
             if has_gasteiger:
                 try:
@@ -405,21 +395,17 @@ def extract_molecule(mol2_path: Path, itp_path: Path) -> list:
             else:
                 gasteiger_charge = 0.0
         else:
-            # Fallback si RDKit falló: inferir desde tripos_type y grafo
             is_in_ring       = tripos_type in {"C.ar", "N.ar"}
             ring_size        = 6 if is_in_ring else 0
-            is_aromatic      = tripos_type in {"C.ar", "N.ar"}
+            is_aromatic      = is_in_ring
             formal_charge    = 0
             gasteiger_charge = 0.0
 
         degree_of_unsat = bond_type_counts["double"] + bond_type_counts["aromatic"]
 
-        # Targets del ITP — primero por nombre, luego por índice
-        by_index = itp_data.get("__by_index__", {})
-        itp_atom = itp_data.get(atom_name)
-        if itp_atom is None:
-            itp_atom = by_index.get(atom_id)
-        if itp_atom is None and itp_data:
+        # Targets del ITP — siempre por índice posicional
+        itp_atom = itp_by_index.get(atom_id)
+        if itp_atom is None and itp_by_index:
             unmatched.append(atom_name)
         atomtype = itp_atom["atomtype"] if itp_atom else None
         charge   = itp_atom["charge"]   if itp_atom else None
@@ -515,4 +501,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

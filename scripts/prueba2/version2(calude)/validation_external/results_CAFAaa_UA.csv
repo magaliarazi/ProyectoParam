@@ -1,0 +1,16 @@
+molecule,atom_id,atom_name,element,atomtype_real,charge_real,atomtype_pred,charge_pred,clf_correct,charge_error,charge_abs_error
+CAFAaa,1,O1,O,OM,-0.776,O,-0.3928,False,-0.3832,0.3832
+CAFAaa,2,C2,C,CPos,0.73,C,0.5073,False,0.2227,0.2227
+CAFAaa,3,O3,O,OM,-0.776,O,-0.3355,False,-0.4405,0.4405
+CAFAaa,4,C4,C,C,-0.26,C,-0.1788,True,-0.0812,0.0812
+CAFAaa,6,C6,C,C,-0.187,C,-0.1736,True,-0.0134,0.0134
+CAFAaa,8,C8,C,C,0.172,C,-0.0086,True,0.1806,0.1806
+CAFAaa,9,C9,C,C,-0.259,C,-0.1678,True,-0.0912,0.0912
+CAFAaa,11,C11,C,C,-0.27,C,-0.2808,True,0.0108,0.0108
+CAFAaa,13,C13,C,C,0.288,C,0.1884,True,0.0996,0.0996
+CAFAaa,14,O14,O,OAlc,-0.583,OA,-0.3672,False,-0.2158,0.2158
+CAFAaa,15,H15,H,HS14,0.458,H,0.1534,False,0.3046,0.3046
+CAFAaa,16,C16,C,C,0.205,C,0.0709,True,0.1341,0.1341
+CAFAaa,17,C17,C,C,-0.353,C,-0.2065,True,-0.1465,0.1465
+CAFAaa,19,O19,O,OAlc,-0.605,OA,-0.452,False,-0.153,0.153
+CAFAaa,20,H20,H,HS14,0.474,H,0.152,False,0.322,0.322

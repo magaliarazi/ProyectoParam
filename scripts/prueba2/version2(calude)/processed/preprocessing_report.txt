@@ -4,7 +4,7 @@ REPORTE DE PREPROCESAMIENTO
 =======================================================
   PREPROCESAMIENTO — AA
 =======================================================
-  Shape inicial: (472, 31)
+  Shape inicial: (655, 31)
 
   [1] Eliminando átomos erróneos...
 
@@ -24,19 +24,19 @@ REPORTE DE PREPROCESAMIENTO
   [6] Separando columnas de identificación...
   ID cols separadas: ['molecule', 'atom_id', 'atom_name', 'bonded_to_element']
 
-  Shape final: (472, 91)
+  Shape final: (655, 91)
   Features: 89
   Valores nulos: 0 ✓
-  Clases atomtype: 20
+  Clases atomtype: 16
   Rango charge: [-0.608, 0.820]
 
 =======================================================
   PREPROCESAMIENTO — UA
 =======================================================
-  Shape inicial: (315, 31)
+  Shape inicial: (402, 31)
 
   [1] Eliminando átomos erróneos...
-  Eliminado (2NP, O, HC): 1 átomo(s)
+  Eliminado (2NP, O, HC): 0 átomo(s)
 
   [2] Eliminando features redundantes...
   Eliminadas: ['degree_of_unsat', 'n_dihedrals', 'bonds_single', 'tripos_type']
@@ -54,8 +54,8 @@ REPORTE DE PREPROCESAMIENTO
   [6] Separando columnas de identificación...
   ID cols separadas: ['molecule', 'atom_id', 'atom_name', 'bonded_to_element']
 
-  Shape final: (314, 91)
+  Shape final: (402, 91)
   Features: 89
   Valores nulos: 0 ✓
-  Clases atomtype: 19
+  Clases atomtype: 15
   Rango charge: [-0.608, 0.820]

@@ -22,7 +22,7 @@ Reglas (sin hardcodear atomtypes):
 Requiere columna 'bonded_to_element' generada por extract_dataset_v2.py.
 
 Uso:
-    python split_v2.py --input dataset.csv --output_AA aa.csv --output_UA ua.csv
+    python split_v2.py --input dataset_remapped.csv --output_AA dataset_AA.csv --output_UA dataset_UA.csv
 """
 
 import argparse

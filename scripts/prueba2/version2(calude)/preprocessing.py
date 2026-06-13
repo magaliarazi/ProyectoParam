@@ -22,7 +22,7 @@ Nota sobre clases raras:
   El desbalance se maneja durante el entrenamiento con class_weight='balanced'.
 
 Uso:
-    python preprocessing.py --aa aa.csv --ua ua.csv --output_dir processed/
+    python preprocessing.py --aa dataset_AA.csv --ua dataset_UA.csv --output_dir processed/
 
 Salida:
     processed/aa_clean.csv

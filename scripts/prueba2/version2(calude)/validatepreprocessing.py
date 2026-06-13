@@ -14,7 +14,7 @@ Checks realizados:
   7. Artifacts JSON consistente con los CSVs
 
 Uso:
-    python validate_preprocessing.py --processed_dir processed/
+    python validatepreprocessing.py --processed_dir processed/
 
 Dependencias:
     pip install pandas numpy

@@ -1,7 +1,7 @@
 """
-model_U.py
------------
-Entrena y evalúa modelos Random Forest para el dataset All-Atom (AA).
+model_UA.py
+-------------
+Entrena y evalúa modelos Random Forest para el dataset United-Atom (UA).
 
 Tareas:
   - Clasificación: predicción de atomtype
@@ -12,10 +12,10 @@ Estrategia de evaluación:
   - 5-fold cross-validation → métricas robustas para la tesis
 
 Salidas:
-  results_AA/
-    ├── clf_AA.joblib                 modelo de clasificación
-    ├── reg_AA.joblib                 modelo de regresión
-    ├── metrics_AA.json               métricas completas
+  results_UA/
+    ├── clf_UA.joblib                 modelo de clasificación
+    ├── reg_UA.joblib                 modelo de regresión
+    ├── metrics_UA.json               métricas completas
     ├── fig_atomtype_distribution.png distribución de clases
     ├── fig_confusion_matrix.png      matriz de confusión
     ├── fig_feature_importance_clf.png feature importance clasificación
@@ -25,7 +25,7 @@ Salidas:
     └── fig_crossval_scores.png       scores de cross-validation
 
 Uso:
-    python model_U.py --input processed/u_clean.csv --output_dir results_U/
+    python model_UA.py --input processed/ua_clean.csv --output_dir results_UA/
 
 Dependencias:
     pip install pandas numpy scikit-learn matplotlib seaborn joblib

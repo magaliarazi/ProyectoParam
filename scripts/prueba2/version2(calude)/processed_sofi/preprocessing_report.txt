@@ -1,0 +1,61 @@
+REPORTE DE PREPROCESAMIENTO
+=======================================================
+
+=======================================================
+  PREPROCESAMIENTO — AA
+=======================================================
+  Shape inicial: (487, 31)
+
+  [1] Eliminando átomos erróneos...
+
+  [2] Eliminando features redundantes...
+  Eliminadas: ['degree_of_unsat', 'n_dihedrals', 'bonds_single', 'tripos_type']
+
+  [3] Encoding de booleanas...
+  Booleanas → 0/1: ['is_planar', 'is_in_ring', 'is_aromatic']
+
+  [4] One-hot encoding...
+  One-hot: ['element'] → 7 columnas
+
+  [5] Feature hashing...
+  Hashing 'neighbor_config' → 32 componentes
+  Hashing 'neighbor2_config' → 32 componentes
+
+  [6] Separando columnas de identificación...
+  ID cols separadas: ['molecule', 'atom_id', 'atom_name', 'bonded_to_element']
+
+  Shape final: (487, 91)
+  Features: 89
+  Valores nulos: 0 ✓
+  Clases atomtype: 16
+  Rango charge: [-0.608, 0.820]
+
+=======================================================
+  PREPROCESAMIENTO — UA
+=======================================================
+  Shape inicial: (326, 31)
+
+  [1] Eliminando átomos erróneos...
+  Eliminado (2NP, O, HC): 0 átomo(s)
+
+  [2] Eliminando features redundantes...
+  Eliminadas: ['degree_of_unsat', 'n_dihedrals', 'bonds_single', 'tripos_type']
+
+  [3] Encoding de booleanas...
+  Booleanas → 0/1: ['is_planar', 'is_in_ring', 'is_aromatic']
+
+  [4] One-hot encoding...
+  One-hot: ['element'] → 7 columnas
+
+  [5] Feature hashing...
+  Hashing 'neighbor_config' → 32 componentes
+  Hashing 'neighbor2_config' → 32 componentes
+
+  [6] Separando columnas de identificación...
+  ID cols separadas: ['molecule', 'atom_id', 'atom_name', 'bonded_to_element']
+
+  Shape final: (326, 91)
+  Features: 89
+  Valores nulos: 0 ✓
+  Clases atomtype: 16
+  Rango charge: [-0.608, 0.820]

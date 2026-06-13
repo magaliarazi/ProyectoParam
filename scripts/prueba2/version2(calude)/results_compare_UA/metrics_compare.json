@@ -1,0 +1,45 @@
+{
+  "EXP1_RF_baseline": {
+    "description": "RF original: n=150, depth=10, leaf=1"
+  },
+  "EXP2_RF_conservador": {
+    "description": "RF: n=200, depth=None, leaf=5 (menos overfitting)"
+  },
+  "EXP3_RF_sqrt": {
+    "description": "RF: n=500, depth=None, leaf=2, max_features=sqrt"
+  },
+  "EXP4_GradientBoosting": {
+    "description": "GBR/GBC: n=200, lr=0.05, depth=4, subsample=0.8"
+  },
+  "EXP5_XGBoost": {
+    "description": "XGBoost: n=200, lr=0.05, depth=4, subsample=0.8"
+  },
+  "EXP6_RF_feature_selection": {
+    "description": "RF con top-20 features por importancia",
+    "selected_features": [
+      "mass",
+      "coordination",
+      "avg_bond_len_A",
+      "avg_angle_deg",
+      "C_count",
+      "H_count",
+      "O_count",
+      "n_electroneg_neighbors",
+      "n_electroneg_neighbors2",
+      "gasteiger_charge",
+      "element_C",
+      "element_O",
+      "neighbor_config_h10",
+      "neighbor_config_h21",
+      "neighbor_config_h26",
+      "neighbor2_config_h7",
+      "neighbor2_config_h9",
+      "neighbor2_config_h17",
+      "neighbor2_config_h21",
+      "neighbor2_config_h23"
+    ]
+  },
+  "EXP7_Stacking": {
+    "description": "Stacking: RF + GBR \u2192 Ridge/Logistic meta-learner"
+  }
+}

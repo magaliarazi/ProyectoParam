@@ -2,36 +2,32 @@
   "AA": {
     "dataset": "AA",
     "original_shape": [
-      472,
+      655,
       31
     ],
     "clean_shape": [
-      472,
+      655,
       91
     ],
-    "n_atoms": 472,
-    "n_atomtypes": 20,
+    "n_atoms": 655,
+    "n_atomtypes": 16,
     "atomtypes": [
       "C",
-      "CAro",
       "CH1",
       "CH2",
       "CH3",
       "CL",
-      "CLAro",
       "F",
       "H",
       "HC",
       "HS14",
       "N",
-      "NOpt",
-      "NPri",
       "NT",
       "O",
       "OA",
       "OE",
       "OM",
-      "SDmso"
+      "S"
     ],
     "charge_range": [
       -0.608,
@@ -74,35 +70,31 @@
   "UA": {
     "dataset": "UA",
     "original_shape": [
-      315,
+      402,
       31
     ],
     "clean_shape": [
-      314,
+      402,
       91
     ],
-    "n_atoms": 314,
-    "n_atomtypes": 19,
+    "n_atoms": 402,
+    "n_atomtypes": 15,
     "atomtypes": [
       "C",
-      "CAro",
       "CH1",
       "CH2",
       "CH3",
       "CL",
-      "CLAro",
       "F",
       "H",
       "HS14",
       "N",
-      "NOpt",
-      "NPri",
       "NT",
       "O",
       "OA",
       "OE",
       "OM",
-      "SDmso"
+      "S"
     ],
     "charge_range": [
       -0.608,
