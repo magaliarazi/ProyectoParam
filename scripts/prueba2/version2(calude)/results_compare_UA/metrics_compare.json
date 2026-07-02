@@ -26,17 +26,17 @@
       "O_count",
       "n_electroneg_neighbors",
       "n_electroneg_neighbors2",
+      "is_in_ring",
+      "ring_size",
       "gasteiger_charge",
       "element_C",
       "element_O",
+      "neighbor_config_h0",
       "neighbor_config_h10",
       "neighbor_config_h21",
-      "neighbor_config_h26",
       "neighbor2_config_h7",
-      "neighbor2_config_h9",
       "neighbor2_config_h17",
-      "neighbor2_config_h21",
-      "neighbor2_config_h23"
+      "neighbor2_config_h21"
     ]
   },
   "EXP7_Stacking": {
