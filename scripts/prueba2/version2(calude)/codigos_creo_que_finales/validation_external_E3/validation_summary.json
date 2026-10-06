@@ -1,0 +1,102 @@
+[
+  {
+    "molecule": "CAFAaa",
+    "scheme": "AA",
+    "n_atoms": 20,
+    "reg_model": "TabTransformer",
+    "atomtypes_real": [
+      "C",
+      "CPos",
+      "HC",
+      "HS14",
+      "OAlc",
+      "OM"
+    ],
+    "classification": {
+      "accuracy": 0.7,
+      "f1_macro": 0.2898,
+      "f1_weighted": 0.6931
+    },
+    "regression": {
+      "mae": 0.2014,
+      "rmse": 0.2647,
+      "r2": 0.5956
+    }
+  },
+  {
+    "molecule": "CAFAaa",
+    "scheme": "UA",
+    "n_atoms": 15,
+    "reg_model": "RF_E3",
+    "atomtypes_real": [
+      "C",
+      "CPos",
+      "HS14",
+      "OAlc",
+      "OM"
+    ],
+    "classification": {
+      "accuracy": 0.6,
+      "f1_macro": 0.201,
+      "f1_weighted": 0.5908
+    },
+    "regression": {
+      "mae": 0.2066,
+      "rmse": 0.2454,
+      "r2": 0.7176
+    }
+  },
+  {
+    "molecule": "DTXaa",
+    "scheme": "AA",
+    "n_atoms": 111,
+    "reg_model": "TabTransformer",
+    "atomtypes_real": [
+      "C",
+      "CPos",
+      "H",
+      "HC",
+      "HS14",
+      "N",
+      "OAlc",
+      "OE",
+      "OEOpt"
+    ],
+    "classification": {
+      "accuracy": 0.7748,
+      "f1_macro": 0.3476,
+      "f1_weighted": 0.7235
+    },
+    "regression": {
+      "mae": 0.2199,
+      "rmse": 0.3745,
+      "r2": 0.3052
+    }
+  },
+  {
+    "molecule": "DTXaa",
+    "scheme": "UA",
+    "n_atoms": 63,
+    "reg_model": "RF_E3",
+    "atomtypes_real": [
+      "C",
+      "CPos",
+      "H",
+      "HS14",
+      "N",
+      "OAlc",
+      "OE",
+      "OEOpt"
+    ],
+    "classification": {
+      "accuracy": 0.6032,
+      "f1_macro": 0.2883,
+      "f1_weighted": 0.5128
+    },
+    "regression": {
+      "mae": 0.3225,
+      "rmse": 0.4404,
+      "r2": 0.4172
+    }
+  }
+]

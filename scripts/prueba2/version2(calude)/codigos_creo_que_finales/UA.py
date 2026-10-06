@@ -25,7 +25,7 @@ Salidas:
     └── fig_crossval_scores.png       scores de cross-validation
 
 Uso:
-    python UA.py --input processed/ua_clean.csv --output_dir results_UA/
+    python UA.py --input ua_clean.csv --output_dir results_UA/
 
 Dependencias:
     pip install pandas numpy scikit-learn matplotlib seaborn joblib

@@ -1,11 +1,13 @@
 """
 validate_external.py
 --------------------
-Valida los modelos Random Forest entrenados sobre moléculas externas
-(no vistas durante el entrenamiento) comparando las predicciones con
-los parámetros reales del .itp parametrizado por la tutora.
+Valida los modelos sobre moléculas externas no vistas durante el entrenamiento.
 
-Genera métricas y figuras de validación externa para AA y UA.
+Modelos utilizados:
+  - AA clasificación (atomtype): Random Forest E3 (clf_AA.joblib)
+  - AA regresión (charge):       TabTransformer  (reg_AA.pt)
+  - UA clasificación (atomtype): Random Forest E3 (clf_UA.joblib)
+  - UA regresión (charge):       Random Forest E3 (reg_UA.joblib)
 
 Uso:
     python validate_external.py \
@@ -15,9 +17,6 @@ Uso:
         --artifacts processed/preprocessing_artifacts.json \
         --pipeline_dir /home/marazi/proyectoParam/scripts/prueba2/version2(calude) \
         --output_dir validation_external/
-
-Dependencias:
-    pip install pandas numpy scikit-learn matplotlib seaborn joblib rdkit
 """
 
 import argparse
@@ -31,12 +30,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
+import torch
+import torch.nn as nn
 from joblib import load
 from sklearn.feature_extraction import FeatureHasher
 from sklearn.metrics import (
     accuracy_score, classification_report, confusion_matrix,
     f1_score, mean_absolute_error, mean_squared_error, r2_score,
 )
+from sklearn.preprocessing import StandardScaler
 
 warnings.filterwarnings("ignore")
 sns.set_theme(style="whitegrid", palette="muted")
@@ -47,8 +49,8 @@ plt.rcParams["font.size"]  = 11
 # CONFIG
 # =============================================================================
 
-TARGET_CLF  = "atomtype"
-TARGET_REG  = "charge"
+TARGET_CLF   = "atomtype"
+TARGET_REG   = "charge"
 COLS_TO_DROP = ["degree_of_unsat", "n_dihedrals", "bonds_single", "tripos_type"]
 BOOL_COLS    = ["is_planar", "is_in_ring", "is_aromatic"]
 TOP_N        = 20
@@ -60,6 +62,95 @@ ATOMTYPE_REMAP = {
     "SDmso": "S",
     "CAro":  "C",
 }
+
+# Features en el orden exacto que espera el TabTransformer
+NUMERIC_COLS = [
+    "mass", "coordination", "avg_bond_len_A", "avg_angle_deg", "is_planar",
+    "C_count", "H_count", "O_count", "N_count", "n_electroneg_neighbors",
+    "n_electroneg_neighbors2", "bonds_double", "bonds_aromatic", "is_in_ring",
+    "ring_size", "is_aromatic", "formal_charge", "gasteiger_charge",
+]
+ELEMENT_COLS   = ["element_C", "element_Cl", "element_F", "element_H",
+                  "element_N", "element_O", "element_S"]
+NEIGHBOR_COLS  = [f"neighbor_config_h{i}"  for i in range(32)]
+NEIGHBOR2_COLS = [f"neighbor2_config_h{i}" for i in range(32)]
+TABTRANSFORMER_COLS = NUMERIC_COLS + ELEMENT_COLS + NEIGHBOR_COLS + NEIGHBOR2_COLS
+
+
+# =============================================================================
+# TABTRANSFORMER — arquitectura
+# =============================================================================
+
+class FeatureTokenizer(nn.Module):
+    def __init__(self, n_features, d_model):
+        super().__init__()
+        self.projections = nn.ModuleList([
+            nn.Linear(1, d_model) for _ in range(n_features)
+        ])
+
+    def forward(self, x):
+        tokens = [proj(x[:, i:i+1]) for i, proj in enumerate(self.projections)]
+        return torch.stack(tokens, dim=1)
+
+
+class TabTransformerModel(nn.Module):
+    def __init__(self, n_features, n_classes, d_model=64, nhead=8,
+                 num_layers=3, dim_feedforward=256, dropout=0.1):
+        super().__init__()
+        self.tokenizer = FeatureTokenizer(n_features, d_model)
+        encoder_layer  = nn.TransformerEncoderLayer(
+            d_model=d_model, nhead=nhead, dim_feedforward=dim_feedforward,
+            dropout=dropout, batch_first=True,
+        )
+        self.transformer = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
+        flat_dim = n_features * d_model
+        self.head_cat = nn.Sequential(
+            nn.Linear(flat_dim, 128), nn.ReLU(), nn.Dropout(dropout),
+            nn.Linear(128, n_classes),
+        )
+        self.head_reg = nn.Sequential(
+            nn.Linear(flat_dim, 128), nn.ReLU(), nn.Dropout(dropout),
+            nn.Linear(128, 1),
+        )
+
+    def forward(self, x):
+        tokens  = self.tokenizer(x)
+        encoded = self.transformer(tokens)
+        flat    = encoded.reshape(encoded.size(0), -1)
+        return self.head_cat(flat), self.head_reg(flat).squeeze(-1)
+
+
+def load_tabtransformer(pt_path, device):
+    ckpt       = torch.load(pt_path, map_location=device, weights_only=False)
+    args       = ckpt["args"]
+    n_classes  = len(ckpt["label_encoder_classes"])
+    n_features = len(TABTRANSFORMER_COLS)
+    model = TabTransformerModel(
+        n_features=n_features, n_classes=n_classes,
+        d_model=args.get("d_model", 64), nhead=args.get("nhead", 8),
+        num_layers=args.get("num_layers", 3),
+        dim_feedforward=args.get("d_model", 64) * 4,
+        dropout=args.get("dropout", 0.1),
+    ).to(device)
+    model.load_state_dict(ckpt["model_state"])
+    model.eval()
+    scaler        = StandardScaler()
+    scaler.mean_  = ckpt["scaler_mean"]
+    scaler.scale_ = ckpt["scaler_scale"]
+    scaler.n_features_in_ = n_features
+    return model, scaler
+
+
+def predict_charge_tabtransformer(model, scaler, df_proc, device):
+    df_proc = df_proc.copy()
+    for col in TABTRANSFORMER_COLS:
+        if col not in df_proc.columns:
+            df_proc[col] = 0
+    X = df_proc[TABTRANSFORMER_COLS].values.astype(np.float32)
+    X = scaler.transform(X)
+    with torch.no_grad():
+        _, charge_pred = model(torch.tensor(X, dtype=torch.float32).to(device))
+    return charge_pred.cpu().numpy()
 
 
 # =============================================================================
@@ -78,7 +169,7 @@ def section(title):
 
 
 # =============================================================================
-# PARSERS (copiados del pipeline para consistencia)
+# PARSERS
 # =============================================================================
 
 def parse_mol2(mol2_path):
@@ -152,14 +243,13 @@ def parse_itp(itp_path):
 # =============================================================================
 
 def extract_features_from_mol2(mol2_path, pipeline_dir):
-    """Importa funciones del pipeline y extrae features."""
     sys.path.append(str(pipeline_dir))
     from extract_dataset_v3 import (
         build_rdkit_mol, bond_length, angle_deg, is_planar_geometry,
         ATOMIC_MASSES, PLANAR_TYPES, ELECTRONEGATIVE,
     )
 
-    mol_name  = mol2_path.stem
+    mol_name     = mol2_path.stem
     atoms, bonds = parse_mol2(mol2_path)
 
     graph = {aid: [] for aid in atoms}
@@ -181,9 +271,9 @@ def extract_features_from_mol2(mol2_path, pipeline_dir):
                         dihedral_counts[idx] += 1
 
     mol, id_to_idx = build_rdkit_mol(atoms, bonds)
-    has_rdkit = mol is not None
-    has_gasteiger = False
-    ring_info = None
+    has_rdkit      = mol is not None
+    has_gasteiger  = False
+    ring_info      = None
 
     if has_rdkit:
         try:
@@ -437,15 +527,13 @@ def plot_residuals(y_true, y_pred, title, out_dir, fname):
 
 
 def plot_error_by_atomtype(df_results, title, out_dir, fname):
-    """Error absoluto de charge por atomtype real."""
     df_results = df_results.copy()
     df_results["abs_error"] = abs(df_results["charge_real"] - df_results["charge_pred"])
     grouped = df_results.groupby("atomtype_real")["abs_error"].mean().sort_values(ascending=False)
     fig, ax = plt.subplots(figsize=(10, 5))
     colors = ["#ef5350" if v > 0.1 else "#378ADD" for v in grouped.values]
     ax.bar(grouped.index, grouped.values, color=colors)
-    ax.axhline(0.05, color="orange", linestyle="--", linewidth=1,
-               label="Umbral 0.05 e")
+    ax.axhline(0.05, color="orange", linestyle="--", linewidth=1, label="Umbral 0.05 e")
     ax.set_xlabel("Atomtype real")
     ax.set_ylabel("MAE (e)")
     ax.set_title(title)
@@ -455,15 +543,14 @@ def plot_error_by_atomtype(df_results, title, out_dir, fname):
 
 
 def plot_atomtype_comparison(y_true, y_pred, title, out_dir, fname):
-    """Barras comparando atomtype real vs predicho por clase."""
     df = pd.DataFrame({"real": y_true, "pred": y_pred})
-    classes = sorted(set(y_true) | set(y_pred))
+    classes     = sorted(set(y_true) | set(y_pred))
     real_counts = df["real"].value_counts().reindex(classes, fill_value=0)
     pred_counts = df["pred"].value_counts().reindex(classes, fill_value=0)
     x = np.arange(len(classes))
     w = 0.35
     fig, ax = plt.subplots(figsize=(max(10, len(classes)), 5))
-    ax.bar(x - w/2, real_counts.values, w, label="Real", color="#378ADD")
+    ax.bar(x - w/2, real_counts.values, w, label="Real",     color="#378ADD")
     ax.bar(x + w/2, pred_counts.values, w, label="Predicho", color="#D85A30")
     ax.set_xticks(x)
     ax.set_xticklabels(classes, rotation=45, ha="right")
@@ -479,51 +566,48 @@ def plot_atomtype_comparison(y_true, y_pred, title, out_dir, fname):
 # =============================================================================
 
 def validate(mol2_path, itp_path, clf, reg, artifacts, scheme,
-             pipeline_dir, out_dir, label):
+             pipeline_dir, out_dir, label,
+             tab_model=None, tab_scaler=None, device=None):
 
     section(f"Validación {label} — {scheme}")
     mol_name = mol2_path.stem
 
-    # Extraer features
-    df_raw = extract_features_from_mol2(mol2_path, pipeline_dir)
-
-    # Split AA/UA
+    df_raw   = extract_features_from_mol2(mol2_path, pipeline_dir)
     df_aa, df_ua = split_AA_UA(df_raw)
     df_scheme = df_aa if scheme == "AA" else df_ua
 
-    # Leer targets del ITP
     itp_data = parse_itp(itp_path)
-
-    # Agregar targets al dataframe
     df_scheme = df_scheme.copy()
     df_scheme["atomtype_real"] = df_scheme["atom_id"].map(
-        lambda x: itp_data.get(x, {}).get("atomtype", None)
-    )
+        lambda x: itp_data.get(x, {}).get("atomtype", None))
     df_scheme["charge_real"] = df_scheme["atom_id"].map(
-        lambda x: itp_data.get(x, {}).get("charge", None)
-    )
-
-    # Aplicar remapeo a targets reales
+        lambda x: itp_data.get(x, {}).get("charge", None))
     df_scheme["atomtype_real"] = df_scheme["atomtype_real"].replace(ATOMTYPE_REMAP)
-
-    # Eliminar átomos sin target
     df_scheme = df_scheme.dropna(subset=["atomtype_real", "charge_real"])
 
     print(f"  Átomos para validación: {len(df_scheme)}")
     print(f"  Atomtypes reales únicos: {sorted(df_scheme['atomtype_real'].unique())}")
 
-    # Preprocesar
     df_proc = preprocess(df_scheme, artifacts, scheme)
+
+    # Clasificación → siempre RF
     expected_cols = list(clf.feature_names_in_) if hasattr(clf, "feature_names_in_") else []
     if expected_cols:
         for col in expected_cols:
             if col not in df_proc.columns:
                 df_proc[col] = 0
-        df_proc = df_proc[expected_cols]
+        df_proc_clf = df_proc[expected_cols]
+    else:
+        df_proc_clf = df_proc
 
-    # Predecir
-    y_clf_pred = clf.predict(df_proc)
-    y_reg_pred = reg.predict(df_proc)
+    y_clf_pred = clf.predict(df_proc_clf)
+
+    # Regresión → TabTransformer para AA, RF para UA
+    if scheme == "AA" and tab_model is not None:
+        y_reg_pred = predict_charge_tabtransformer(tab_model, tab_scaler, df_proc.copy(), device)
+    else:
+        y_reg_pred = reg.predict(df_proc_clf)
+
     y_clf_true = df_scheme["atomtype_real"].values
     y_reg_true = df_scheme["charge_real"].values.astype(float)
 
@@ -531,11 +615,10 @@ def validate(mol2_path, itp_path, clf, reg, artifacts, scheme,
     acc    = accuracy_score(y_clf_true, y_clf_pred)
     f1_mac = f1_score(y_clf_true, y_clf_pred, average="macro",    zero_division=0)
     f1_w   = f1_score(y_clf_true, y_clf_pred, average="weighted", zero_division=0)
-
     print(f"\n  Clasificación:")
-    print(f"    Accuracy:   {acc:.4f}")
-    print(f"    F1 macro:   {f1_mac:.4f}")
-    print(f"    F1 weighted:{f1_w:.4f}")
+    print(f"    Accuracy:    {acc:.4f}")
+    print(f"    F1 macro:    {f1_mac:.4f}")
+    print(f"    F1 weighted: {f1_w:.4f}")
     print()
     print(classification_report(y_clf_true, y_clf_pred, zero_division=0))
 
@@ -543,63 +626,45 @@ def validate(mol2_path, itp_path, clf, reg, artifacts, scheme,
     mae  = mean_absolute_error(y_reg_true, y_reg_pred)
     rmse = np.sqrt(mean_squared_error(y_reg_true, y_reg_pred))
     r2   = r2_score(y_reg_true, y_reg_pred)
-
-    print(f"  Regresión:")
+    print(f"  Regresión ({'TabTransformer' if scheme == 'AA' else 'RF'}):")
     print(f"    MAE:  {mae:.4f} e")
     print(f"    RMSE: {rmse:.4f} e")
     print(f"    R²:   {r2:.4f}")
 
-    # Armar DataFrame de resultados
     df_results = df_scheme[["molecule", "atom_id", "atom_name",
                              "element", "atomtype_real", "charge_real"]].copy()
-    df_results["atomtype_pred"] = y_clf_pred
-    df_results["charge_pred"]   = y_reg_pred.round(4)
-    df_results["clf_correct"]   = (df_results["atomtype_real"] == df_results["atomtype_pred"])
-    df_results["charge_error"]  = (df_results["charge_real"] - df_results["charge_pred"]).round(4)
-    df_results["charge_abs_error"] = df_results["charge_error"].abs().round(4)
+    df_results["atomtype_pred"]    = y_clf_pred
+    df_results["charge_pred"]      = np.round(y_reg_pred, 4)
+    df_results["clf_correct"]      = (df_results["atomtype_real"] == df_results["atomtype_pred"])
+    df_results["charge_error"]     = np.round(y_reg_true - y_reg_pred, 4)
+    df_results["charge_abs_error"] = np.abs(df_results["charge_error"]).round(4)
 
-    # Guardar CSV de resultados
     csv_path = out_dir / f"results_{mol_name}_{scheme}.csv"
     df_results.to_csv(csv_path, index=False)
     print(f"\n  → {csv_path.name}")
 
-    # Figuras
     prefix = f"{mol_name}_{scheme}"
-
-    plot_confusion_matrix(
-        y_clf_true, y_clf_pred,
+    plot_confusion_matrix(y_clf_true, y_clf_pred,
         f"Matriz de confusión — {mol_name} {scheme}\n(validación externa)",
-        out_dir, f"fig_confusion_{prefix}.png"
-    )
-
-    plot_scatter(
-        y_reg_true, y_reg_pred, mae, rmse, r2,
+        out_dir, f"fig_confusion_{prefix}.png")
+    plot_scatter(y_reg_true, y_reg_pred, mae, rmse, r2,
         f"Charge real vs predicha — {mol_name} {scheme}",
-        out_dir, f"fig_scatter_{prefix}.png"
-    )
-
-    plot_residuals(
-        y_reg_true, y_reg_pred,
+        out_dir, f"fig_scatter_{prefix}.png")
+    plot_residuals(y_reg_true, y_reg_pred,
         f"Análisis de residuos — {mol_name} {scheme}",
-        out_dir, f"fig_residuals_{prefix}.png"
-    )
-
-    plot_error_by_atomtype(
-        df_results,
+        out_dir, f"fig_residuals_{prefix}.png")
+    plot_error_by_atomtype(df_results,
         f"MAE de charge por atomtype — {mol_name} {scheme}",
-        out_dir, f"fig_error_by_atomtype_{prefix}.png"
-    )
-
-    plot_atomtype_comparison(
-        y_clf_true, y_clf_pred,
+        out_dir, f"fig_error_by_atomtype_{prefix}.png")
+    plot_atomtype_comparison(y_clf_true, y_clf_pred,
         f"Atomtypes reales vs predichos — {mol_name} {scheme}",
-        out_dir, f"fig_atomtype_comparison_{prefix}.png"
-    )
+        out_dir, f"fig_atomtype_comparison_{prefix}.png")
 
     return {
         "molecule": mol_name,
         "scheme":   scheme,
         "n_atoms":  len(df_scheme),
+        "reg_model": "TabTransformer" if scheme == "AA" else "RF_E3",
         "atomtypes_real": sorted(df_scheme["atomtype_real"].unique().tolist()),
         "classification": {
             "accuracy":    round(acc, 4),
@@ -620,44 +685,44 @@ def validate(mol2_path, itp_path, clf, reg, artifacts, scheme,
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Validación externa de modelos RF sobre moléculas nuevas"
+        description="Validación externa — RF E3 (clf) + TabTransformer (reg AA) + RF E3 (reg UA)"
     )
-    parser.add_argument("--molecules",    required=True,
-                        help="Carpeta con .mol2 e .itp de las moléculas de validación")
+    parser.add_argument("--molecules",    required=True)
     parser.add_argument("--models_AA",    required=True,
-                        help="Carpeta con clf_AA.joblib y reg_AA.joblib")
+                        help="Carpeta con clf_AA.joblib y reg_AA.pt")
     parser.add_argument("--models_UA",    required=True,
                         help="Carpeta con clf_UA.joblib y reg_UA.joblib")
-    parser.add_argument("--artifacts",    required=True,
-                        help="preprocessing_artifacts.json")
-    parser.add_argument("--pipeline_dir", required=True,
-                        help="Carpeta con extract_dataset_v3.py")
+    parser.add_argument("--artifacts",    required=True)
+    parser.add_argument("--pipeline_dir", required=True)
     parser.add_argument("--output_dir",   default="validation_external/")
     args = parser.parse_args()
 
     out_dir = Path(args.output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    # Cargar modelos
+    # Cargar modelos RF
     clf_aa = load(Path(args.models_AA) / "clf_AA.joblib")
-    reg_aa = load(Path(args.models_AA) / "reg_AA.joblib")
     clf_ua = load(Path(args.models_UA) / "clf_UA.joblib")
     reg_ua = load(Path(args.models_UA) / "reg_UA.joblib")
+
+    # Cargar TabTransformer para regresión AA
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Device: {device}")
+    tab_model, tab_scaler = load_tabtransformer(
+        Path(args.models_AA) / "reg_AA.pt", device)
+    print("✔ TabTransformer cargado para regresión AA")
 
     with open(args.artifacts) as f:
         artifacts = json.load(f)
 
     pipeline_dir = Path(args.pipeline_dir)
-
-    # Buscar pares mol2/itp
-    mol2_files = sorted(Path(args.molecules).glob("*.mol2"))
+    mol2_files   = sorted(Path(args.molecules).glob("*.mol2"))
     if not mol2_files:
         sys.exit("No se encontraron archivos .mol2")
 
     all_results = []
 
     for mol2_path in mol2_files:
-        # Buscar itp correspondiente
         itp_candidates = list(Path(args.molecules).glob(f"{mol2_path.stem}*.itp"))
         if not itp_candidates:
             itp_candidates = list(Path(args.molecules).glob(f"{mol2_path.stem.upper()}*.itp"))
@@ -669,32 +734,35 @@ def main():
         print(f"\n✔ Procesando: {mol2_path.name} + {itp_path.name}")
 
         for scheme, clf, reg in [
-            ("AA", clf_aa, reg_aa),
-            ("UA", clf_ua, reg_ua),
+            ("AA", clf_aa, None),   # reg AA → TabTransformer
+            ("UA", clf_ua, reg_ua), # reg UA → RF
         ]:
             try:
                 result = validate(
                     mol2_path, itp_path, clf, reg,
                     artifacts, scheme, pipeline_dir, out_dir,
-                    mol2_path.stem
+                    mol2_path.stem,
+                    tab_model=tab_model if scheme == "AA" else None,
+                    tab_scaler=tab_scaler if scheme == "AA" else None,
+                    device=device,
                 )
                 all_results.append(result)
             except Exception as e:
                 print(f"  [ERROR] {mol2_path.stem} {scheme}: {e}")
+                import traceback; traceback.print_exc()
 
-    # Guardar resumen JSON
     summary_path = out_dir / "validation_summary.json"
     with open(summary_path, "w") as f:
         json.dump(all_results, f, indent=2)
     print(f"\n✔ Resumen guardado en: {summary_path}")
 
-    # Imprimir tabla resumen
     section("RESUMEN VALIDACIÓN EXTERNA")
-    print(f"{'Molécula':<12} {'Esquema':<8} {'Átomos':<8} "
+    print(f"{'Molécula':<12} {'Esquema':<8} {'Átomos':<8} {'Reg':<15} "
           f"{'Acc':<8} {'F1mac':<8} {'MAE(e)':<10} {'R²':<8}")
-    print("-" * 65)
+    print("-" * 80)
     for r in all_results:
         print(f"{r['molecule']:<12} {r['scheme']:<8} {r['n_atoms']:<8} "
+              f"{r['reg_model']:<15} "
               f"{r['classification']['accuracy']:<8.4f} "
               f"{r['classification']['f1_macro']:<8.4f} "
               f"{r['regression']['mae']:<10.4f} "
